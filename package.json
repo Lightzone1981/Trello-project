@@ -1,0 +1,50 @@
+{
+  "name": "trello",
+  "version": "1.0.0",
+  "description": "tutorial team project to create clone of Trello web application",
+  "private": true,
+  "scripts": {
+    "start": "npx webpack --mode development",
+    "build": "npx webpack --mode production",
+    "lint": "npx eslint ./",
+    "format": "npx eslint ./ --fix",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js}": "npx eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lightzone1981/Trello-project.git"
+  },
+  "keywords": [
+    "trello"
+  ],
+  "author": "Evgeniy Lebedevsky team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lightzone1981/Trello-project/issues"
+  },
+  "homepage": "https://github.com/Lightzone1981/Trello-project#readme",
+  "devDependencies": {
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "eslint": "^8.33.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "prettier": "^2.8.3",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
