@@ -56,5 +56,6 @@
   },
   "dependencies": {
     "favicons-webpack-plugin": "^6.0.0"
-  }
+  },
+  "main": ".eslintrc.js"
 }
