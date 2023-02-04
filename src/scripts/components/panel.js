@@ -3,12 +3,11 @@
 
 export function createPanel (type, title, buttonName) {
   const panel = document.createElement('section')
-  panel.className = `panel  ${type}`
-  panel.id = `${type}`
-  //   root.append(panel)
+  panel.className = `panel  panel-${type}`
+  panel.id = `panel-${type}`
 
   const panelHeader = document.createElement('div')
-  panelHeader.className = `panel__header ${type}__header`
+  panelHeader.className = `panel__header panel-${type}__header`
   panel.append(panelHeader)
 
   const panelTitle = document.createElement('h2')
@@ -18,13 +17,13 @@ export function createPanel (type, title, buttonName) {
 
   const panelCount = document.createElement('p')
   panelCount.className = 'panel__count'
-  panelCount.id = `${type}__count`
+  panelCount.id = `panel-${type}__count`
   // panelCount.textContent = getTasksCount(type)
   panelHeader.append(panelCount)
 
   const panelContainer = document.createElement('div')
   panelContainer.className = 'panel__container'
-  panelContainer.id = `${type}__container`
+  panelContainer.id = `panel-${type}__container`
   panel.append(panelContainer)
   // taskCard()
 
