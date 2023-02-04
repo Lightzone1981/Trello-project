@@ -7,9 +7,8 @@ export function setData (array, key) {
 }
 
 export function getTasksCount (panelType) {
-  const typePanel = getData(panelType)
-  const countTasks = typePanel.length
-  return countTasks
+  const arrayTask = getData(panelType)
+  return arrayTask.length
 }
 
 export function getUniqId () {
