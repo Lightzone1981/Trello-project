@@ -1,5 +1,5 @@
 // import {getTasksCount} from '../utils/dataUtils.js'
-// import {createButton}
+// import {createButton} from '../components/button.js'
 
 export function createPanel (type, title, buttonName) {
   const panel = document.createElement('section')
