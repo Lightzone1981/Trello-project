@@ -6,7 +6,7 @@ export function createHeader () {
 
   const imgLogo = document.createElement('img')
   imgLogo.className = 'main-header__logo'
-  imgLogo.src = 'img/trello_plain_wordmark_logo_icon_146320.png'
+  imgLogo.src = 'src/assets/icons/images/trello.png'
 
   const usersClockHeader = document.createElement('div')
   usersClockHeader.className = 'main-header__users-clock'
