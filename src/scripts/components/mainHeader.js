@@ -1,5 +1,5 @@
 import { createClock } from '.src/scripts/components/clock.js'
-//Создает главный Header logo+clock
+// Создает главный Header logo+clock
 export function createHeader () {
   const header = document.createElement('header')
   header.className = 'main-header container'
