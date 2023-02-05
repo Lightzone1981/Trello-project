@@ -1,5 +1,5 @@
 import { createButton } from '../components/button.js'
-// Создаем ф-ию доска заголовка
+// Верстка header доски
 export function createBoardHeader (getDomElements) {
   const boardHeader = document.createElement('header')
   boardHeader.className = 'board__header'
@@ -8,12 +8,11 @@ export function createBoardHeader (getDomElements) {
   boardHeaderTitle.className = 'board__header-title'
   boardHeaderTitle.innerText = 'Какой-то текст заголовка'
 
-  // const boardHeaderAvatarsDiv = document.createElement('div')
+  //  Здесь будут usersAvatars
+  // const boardHeaderAvatars = document.createElement('div')
   // boardHeaderAvatarsDiv.className = ' board_users-Avatars'
 
-  const boardMenuButton = document.createElement('button')
-  boardMenuButton.className = 'board__menu-button'
-  createButton()
+  const boardMenuButton = createButton('id, className, text, type')
 
   boardHeader.append(boardHeaderTitle, boardMenuButton)
 
