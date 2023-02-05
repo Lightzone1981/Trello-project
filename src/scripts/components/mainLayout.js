@@ -1,18 +1,18 @@
+import { createHeader } from '.scr/scripts/components/mainHeader.js'
+import { createBoard } from '.scr/scripts/components/boardLayout.js'
 
-const root = document.querySelector('#root')
-
-export function createMainLayout () {
+export function createMainLayout (root) {
   const wrapper = document.createElement('div')
   wrapper.className = 'main-wrapper'
-  root.append(wrapper)
 
-  const mainHeader = document.createElement('header')
-  mainHeader.className = 'main-header container'
+  const mainHeader = createHeader()
   wrapper.append(mainHeader)
 
   const mainBoardsContainer = document.createElement('main')
   mainBoardsContainer.className = 'boards-container container'
+
+  mainBoardsContainer.append(createBoard())
   wrapper.append(mainBoardsContainer)
 
-  return wrapper
+  root.append(wrapper)
 }
