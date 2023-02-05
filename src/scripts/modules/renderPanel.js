@@ -1,6 +1,6 @@
 function renderPanel(domElements, panelType){
-    const arrayCards = getData();
-    getTasksCount(panelType)
+    const tasksArray = getData();
+    getTasksCount(tasksArray, panelType)
     switch(panelType){
         case 'todo':
             clear(domElements.todo)
@@ -10,6 +10,6 @@ function renderPanel(domElements, panelType){
             clear(domElements.done)
     }
     arrayCards.forEach(item => {
-        item.renderTaskCard(domElements, cardTitle, cardDescription, creationTime,cardUser)
+        item.renderTaskCard(cardTitle, cardDescription, creationTime,cardUser)
     });
 }

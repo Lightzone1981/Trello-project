@@ -6,9 +6,9 @@ export function setData (array, key) {
   localStorage.setItem(key, JSON.stringify(array))
 }
 
-export function getTasksCount (panelType) {
-  const arrayTask = getData(panelType)
-  return arrayTask.length
+export function getTasksCount (tasksArray, panelType) {
+  const tasksCount = tasksArray.filter((item) => item.tasksArray.type === panelType).length
+  return tasksCount
 }
 
 export function getUniqId () {
