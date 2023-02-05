@@ -1,32 +1,21 @@
-export function createBoardHeader () {
-  const boardHeader = {
-    title: 'task 1',
-    usersAvatars: []
-  }
-
-  const boardHeaderDiv = document.createElement('header')
-  boardHeaderDiv.className = 'board__header'
+import { createButton } from '../components/button.js'
+// Создаем ф-ию доска заголовка
+export function createBoardHeader (getDomElements) {
+  const boardHeader = document.createElement('header')
+  boardHeader.className = 'board__header'
 
   const boardHeaderTitle = document.createElement('h1')
   boardHeaderTitle.className = 'board__header-title'
-  boardHeaderTitle.innerText = boardHeader.title
+  boardHeaderTitle.innerText = 'Какой-то текст заголовка'
 
-  const boardHeaderAvatarsDiv = document.createElement('div')
-  boardHeaderAvatarsDiv.className = ' board_users-Avatars'
-  boardHeader.usersAvatars.forEach((avatar) => {
-    const userAvatar = document.createElement('img')
-    userAvatar.className = 'users-Avatars'
-    userAvatar.src = avatar.src
-    userAvatar.alt = avatar.alt
-    boardHeaderAvatarsDiv.append(userAvatar)
-  })
+  // const boardHeaderAvatarsDiv = document.createElement('div')
+  // boardHeaderAvatarsDiv.className = ' board_users-Avatars'
 
   const boardMenuButton = document.createElement('button')
   boardMenuButton.className = 'board__menu-button'
-  boardMenuButton.type = 'button'
-  boardMenuButton.innerHTML = 'icons'
+  createButton()
 
-  boardHeaderDiv.append(boardHeaderTitle, boardHeaderAvatarsDiv, boardMenuButton)
+  boardHeader.append(boardHeaderTitle, boardMenuButton)
 
-  return boardHeaderDiv
+  return boardHeader
 }
