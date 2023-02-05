@@ -1,5 +1,5 @@
 import '../styles/index.scss'
-import { initApp } from './app.js'
+import { initApp } from './initApp.js'
 const root = document.querySelector('#root')
 
 initApp(root)
