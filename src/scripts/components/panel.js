@@ -12,7 +12,7 @@ export function createPanel (type) {
 
   const panelTitle = document.createElement('h2')
   panelTitle.className = 'panel__title'
-  panelTitle.textContent = `${type.toUppercase()}:`
+  panelTitle.textContent = `${type}:`
   panelHeader.append(panelTitle)
 
   const panelCount = document.createElement('h2')

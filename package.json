@@ -4,7 +4,7 @@
   "description": "tutorial team project to create clone of Trello web application",
   "private": true,
   "scripts": {
-    "start": "npx webpack --mode development",
+    "start": "npx webpack serve --mode development",
     "build": "npx webpack --mode production",
     "lint": "npx eslint ./",
     "format": "npx eslint ./ --fix",
@@ -53,3 +53,4 @@
   },
   "main": ".eslintrc.js"
 }
+

@@ -10,7 +10,7 @@ export function createBoard () {
   boardPanelsContainer.className = 'board__panels-container'
 
   const todoPanel = createPanel('todo')
-  const progressPanel = createPanel('proress')
+  const progressPanel = createPanel('progress')
   const donePanel = createPanel('done')
   boardPanelsContainer.append(todoPanel, progressPanel, donePanel)
 
