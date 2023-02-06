@@ -1,36 +1,34 @@
-// import {getTasksCount} from '../utils/dataUtils.js'
-// import {createButton} from '../components/button.js'
+import { createButton } from './button.js'
 
-export function createPanel (type, title, buttonName) {
+// верстка панели для карточек
+export function createPanel (type) {
   const panel = document.createElement('section')
   panel.className = `panel  panel-${type}`
   panel.id = `panel-${type}`
 
   const panelHeader = document.createElement('div')
-  panelHeader.className = `panel__header panel-${type}__header`
+  panelHeader.className = 'panel__header'
   panel.append(panelHeader)
 
   const panelTitle = document.createElement('h2')
-  panelTitle.className = 'panel-title'
-  panelTitle.textContent = title
+  panelTitle.className = 'panel__title'
+  panelTitle.textContent = `${type.toUppercase()}:`
   panelHeader.append(panelTitle)
 
-  const panelCount = document.createElement('p')
+  const panelCount = document.createElement('h2')
   panelCount.className = 'panel__count'
-  panelCount.id = `panel-${type}__count`
-  // panelCount.textContent = getTasksCount(type)
+  panelCount.id = `panel-count-${type}`
   panelHeader.append(panelCount)
 
   const panelContainer = document.createElement('div')
   panelContainer.className = 'panel__container'
-  panelContainer.id = `panel-${type}__container`
+  panelContainer.id = `panel-container-${type}`
   panel.append(panelContainer)
-  // taskCard()
 
-  if (buttonName === 'Add todo') {
-    // createButton('panel-todo-button','panel-button','Add todo')
-  } else if (buttonName === 'Delete All') {
-    // createButton('panel-done-button','panel-button','Add todo')
+  switch (type) {
+    case 'todo': createButton('panel-todo-button', 'panel__button', 'New card', 'button')
+      break
+    case 'done': createButton('panel-done-button', 'panel__button', 'Delete All', 'button')
   }
 
   return panel

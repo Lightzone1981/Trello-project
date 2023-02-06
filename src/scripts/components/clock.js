@@ -1,4 +1,4 @@
-// Создает часы
+// создаёт компонент часы
 export const createClock = () => {
   const date = new Date()
   document.getElementById('time').innerText = `${updateTime(date.getHours())} : ${updateTime(date.getMinutes())} : ${updateTime(date.getSeconds())}`

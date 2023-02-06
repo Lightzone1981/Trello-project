@@ -1,6 +1,7 @@
-import { createHeader } from '.scr/scripts/components/mainHeader.js'
-import { createBoard } from '.scr/scripts/components/boardLayout.js'
+import { createHeader } from '../components/mainHeader.js'
+import { createBoard } from '../components/board.js'
 
+// верстка основного шаблона приложения
 export function createMainLayout (root) {
   const wrapper = document.createElement('div')
   wrapper.className = 'main-wrapper'

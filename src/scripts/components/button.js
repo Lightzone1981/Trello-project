@@ -1,3 +1,4 @@
+// создаёт компонент кнопи с полученными параметрами
 export function createButton (id, className, text, type) {
   const button = document.createElement('button')
   button.className = className
