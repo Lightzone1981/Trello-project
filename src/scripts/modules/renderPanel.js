@@ -1,6 +1,6 @@
 function renderPanel(domElements, panelType){
-    const tasksArray = getData();
-    getTasksCount(tasksArray, panelType)
+    const boardObjects = getData();
+    getTasksCount(boardObjects.tasksArray, panelType)
     switch(panelType){
         case 'todo':
             clear(domElements.todo)
