@@ -1,2 +1,5 @@
 import '../styles/index.scss'
-console.log('hello')
+import { initApp } from './initApp.js'
+const root = document.querySelector('#root')
+
+initApp(root)

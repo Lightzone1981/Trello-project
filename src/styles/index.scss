@@ -1,1 +1,3 @@
-body{background-color:blue;}
+@import "./config/reset";
+@import "./config/normalize";
+@import "./config/base.scss";
