@@ -1,1 +1,6 @@
-body{background-color:rgb(211, 32, 211);}
+@import "./config/reset";
+@import "./config/normalize";
+@import "./config/base.scss";
+@import "./components/mainLayout.scss";
+@import "./components/board.scss";
+@import "./components/taskCard.scss";

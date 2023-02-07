@@ -4,7 +4,7 @@
   "description": "tutorial team project to create clone of Trello web application",
   "private": true,
   "scripts": {
-    "start": "npx webpack --mode development",
+    "start": "npx webpack serve --mode development",
     "build": "npx webpack --mode production",
     "lint": "npx eslint ./",
     "format": "npx eslint ./ --fix",
@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/Lightzone1981/Trello-project#readme",
   "devDependencies": {
+    "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.33.0",
     "eslint-config-standard": "^17.0.0",
@@ -44,11 +45,12 @@
     "lint-staged": "^13.1.0",
     "mini-css-extract-plugin": "^2.7.2",
     "prettier": "^2.8.3",
+    "sass": "^1.58.0",
+    "sass-loader": "^13.2.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
   },
-  "dependencies": {
-  },
   "main": ".eslintrc.js"
 }
+

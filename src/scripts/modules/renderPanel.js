@@ -1,15 +1,15 @@
-function renderPanel (domElements, panelType) {
-  const tasksArray = getData()
-  getTasksCount(tasksArray, panelType)
-  switch (panelType) {
-    case 'todo':
-      clear(domElements.todo)
-    case 'progress':
-      clear(domElements.progress)
-    case 'done':
-      clear(domElements.done)
-  }
+import { getData, getTasksCount } from '../utils/dataUtils.js'
+
+import { clear } from '../utils/clearComponent.js'
+import { renderTaskCard } from './renderTaskCard.js'
+
+export const renderPanel = (domElements, panelType) => {
+  const boardObjects = getData()
+  const arrayCards = boardObjects.tasksArray
+  domElements[`${panelType}Count`].innerText = getTasksCount(arrayCards, panelType)
+  clear(domElements.panelType)
+
   arrayCards.forEach(item => {
-    item.renderTaskCard(cardTitle, cardDescription, creationTime, cardUser)
+    if (item.type === panelType) { renderTaskCard(panelType, item) }
   })
 }

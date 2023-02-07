@@ -1,19 +1,18 @@
 import { createButton } from '../components/button.js'
-// Создаем ф-ию доска заголовка
-export function createBoardHeader (getDomElements) {
+
+// верстка header доски
+export function createBoardHeader () {
   const boardHeader = document.createElement('header')
-  boardHeader.className = 'board__header'
+  boardHeader.className = 'board__header container'
 
   const boardHeaderTitle = document.createElement('h1')
   boardHeaderTitle.className = 'board__header-title'
-  boardHeaderTitle.innerText = 'Какой-то текст заголовка'
 
-  // const boardHeaderAvatarsDiv = document.createElement('div')
-  // boardHeaderAvatarsDiv.className = ' board_users-Avatars'
+  // Здесь будут usersAvatars
+  // const boardHeaderAvatars = document.createElement('div')
+  // boardHeaderAvatarsDiv.className = ' board__users-Avatars'
 
-  const boardMenuButton = document.createElement('button')
-  boardMenuButton.className = 'board__menu-button'
-  createButton()
+  const boardMenuButton = createButton('#board-menu-button', 'board__menu-button', '', 'button')
 
   boardHeader.append(boardHeaderTitle, boardMenuButton)
 

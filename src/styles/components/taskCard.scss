@@ -1,0 +1,56 @@
+.task-card{
+    display: flex;
+    background-color: rgb(70, 219, 67);
+    max-width: 16rem;
+    max-height: 16rem;
+    border-radius: 10px;
+}
+.task-card__info-container{
+    padding-left: 1rem;
+    padding-right: 0.3rem;
+}
+
+.task-card__title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.taskCard__description{
+    font-size: 15px;
+}
+.task-card__footer{
+    display: flex;
+    justify-content: space-between;
+}
+.task-card__user-container{
+    display: flex;
+
+}
+/* .task-card__user-img{
+
+} */
+
+/* .taskCard__time{
+
+} */
+
+.taskCardButtonsContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .card__button-delete{
+    
+} */
+
+/* .card__button-edit{
+    
+} */
+
+/* .card__button-move-forward{
+
+} */
+
+/* .card__button-move-back{
+
+} */

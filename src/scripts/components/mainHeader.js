@@ -1,22 +1,17 @@
-import { createClock } from '.src/scripts/components/clock.js'
-// Создает главный Header logo+clock
+import { createClock } from '../components/clock'
+import logoUrl from '../../assets/images/logo.svg'
+
+// верстка главного header
 export function createHeader () {
   const header = document.createElement('header')
   header.className = 'main-header container'
 
-  const imgLogo = document.createElement('img')
-  imgLogo.className = 'main-header__logo'
-  imgLogo.src = 'src/assets/icons/images/trello.png'
+  const logoImg = document.createElement('img')
+  logoImg.className = 'main-header__logo'
+  logoImg.src = logoUrl
+  logoImg.alt = 'Trollo-lo Logo'
 
-  const clock = document.createElement('div')
-  clock.className = 'clock'
-  const clockInfo = document.createElement('p')
-  clockInfo.id = 'time'
-  clockInfo.className = 'clock__info'
-  clock.append(clockInfo)
-  clockInfo.append(createClock())
-
-  header.append(imgLogo, clock)
+  header.append(logoImg, createClock())
 
   return header
 }

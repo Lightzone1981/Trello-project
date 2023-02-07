@@ -42,7 +42,7 @@ export function setData (array, key) {
 }
 
 export function getTasksCount (tasksArray, panelType) {
-  const tasksCount = tasksArray.filter((item) => item.tasksArray.type === panelType).length
+  const tasksCount = tasksArray.filter((item) => item.type === panelType).length
   return tasksCount
 }
 

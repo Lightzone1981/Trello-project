@@ -1,8 +1,9 @@
 // Отрисовка todo progress done
-import { createBoardHeader } from '../components/boardHeader'
+import { renderBoardHeader } from '../modules/renderBoardHeader.js'
 import { renderPanel } from '../modules/renderPanel.js'
+
 export const renderAllData = (domElements) => {
-  createBoardHeader(domElements)
+  renderBoardHeader(domElements)
   renderPanel(domElements, 'todo')
   renderPanel(domElements, 'progress')
   renderPanel(domElements, 'done')
