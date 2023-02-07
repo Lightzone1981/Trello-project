@@ -4,7 +4,7 @@ import { createPanel } from '../components/panel'
 // верстка доски
 export function createBoard () {
   const board = document.createElement('main')
-  board.className = 'board container'
+  board.className = 'board'
 
   const boardPanelsContainer = document.createElement('div')
   boardPanelsContainer.className = 'board__panels-container'

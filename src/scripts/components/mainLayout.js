@@ -10,7 +10,7 @@ export function createMainLayout (root) {
   wrapper.append(mainHeader)
 
   const mainBoardsContainer = document.createElement('main')
-  mainBoardsContainer.className = 'boards-container container'
+  mainBoardsContainer.className = 'boards-container'
 
   mainBoardsContainer.append(createBoard())
   wrapper.append(mainBoardsContainer)

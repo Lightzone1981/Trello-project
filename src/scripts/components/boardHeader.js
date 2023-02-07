@@ -3,7 +3,7 @@ import { createButton } from '../components/button.js'
 // верстка header доски
 export function createBoardHeader () {
   const boardHeader = document.createElement('header')
-  boardHeader.className = 'board__header'
+  boardHeader.className = 'board__header container'
 
   const boardHeaderTitle = document.createElement('h1')
   boardHeaderTitle.className = 'board__header-title'
