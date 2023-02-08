@@ -3,31 +3,34 @@ export function getData (key) {
   const arrBoards = [
     {
       id: Date.now(),
-      title: 'Programing',
+      title: 'Programming',
       password: 1235,
       color: 'blue',
       tasksArray: [
         {
-          type: 'ToDo',
+          type: 'todo',
           id: Date.now(),
           title: 'Разработка динамической верстки',
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
+          user: 'Ivan',
           creationTime: '17.12.2022 18:00',
           getterTime: '21.12.2022 20:00'
         },
         {
-          type: 'Progress',
+          type: 'progress',
           id: Date.now(),
           title: 'Написание UI',
           description: 'Написать UI с помощью scss, использовать вложенность',
+          user: 'Alexander',
           creationTime: '20.12.2022 18:00',
           getterTime: '30.12.2022 20:00'
         },
         {
-          type: 'Done',
+          type: 'done',
           id: Date.now(),
           title: 'Тест приложения',
           description: 'Протестировать приложение, найти баги, составить отчет',
+          user: 'Stepan',
           creationTime: '10.12.2022 18:00',
           getterTime: '15.12.2022 20:00'
         }

@@ -18,6 +18,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
             background-color: rgb(44, 137, 208);
         }
 
@@ -25,12 +27,13 @@
             position: relative;
             color: white;
             padding-left: 1.7rem;
+            font-size: 1.5rem;
         }
         
         &__header-title::before {
             content: '';
             position: absolute;
-            top:0.7rem;
+            top:0.5rem;
             left: 0;
             width: 1rem;
             height: 1rem;
@@ -39,15 +42,9 @@
         }
 
         &__menu-button {
-            &::before {
-                position: absolute;
-                top:0.7rem;
-                right:1rem;
                 width: 1.5rem;
                 height: 1rem;
-                content: '';
                 background: url('../assets/icons/menu-icon.svg') center/contain no-repeat;
-            }
         }
 
         &__panels-container {
@@ -55,11 +52,6 @@
             display: flex;
             gap: 1rem;
             justify-content: space-evenly;
-        }
-
-        .panel {
-            flex-grow: 1;
-            background-color: rgba(225, 225, 225, 0.5);
         }
     }
 }

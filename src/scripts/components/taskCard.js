@@ -46,7 +46,7 @@ export function createTaskCard (cardId, cardType) {
   taskCardFooter.append(taskCardTime)
 
   const taskCardButtonsContainer = document.createElement('div')
-  taskCardButtonsContainer.className = 'taskCard__buttons-container'
+  taskCardButtonsContainer.className = 'task-card__buttons-container'
   taskCard.append(taskCardButtonsContainer)
 
   // кнопки(удаления, редактирования, вперед, назад)
@@ -58,4 +58,6 @@ export function createTaskCard (cardId, cardType) {
     taskCardButtonsContainer.append(createButton(cardId, 'card__button-move-forward', '', 'button'))
     taskCardButtonsContainer.append(createButton(cardId, 'card__button-move-back', '', 'button'))
   }
+
+  return taskCard
 }
