@@ -1,5 +1,4 @@
 .main-wrapper {
-    border: 1px solid rgb(208, 194, 44);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -15,9 +14,10 @@
         align-items: center;
         padding-bottom: 1rem;
         &__logo {
-            width: 10rem;
+            width: 7rem;
         }
         .clock {
+            font-size: 0.8rem;
             border: 1px solid rgb(44, 137, 208);
             padding: 0.5rem 1rem;
             border-radius: 1.5rem;

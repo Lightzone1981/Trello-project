@@ -1,5 +1,5 @@
 import { createClock } from '../components/clock.js'
-// import logoUrl from '../../assets/images/logo.svg'
+import logoUrl from '../../assets/images/logo.svg'
 
 // верстка главного header
 export function createHeader () {
@@ -8,7 +8,7 @@ export function createHeader () {
 
   const logoImg = document.createElement('img')
   logoImg.className = 'main-header__logo'
-  // logoImg.src = logoUrl
+  logoImg.src = logoUrl
   logoImg.alt = 'Trollo-lo Logo'
 
   header.append(logoImg, createClock())
