@@ -13,7 +13,6 @@ export const renderPanel = (domElements, panelType) => {
   arrayCards.forEach(item => {
     if (item.type === panelType) {
       renderTaskCard(panelType, item)
-      console.log('item')
     }
   })
 }

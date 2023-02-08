@@ -14,7 +14,8 @@ export const getDomElements = () => {
 
     donePanel: document.querySelector('#panel-done'),
     doneCount: document.querySelector('#panel-count-done'),
-    donePanelContainer: document.querySelector('#panel-done-container')
+    donePanelContainer: document.querySelector('#panel-done-container'),
 
+    clockInfo: document.querySelector('#clock-info')
   }
 }
