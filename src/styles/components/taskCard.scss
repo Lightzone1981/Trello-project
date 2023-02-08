@@ -1,11 +1,12 @@
 .task-card{
     display: flex;
     background-color: #fff;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
-    width: 100%;
+    max-width: 100%;
 
     &__info-container{
+        flex-grow: 0;
         display: flex;
         flex-direction: column;
         gap:0.5rem;
@@ -22,11 +23,27 @@
         }
         .task-card__footer{
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
+            gap:0.5rem;
             font-size: 0.7rem;
 
             .task-card__user-container{
                 display: flex;
+                gap:0.5rem;
+                align-items: center;
+                
+                .task-card__user-img{
+                    width: 1rem;
+                    height: 1rem;
+                    border-radius: 50%;
+                    background-color: rgb(245, 129, 28);
+                    padding-right: 1rem;
+                }
+                .task-card__user-name{
+                    font-size: 0.7rem;
+                    font-weight: bold;
+                }
             
             }
 
@@ -37,8 +54,8 @@
     .task-card__buttons-container{
         display: flex;
         flex-direction: column;
-        width: 3rem;
-        background: #828282;
+        width: 4rem;
+        background: #b7b7b7;
     }
     
 }

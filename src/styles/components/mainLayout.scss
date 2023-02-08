@@ -1,12 +1,14 @@
 .main-wrapper {
+    border: 1px solid rgb(208, 194, 44);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     max-width: 80%;
-    min-width: 400px;
+    min-width: 700px;
     min-height: 500px;
     height: 100vh;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     .main-header {
         display: flex;
         justify-content: space-between;

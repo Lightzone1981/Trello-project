@@ -36,12 +36,12 @@ export function createTaskCard (cardId, cardType) {
   taskCardUserContainer.append(taskCardUserImg)
 
   const taskCardUserName = document.createElement('p')
-  taskCardUserName.className = 'taskCard__user-name'
+  taskCardUserName.className = 'task-card__user-name'
   taskCardUserName.id = `task-card-user-name-${cardId}`
   taskCardUserContainer.append(taskCardUserName)
 
   const taskCardTime = document.createElement('p')
-  taskCardTime.className = 'taskCard__time'
+  taskCardTime.className = 'task-card__time'
   taskCardTime.id = `task-card-time-${cardId}`
   taskCardFooter.append(taskCardTime)
 

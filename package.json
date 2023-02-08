@@ -51,6 +51,8 @@
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
   },
-  "main": ".eslintrc.js"
+  "main": ".eslintrc.js",
+  "dependencies": {
+    "terser-webpack-plugin": "^5.3.6"
+  }
 }
-

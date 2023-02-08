@@ -7,6 +7,10 @@
     &__header {
         display: flex;
         justify-content: center;
+        gap: 0.5rem;
+        .panel__title, .panel__count{
+            color:#fff;
+        }
     }
 
     &__container {

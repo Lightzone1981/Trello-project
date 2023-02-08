@@ -1,6 +1,5 @@
 .boards-container {
-    // background: url('../assets/icons/boards-icon.svg');
-    // background: url('./boards-icon.svg');
+    border: 1px solid #da2626;
     margin: 0 auto;
     width: 100%;
     flex-grow: 1;
@@ -10,7 +9,7 @@
         flex-grow: 1;
         margin: 0 auto;
         display: flex;
-        gap: 1rem;
+        gap: 0.5rem;
         flex-direction: column;
 
         &__header {
