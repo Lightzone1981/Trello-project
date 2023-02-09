@@ -1,5 +1,5 @@
 import { createBoardHeader } from './boardHeader.js'
-import { createPanel } from '../components/panel'
+import { createPanel } from '../components/panel.js'
 
 // верстка доски
 export function createBoard () {

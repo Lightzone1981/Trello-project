@@ -1,23 +1,27 @@
 .main-wrapper {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     max-width: 80%;
-    min-width: 500px;
+    min-width: 700px;
     min-height: 500px;
     height: 100vh;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem 0 2rem 0;
     .main-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding-bottom: 1rem;
         &__logo {
-            width: 10rem;
+            width: 7rem;
         }
-        .clock {
-            border: 1px solid rgb(44, 137, 208);
-            padding: 0.5rem 1rem;
+        .clock__info {
+            text-align: center;
+            width: 5rem;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            border: 2px solid rgb(44, 137, 208);
             border-radius: 1.5rem;
             color: #fff;
         }

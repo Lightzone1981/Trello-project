@@ -1,4 +1,4 @@
-import { createClock } from '../components/clock'
+import { createClock } from '../components/clock.js'
 import logoUrl from '../../assets/images/logo.svg'
 
 // верстка главного header
