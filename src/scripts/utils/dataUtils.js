@@ -1,6 +1,6 @@
 export function getData (key) {
   // return JSON.parse(localStorage.getItem(key) ?? '[]')
-  const arrBoards = [
+  const boardsArray = [
     {
       id: Date.now(),
       title: 'Programming',
@@ -9,7 +9,7 @@ export function getData (key) {
       tasksArray: [
         {
           type: 'todo',
-          id: Date.now(),
+          id: 11,
           title: 'Разработка динамической верстки',
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
           user: 'Ivan',
@@ -18,7 +18,7 @@ export function getData (key) {
         },
         {
           type: 'progress',
-          id: Date.now(),
+          id: 12,
           title: 'Написание UI',
           description: 'Написать UI с помощью scss, использовать вложенность',
           user: 'Alexander',
@@ -27,8 +27,35 @@ export function getData (key) {
         },
         {
           type: 'done',
-          id: Date.now(),
+          id: 13,
           title: 'Тест приложения',
+          description: 'Протестировать приложение, найти баги, составить отчет',
+          user: 'Stepan',
+          creationTime: '10.12.2022 18:00',
+          getterTime: '15.12.2022 20:00'
+        },
+        {
+          type: 'todo',
+          id: 14,
+          title: '11111111',
+          description: 'Написать на js динамическую верстку, использовать методологию бэм',
+          user: 'Ivan',
+          creationTime: '17.12.2022 18:00',
+          getterTime: '21.12.2022 20:00'
+        },
+        {
+          type: 'todo',
+          id: 15,
+          title: '22222222',
+          description: 'Написать UI с помощью scss, использовать вложенность',
+          user: 'Alexander',
+          creationTime: '20.12.2022 18:00',
+          getterTime: '30.12.2022 20:00'
+        },
+        {
+          type: 'todo',
+          id: 16,
+          title: '3333333',
           description: 'Протестировать приложение, найти баги, составить отчет',
           user: 'Stepan',
           creationTime: '10.12.2022 18:00',
@@ -37,7 +64,7 @@ export function getData (key) {
       ]
     }
   ]
-  return arrBoards
+  return boardsArray
 }
 
 export function setData (array, key) {

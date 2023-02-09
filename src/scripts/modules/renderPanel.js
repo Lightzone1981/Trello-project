@@ -1,6 +1,6 @@
 import { getData, getTasksCount } from '../utils/dataUtils.js'
 
-// import { clear } from '../utils/clearComponent.js'
+import { clear } from '../utils/clearComponent.js'
 import { renderTaskCard } from './renderTaskCard.js'
 
 export const renderPanel = (domElements, panelType) => {
@@ -8,7 +8,7 @@ export const renderPanel = (domElements, panelType) => {
   const arrayCards = boardObjects[0].tasksArray
 
   domElements[`${panelType}Count`].innerText = getTasksCount(arrayCards, panelType)
-  // clear(domElements[`${panelType}PanelContainer`])
+  clear(domElements[`${panelType}PanelContainer`])
 
   arrayCards.forEach(item => {
     if (item.type === panelType) {

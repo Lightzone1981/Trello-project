@@ -1,3 +1,4 @@
+// генерирует и отображает текущее время
 export const updateTime = () => {
   const date = new Date()
   const clockInfo = document.querySelector('#clock-info')

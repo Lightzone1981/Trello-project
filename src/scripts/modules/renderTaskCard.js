@@ -14,7 +14,7 @@ export const renderTaskCard = (panelType, cardObject) => {
   taskCardDescription.innerText = cardObject.description
 
   const taskCardTime = document.querySelector(`#task-card-time-${cardObject.id}`)
-  taskCardTime.innerText = cardObject.creationTime
+  taskCardTime.innerText = `created: ${cardObject.creationTime}`
 
   const taskCardUser = document.querySelector(`#task-card-user-name-${cardObject.id}`)
   taskCardUser.innerText = cardObject.user

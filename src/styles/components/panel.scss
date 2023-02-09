@@ -1,5 +1,5 @@
 .panel {
-    flex-grow: 1;
+    width: calc(33% - 0.5rem);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -10,20 +10,59 @@
         gap: 0.5rem;
         .panel__title, .panel__count{
             color:#fff;
+            font-size: 0.8rem;
         }
     }
 
     &__container {
         flex-grow: 1;
+        height: 100px;
         padding: 0.7rem;
-        background-color: rgba(255,255,255, 0.3);
-        &:hover{
-        background-color: rgba(255,255,255, 0.6);
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+        background-color: rgba(255,255,255, 0.2);
+       
+    }
+
+    #panel-container-todo:hover{
+        background-color: rgb(153, 153, 153);
         transition: 0.5s;
+    }
+    #panel-container-progress{
+        background-color: rgba(255, 128, 0,0.5);
+        transition: 0.3s;
+        &:hover{
+        background-color: rgba(255, 128, 0);
+        opacity: 1;
+        }
+    }
+
+    #panel-container-done{
+        background-color: rgba(44, 137, 208);
+        opacity: 0.5;
+        transition: 0.3s;
+
+        &:hover{
+        background-color: rgba(44, 137, 208);
+        opacity: 1;
         }
     }
 
     &__button {
         padding: 0.5rem 0;
+        border-radius: 3px;
+    }
+    #panel-todo-button, #panel-done-button{
+        background-color: rgba(44, 137, 208,0.5);
+        color: #fff;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(44, 137, 208);
+
+
+        }
     }
 }

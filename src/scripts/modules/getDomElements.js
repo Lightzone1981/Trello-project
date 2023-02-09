@@ -6,15 +6,15 @@ export const getDomElements = () => {
 
     todoPanel: document.querySelector('#panel-todo'),
     todoCount: document.querySelector('#panel-count-todo'),
-    todoPanelContainer: document.querySelector('#panel-todo-container'),
+    todoPanelContainer: document.querySelector('#panel-container-todo'),
 
     progressPanel: document.querySelector('#panel-progress'),
     progressCount: document.querySelector('#panel-count-progress'),
-    progressPanelContainer: document.querySelector('#panel-progress-container'),
+    progressPanelContainer: document.querySelector('#panel-container-progress'),
 
     donePanel: document.querySelector('#panel-done'),
     doneCount: document.querySelector('#panel-count-done'),
-    donePanelContainer: document.querySelector('#panel-done-container'),
+    donePanelContainer: document.querySelector('#panel-container-done'),
 
     clockInfo: document.querySelector('#clock-info')
   }

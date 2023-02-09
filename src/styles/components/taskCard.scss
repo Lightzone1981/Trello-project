@@ -2,8 +2,25 @@
     display: flex;
     background-color: #fff;
     border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
     overflow: hidden;
     max-width: 100%;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+
+    &:hover{
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+    transform: scale(1.03);
+    z-index: 100;
+    }
+
+    &--done{
+        background-color: #d0d0d0;
+        color:#5e5e5e;
+        .task-card__title{
+            text-decoration: line-through;
+        }
+    }
 
     &__info-container{
         flex-grow: 0;
@@ -14,7 +31,7 @@
 
 
         .task-card__title{
-            font-size: 1rem;
+            font-size: 0.8rem;
             font-weight: 700;
         }
         
@@ -46,6 +63,9 @@
                 }
             
             }
+            .task-card__time{
+                font-size: 0.5rem;
+            }
 
         }
 
@@ -54,36 +74,51 @@
     .task-card__buttons-container{
         display: flex;
         flex-direction: column;
-        width: 4rem;
-        background: #b7b7b7;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.5rem 0;
+        min-width: 2rem;
+        border-left: 1px solid #b4b4b4;
+        // background: #b7b7b7;
+
+        .card__button{
+            width: 0.75rem;
+            height: 0.75rem;
+            cursor: pointer;
+            transition: 0.3s;
+            filter: brightness(0.7);
+
+            &:hover{
+                filter: brightness(0.5);
+                transform: scale(1.1);
+            }
+        }
+        .task-card__container-divider{
+            flex-grow: 1;
+        }
+
+        .card__button-delete{
+            background: url('../assets/icons/delete-button-icon.svg') center/contain no-repeat;
+        } 
+        .card__button-edit{
+            width: 1.05rem;
+            height: 1.05rem;
+            background: url('../assets/icons/edit-button-icon.svg') center/contain no-repeat;
+        } 
+        .card__button-move-forward{
+            width: 1.2rem;
+            height: 1.2rem;
+            background: url('../assets/icons/move-forward-icon.svg') center/contain no-repeat;
+        } 
+        .card__button-move-back{
+            width: 1.2rem;
+            height: 1.2rem;
+            background: url('../assets/icons/move-back-icon.svg') center/contain no-repeat;
+        }        
     }
     
 }
 
 
 
-/* .task-card__user-img{
 
-} */
-
-/* .taskCard__time{
-
-} */
-
-
-
-/* .card__button-delete{
-    
-} */
-
-/* .card__button-edit{
-    
-} */
-
-/* .card__button-move-forward{
-
-} */
-
-/* .card__button-move-back{
-
-} */

@@ -7,7 +7,7 @@
     min-height: 500px;
     height: 100vh;
     margin: 0 auto;
-    padding: 1rem 1rem;
+    padding: 1rem 0 2rem 0;
     .main-header {
         display: flex;
         justify-content: space-between;
@@ -16,10 +16,12 @@
         &__logo {
             width: 7rem;
         }
-        .clock {
+        .clock__info {
+            text-align: center;
+            width: 5rem;
+            padding: 0.5rem;
             font-size: 0.8rem;
-            border: 1px solid rgb(44, 137, 208);
-            padding: 0.5rem 1rem;
+            border: 2px solid rgb(44, 137, 208);
             border-radius: 1.5rem;
             color: #fff;
         }
