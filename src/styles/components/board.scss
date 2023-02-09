@@ -25,6 +25,7 @@
             position: relative;
             color: white;
             padding-left: 1.7rem;
+            opacity: 0.9;
         }
         
         &__header-title::before {
@@ -36,9 +37,11 @@
             height: 1rem;
 
             background: url('../assets/icons/boards-icon.svg') center/contain no-repeat;
+            opacity: 0.8;
         }
 
         &__menu-button {
+            cursor: pointer;
             &::before {
                 position: absolute;
                 top:0.7rem;
@@ -47,7 +50,13 @@
                 height: 1rem;
                 content: '';
                 background: url('../assets/icons/menu-icon.svg') center/contain no-repeat;
-            }
+                }
+            &:hover{
+                    
+                    opacity: 0.5;
+                    transition: 0.5;
+                }
+            
         }
 
         &__panels-container {
