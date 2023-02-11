@@ -1,0 +1,132 @@
+.users-edit-wrapper {
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 2rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  .users-edit {
+    max-height: 85%;
+    max-width: 22rem;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding-bottom: 1rem;
+    border: 1px solid $color1;
+    // overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding-bottom: 1rem;
+
+    .users-edit__header {
+      position: relative;
+      width: 100%;
+      background-color: rgb(44, 137, 208);
+      font-size: 1rem;
+      height: 1rem;
+      padding: 1rem 1rem 2rem 2.5rem;
+      color: #fff;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: 1rem;
+        height: 1rem;
+        background: url('../assets/icons/boards-icon.svg') center/contain no-repeat;
+      }
+    }
+    .users-edit__add-form {
+      display: flex;
+      gap: 1rem;
+      .users-edit__select {
+        border: 1px solid #7d7d7d;
+        border-radius: 3px;
+        color: #151515;
+        font-size: 0.8rem;
+        padding: 0.3rem;
+        cursor: pointer;
+        &:hover {
+          border-color: $color1;
+        }
+      }
+    }
+    .user-edit__container {
+        list-style-type: none;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      min-height: 8rem;
+      max-height: 50vh;
+      overflow: auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      // gap: 2rem;
+      .user-add__list-item {
+        display: flex;
+        gap: 1rem;
+        border: 1px solid transparent;
+        border-bottom-color: #4d4d4d;
+        padding: 1rem 0;
+        .user-add__image-container {
+          position: relative;
+          overflow: hidden;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 3px;
+          transition: 0.3s;
+          .user-add__list-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 3rem;
+            height: 3rem;
+            object-fit: cover;
+          }
+          
+        }
+        .user-add__name{
+            font-weight: bold;
+            font-size: 0.8rem;
+            padding-bottom: 0.3rem;
+        }
+        .user-add__job{
+            font-size: 0.7rem;
+        }
+        .delete-user-button{
+            width: 0.7rem;
+            height: 0.7rem;
+            margin-left: auto;
+            background: url('../assets/icons/delete-button-icon.svg') center/contain no-repeat;
+            cursor: pointer;
+            transition: 0.2s;
+            filter:brightness(0.5);
+
+            &:hover{
+                filter:brightness(0.3)
+            }
+        }
+      }
+    }
+  }
+}
+
+.user-edit__button {
+  background-color: $color1;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  &:hover {
+    background-color: $color1-opacity;
+  }
+}

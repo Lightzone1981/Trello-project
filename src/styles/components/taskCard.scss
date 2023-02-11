@@ -15,10 +15,22 @@
     }
 
     &--done{
-        background-color: #d0d0d0;
-        color:#5e5e5e;
+        background-color: #d1d1d1;
+        color:#777777;
         .task-card__title{
             text-decoration: line-through;
+        }
+    }
+    &--progress{
+        .task-card__buttons-container{
+            background-color: $color1;
+            .card__button{
+                filter: brightness(0.1);
+                &:hover{
+                    filter: brightness(0);
+                }
+            }
+
         }
     }
 
@@ -79,7 +91,6 @@
         padding: 0.5rem 0;
         min-width: 2rem;
         border-left: 1px solid #b4b4b4;
-        // background: #b7b7b7;
 
         .card__button{
             width: 0.75rem;

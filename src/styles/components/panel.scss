@@ -31,22 +31,20 @@
         transition: 0.5s;
     }
     #panel-container-progress{
-        background-color: rgba(255, 128, 0,0.5);
+        background-color: rgba(255,255,255, 0.2);
         transition: 0.3s;
         &:hover{
-        background-color: rgba(255, 128, 0);
+        background-color: rgba(255,255,255, 0.4);
         opacity: 1;
         }
     }
 
     #panel-container-done{
-        background-color: rgba(44, 137, 208);
-        opacity: 0.5;
+        background-color: $color1-opacity;
         transition: 0.3s;
 
         &:hover{
-        background-color: rgba(44, 137, 208);
-        opacity: 1;
+        background-color: $color1-opacity-more;
         }
     }
 
@@ -55,13 +53,12 @@
         border-radius: 3px;
     }
     #panel-todo-button, #panel-done-button{
-        background-color: rgba(44, 137, 208,0.5);
+        background-color: $color1;
         color: #fff;
         transition: 0.3s;
         cursor: pointer;
         &:hover{
-            background-color: rgb(44, 137, 208);
-
+            background-color: $color1-opacity;
 
         }
     }
