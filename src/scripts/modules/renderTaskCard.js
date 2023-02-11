@@ -3,8 +3,8 @@ import { getData } from '../utils/dataUtils.js'
 
 // отрисовывает карточку задачи в соответствиями с типом панели и данными карточки
 export const renderTaskCard = (panelType, cardObject) => {
-  const boardObjects = getData()
-  const usersArray = boardObjects[0].usersArray
+  const boardsArray = getData()
+  const usersArray = boardsArray[0].usersArray
 
   const panelContainer = document.querySelector(`#panel-container-${panelType}`)
 
