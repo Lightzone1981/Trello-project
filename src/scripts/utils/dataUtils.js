@@ -12,7 +12,7 @@ export function getData (key) {
           id: 11,
           title: 'Разработка динамической верстки',
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
-          user: 'Ivan',
+          user: 7,
           creationTime: '17.12.2022 18:00',
           getterTime: '21.12.2022 20:00'
         },
@@ -21,7 +21,7 @@ export function getData (key) {
           id: 12,
           title: 'Написание UI',
           description: 'Написать UI с помощью scss, использовать вложенность',
-          user: 'Alexander',
+          user: 8,
           creationTime: '20.12.2022 18:00',
           getterTime: '30.12.2022 20:00'
         },
@@ -30,7 +30,7 @@ export function getData (key) {
           id: 13,
           title: 'Тест приложения',
           description: 'Протестировать приложение, найти баги, составить отчет',
-          user: 'Stepan',
+          user: 7,
           creationTime: '10.12.2022 18:00',
           getterTime: '15.12.2022 20:00'
         },
@@ -39,7 +39,7 @@ export function getData (key) {
           id: 14,
           title: '11111111',
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
-          user: 'Ivan',
+          user: 11,
           creationTime: '17.12.2022 18:00',
           getterTime: '21.12.2022 20:00'
         },
@@ -48,7 +48,7 @@ export function getData (key) {
           id: 15,
           title: '22222222',
           description: 'Написать UI с помощью scss, использовать вложенность',
-          user: 'Alexander',
+          user: 10,
           creationTime: '20.12.2022 18:00',
           getterTime: '30.12.2022 20:00'
         },
@@ -57,7 +57,7 @@ export function getData (key) {
           id: 16,
           title: '3333333',
           description: 'Протестировать приложение, найти баги, составить отчет',
-          user: 'Stepan',
+          user: 9,
           creationTime: '10.12.2022 18:00',
           getterTime: '15.12.2022 20:00'
         }

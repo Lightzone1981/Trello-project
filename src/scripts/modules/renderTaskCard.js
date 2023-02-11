@@ -1,7 +1,11 @@
 import { createTaskCard } from '../components/taskCard.js'
+import { getData } from '../utils/dataUtils.js'
 
 // отрисовывает карточку задачи в соответствиями с типом панели и данными карточки
 export const renderTaskCard = (panelType, cardObject) => {
+  const boardObjects = getData()
+  const usersArray = boardObjects[0].usersArray
+
   const panelContainer = document.querySelector(`#panel-container-${panelType}`)
 
   const card = createTaskCard(cardObject.id, panelType)
@@ -13,9 +17,16 @@ export const renderTaskCard = (panelType, cardObject) => {
   const taskCardDescription = document.querySelector(`#task-card-description-${cardObject.id}`)
   taskCardDescription.innerText = cardObject.description
 
+  const taskCardUserImg = document.querySelector(`#task-card-user-img-${cardObject.id}`)
+
   const taskCardTime = document.querySelector(`#task-card-time-${cardObject.id}`)
   taskCardTime.innerText = `created: ${cardObject.creationTime}`
 
   const taskCardUser = document.querySelector(`#task-card-user-name-${cardObject.id}`)
-  taskCardUser.innerText = cardObject.user
+  usersArray.forEach(element => {
+    if (element.id === cardObject.user) {
+      taskCardUser.innerText = element.name
+      taskCardUserImg.src = element.src
+    }
+  })
 }
