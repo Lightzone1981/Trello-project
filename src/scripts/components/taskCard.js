@@ -50,20 +50,20 @@ export function createTaskCard (cardId, cardType) {
   taskCard.append(taskCardButtonsContainer)
 
   // кнопки(удаления, редактирования, вперед, назад)
-  taskCardButtonsContainer.append(createButton(cardId, 'card__button card__button-delete', '', 'button'))
+  taskCardButtonsContainer.append(createButton(`${cardId}-card-delete-button`, 'card__button card__button-delete', '', 'button'))
 
   const divider = document.createElement('div')
   divider.className = 'task-card__container-divider'
 
   if (cardType === 'todo') {
-    taskCardButtonsContainer.append(createButton(cardId, 'card__button card__button-edit', '', 'button'))
+    taskCardButtonsContainer.append(createButton(`${cardId}-card-edit-button`, 'card__button card__button-edit', '', 'button'))
     taskCardButtonsContainer.append(divider)
-    taskCardButtonsContainer.append(createButton(cardId, 'card__button card__button-move-forward', '', 'button'))
+    taskCardButtonsContainer.append(createButton(`${cardId}-card-forward-button`, 'card__button card__button-move-forward', '', 'button'))
   }
   if (cardType === 'progress') {
     taskCardButtonsContainer.append(divider)
-    taskCardButtonsContainer.append(createButton(cardId, 'card__button card__button-move-forward', '', 'button'))
-    taskCardButtonsContainer.append(createButton(cardId, 'card__button card__button-move-back', '', 'button'))
+    taskCardButtonsContainer.append(createButton(`${cardId}-card-forward-button`, 'card__button card__button-move-forward', '', 'button'))
+    taskCardButtonsContainer.append(createButton(`${cardId}-card-back-button`, 'card__button card__button-move-back', '', 'button'))
   }
 
   return taskCard
