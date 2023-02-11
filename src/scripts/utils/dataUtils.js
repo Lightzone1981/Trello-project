@@ -1,3 +1,5 @@
+import { getCreationDate } from "./dataCreation.js"
+
 export function getData (key) {
   const boardsArray = [
     {
@@ -121,7 +123,7 @@ export function createNewCard (cardTitle, cardDescription, cardUser) {
     title: cardTitle,
     description: cardDescription,
     user: cardUser,
-    creationTime: '17.12.2022 18:00',
+    creationTime: getCreationDate(),
     getterTime: '21.12.2022 20:00'
   }
   boardsArray.forEach(item => item.tasksArray.push(newCard))
