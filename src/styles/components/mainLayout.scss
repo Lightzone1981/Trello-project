@@ -2,12 +2,13 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    max-width: 80%;
+    max-width: 60%;
     min-width: 700px;
     min-height: 500px;
     height: 100vh;
     margin: 0 auto;
     padding: 1rem 0 2rem 0;
+    background-color: rgba(0,0,0,0.5);
     .main-header {
         display: flex;
         justify-content: space-between;
@@ -21,9 +22,10 @@
             width: 5rem;
             padding: 0.5rem;
             font-size: 0.8rem;
-            border: 2px solid rgb(44, 137, 208);
+            border: 2px solid $color1;
             border-radius: 1.5rem;
             color: #fff;
+            background-color: rgba(0,0,0,0.2);
         }
     }
 }

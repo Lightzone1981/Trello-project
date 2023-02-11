@@ -16,23 +16,21 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            background-color: rgb(44, 137, 208);
+            padding: 0.5rem 1rem;
+            background-color: $color1;
         }
 
         &__header-title {
             position: relative;
             color: white;
             padding-left: 1.7rem;
-            font-size: 1.5rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
         }
         
         &__header-title::before {
             content: '';
             position: absolute;
-            top:0.5rem;
+            top:0.2rem;
             left: 0;
             width: 1rem;
             height: 1rem;

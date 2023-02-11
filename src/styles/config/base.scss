@@ -1,9 +1,11 @@
-body{background-color:#000;}
+body{
+    background: url('../assets/images/4.jpg') center/cover no-repeat; 
+}
 *{
     font-family: Inter, Arial, Helvetica, sans-serif;
 }
 .container{
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
 h1{

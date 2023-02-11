@@ -61,7 +61,6 @@ export function createTaskCard (cardId, cardType) {
     taskCardButtonsContainer.append(createButton(cardId, 'card__button card__button-move-forward', '', 'button'))
   }
   if (cardType === 'progress') {
-    taskCardButtonsContainer.append(createButton(cardId, 'card__button card__button-edit', '', 'button'))
     taskCardButtonsContainer.append(divider)
     taskCardButtonsContainer.append(createButton(cardId, 'card__button card__button-move-forward', '', 'button'))
     taskCardButtonsContainer.append(createButton(cardId, 'card__button card__button-move-back', '', 'button'))
