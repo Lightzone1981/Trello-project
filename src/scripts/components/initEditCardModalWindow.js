@@ -1,6 +1,6 @@
 import { createButton } from '../components/button.js'
 import { getData } from '..//utils/dataUtils.js'
-import { fillSelectList } from './features/_usersEditWindow.js'
+import { fillSelectList } from './features/__usersEditWindow.js'
 
 export function initEditCardModalWindow (cardId) {
   const boardObjects = getData()
