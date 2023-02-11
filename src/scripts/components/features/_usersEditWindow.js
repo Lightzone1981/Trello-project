@@ -1,6 +1,7 @@
 import { createButton } from '../button.js'
 import { getAllUsers } from './_allUsers.js'
 import { getData } from '../../utils/dataUtils.js'
+import { fillSelectList } from '../../utils/fillSelectList.js'
 
 function fillUserContainer (boardUsersArray) {
   const userEditContainer = document.querySelector('.user-edit__container')
@@ -36,21 +37,6 @@ function fillUserContainer (boardUsersArray) {
       createButton(`delete-user-button-${user.id}`, 'delete-user-button', '', 'button'))
 
     userEditContainer.append(userItem)
-  })
-}
-
-export function fillSelectList (allUsers) {
-  const newUserSelect = document.querySelector('.users-edit__select')
-  newUserSelect.innerHtml = ''
-  const selectItem = document.createElement('option')
-  selectItem.innerText = '----  select new user  ----'
-  newUserSelect.append(selectItem)
-
-  allUsers.forEach((element, index) => {
-    const newSelectItem = document.createElement('option')
-    newSelectItem.value = `value${index}`
-    newSelectItem.innerText = element.name
-    newUserSelect.append(newSelectItem)
   })
 }
 
@@ -95,7 +81,7 @@ export const createUsersEditWindow = () => {
     if (JSON.stringify(boardUsersArray).indexOf(JSON.stringify(element)) === -1) selectUsersArray.push(element)
   })
 
-  fillSelectList(selectUsersArray)
+  fillSelectList(selectUsersArray, newUserSelect)
   fillUserContainer(boardUsersArray)
 
   //  --------------  слушатели ----------------
