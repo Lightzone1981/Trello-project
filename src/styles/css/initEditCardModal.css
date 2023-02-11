@@ -1,22 +1,15 @@
-.modalOverlay {
-  position: fixed;
+.modal-edit_overlay {
+  position: absolute;
   top: 0;
-  right: 0;
   left: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.591);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 2rem;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-.modalContainer {
+.modal-edit_container {
   padding: 2rem;
   background-color: rgba(0, 3, 156, 0.742);
   -webkit-box-shadow: 0 0 0.4rem 0.4rem rgba(0, 0, 0, 0.241);
@@ -35,35 +28,35 @@
   border-radius: 1rem;
 }
 
-.modalTitle {
+.modal-edit_title {
   border: none;
   background: none;
   outline: none;
   color: white;
   margin-bottom: 1rem;
 }
-.modalTitle::-webkit-input-placeholder {
+.modal-edit_title::-webkit-input-placeholder {
   color: white;
 }
-.modalTitle::-moz-placeholder {
+.modal-edit_title::-moz-placeholder {
   color: white;
 }
-.modalTitle:-ms-input-placeholder {
+.modal-edit_title:-ms-input-placeholder {
   color: white;
 }
-.modalTitle::-ms-input-placeholder {
+.modal-edit_title::-ms-input-placeholder {
   color: white;
 }
-.modalTitle::placeholder {
+.modal-edit_title::placeholder {
   color: white;
 }
-.modalTitle:focus {
+.modal-edit_title:focus {
   background-color: rgba(240, 248, 255, 0.3);
   border-radius: 10px;
   color: white;
 }
 
-.modalDescription {
+.modal-edit_description {
   border: none;
   background: none;
   outline: none;
@@ -72,22 +65,22 @@
   padding-bottom: 3rem;
   margin-bottom: 1rem;
 }
-.modalDescription::-webkit-input-placeholder {
+.modal-edit_description::-webkit-input-placeholder {
   color: white;
 }
-.modalDescription::-moz-placeholder {
+.modal-edit_description::-moz-placeholder {
   color: white;
 }
-.modalDescription:-ms-input-placeholder {
+.modal-edit_description:-ms-input-placeholder {
   color: white;
 }
-.modalDescription::-ms-input-placeholder {
+.modal-edit_description::-ms-input-placeholder {
   color: white;
 }
-.modalDescription::placeholder {
+.modal-edit_description::placeholder {
   color: white;
 }
-.modalDescription:focus {
+.modal-edit_description:focus {
   background-color: rgba(240, 248, 255, 0.3);
   border-radius: 10px;
   color: white;
@@ -101,7 +94,7 @@
   cursor: pointer;
 }
 
-.modalFooter {
+.modal-edit_footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,7 +103,7 @@
           justify-content: space-between;
 }
 
-.modalButtons {
+.modal-edit_buttons {
   -webkit-box-flex: 0.2;
       -ms-flex-positive: 0.2;
           flex-grow: 0.2;
@@ -123,7 +116,7 @@
           justify-content: space-evenly;
 }
 
-.cancelBtn {
+.modal-edit_cancel-btn {
   padding: 0.7rem;
   border-radius: 1rem;
   border: none;
@@ -132,7 +125,7 @@
   cursor: pointer;
 }
 
-.confirmBtn {
+.modal-edit_confirm-btn {
   padding: 0.7rem;
   border-radius: 1rem;
   border: none;
