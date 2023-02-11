@@ -27,9 +27,9 @@ export function createPanel (type) {
 
   switch (type) {
     case 'todo':
-      panel.append(createButton('panel-todo-button', 'panel__button', 'New card', 'button'))
+      panel.append(createButton('add-new-card-button', 'panel__button', 'New card', 'button'))
       break
-    case 'done': panel.append(createButton('panel-done-button', 'panel__button', 'Delete All', 'button'))
+    case 'done': panel.append(createButton('delete-all-button', 'panel__button', 'Delete All', 'button'))
   }
 
   return panel
