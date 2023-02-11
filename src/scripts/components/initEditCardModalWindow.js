@@ -8,19 +8,19 @@ export function initEditCardModalWindow (cardId) {
   const arrayUsers = boardObjects[0].usersArray
 
   const modalOverlay = document.createElement('div')
-  modalOverlay.className = 'modalOverlay'
+  modalOverlay.className = 'modal-edit_overlay'
 
   const modalContainer = document.createElement('div')
-  modalContainer.className = 'modalContainer'
+  modalContainer.className = 'modal-edit_container'
   modalOverlay.append(modalContainer)
 
   const modalTitle = document.createElement('input')
-  modalTitle.className = 'modalTitle'
+  modalTitle.className = 'modal-edit_title'
   modalTitle.placeholder = 'Title'
   modalTitle.type = 'text'
 
   const modalDescription = document.createElement('textarea')
-  modalDescription.className = 'modalDescription'
+  modalDescription.className = 'modal-edit_description'
   modalDescription.placeholder = 'Description'
   modalDescription.type = 'text'
 
@@ -31,13 +31,13 @@ export function initEditCardModalWindow (cardId) {
   fillSelectList(arrayUsers)
 
   const modalButtons = document.createElement('div')
-  modalButtons.className = 'modalButtons'
+  modalButtons.className = 'modal-edit_buttons'
 
   const modalFooter = document.createElement('div')
-  modalFooter.className = 'modalFooter'
+  modalFooter.className = 'modal-edit_footer'
 
-  modalButtons.append(createButton('cancel-modal', 'cancelBtn', 'Cancel', 'button', 'Cancel action'),
-    createButton('confirm-modal', 'confirmBtn', 'Confirm', 'submit', 'Confirm action'))
+  modalButtons.append(createButton('modal-edit-cancel', 'modal-edit_cancel-btn', 'Cancel', 'button', 'Cancel action'),
+    createButton('modal-edit-confirm', 'modal-edit_confirm-btn', 'Confirm', 'submit', 'Confirm action'))
 
   modalFooter.append(select, modalButtons)
 
