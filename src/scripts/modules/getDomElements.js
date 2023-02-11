@@ -3,6 +3,7 @@ export const getDomElements = () => {
   return {
     boardHeader: document.querySelector('.board__header'),
     boardTitle: document.querySelector('.board__header-title'),
+    boardContainer: document.querySelector('.board__panels-container'),
 
     todoPanel: document.querySelector('#panel-todo'),
     todoCount: document.querySelector('#panel-count-todo'),

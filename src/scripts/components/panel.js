@@ -31,6 +31,5 @@ export function createPanel (type) {
       break
     case 'done': panel.append(createButton('panel-done-button', 'panel__button', 'Delete All', 'button', 'Delete all cards'))
   }
-
   return panel
 }
