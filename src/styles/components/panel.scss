@@ -27,7 +27,7 @@
     }
 
     #panel-container-todo:hover{
-        background-color: rgb(153, 153, 153);
+        background-color: rgba(255,255,255, 0.4);
         transition: 0.5s;
     }
     #panel-container-progress{
@@ -53,12 +53,12 @@
         border-radius: 3px;
     }
     #add-new-card-button, #delete-all-button{
-        background-color: $color1;
+        background-color: $color1-opacity;
         color: #fff;
         transition: 0.3s;
         cursor: pointer;
         &:hover{
-            background-color: $color1-opacity;
+            background-color: $color1;
 
         }
     }
