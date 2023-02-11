@@ -1,6 +1,10 @@
 .users-bar {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
+    padding: 0 1rem;
+    border: 1px solid transparent;
+    border-right-color: rgba(255,255,255,0.5);
     .user-bar__avatar-container {
       position: relative;
       overflow: hidden;
@@ -16,15 +20,15 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 2rem;
-        height: 2rem;
+        width: 30px;
+        height: 30px;
         object-fit: cover;
       }
     }
 
     .users-bar__button{
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         background: url('../assets/icons/users-icon.svg') center/contain no-repeat;
       transition: 0.3s;
       opacity: 0.5;
