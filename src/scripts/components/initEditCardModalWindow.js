@@ -1,10 +1,11 @@
 import { createButton } from '../components/button.js'
 import { getData } from '..//utils/dataUtils.js'
+import { fillSelectList } from './features/_usersEditWindow.js'
 
 export function initEditCardModalWindow (cardId) {
   const boardObjects = getData()
   const arrayCards = boardObjects[0].tasksArray
-  // const allUsers = getData('users')
+  const arrayUsers = boardObjects[0].usersArray
 
   const modalOverlay = document.createElement('div')
   modalOverlay.className = 'modalOverlay'
@@ -25,15 +26,9 @@ export function initEditCardModalWindow (cardId) {
 
   const select = document.createElement('select')
   select.id = 'select'
-  select.className = 'modalSelect'
+  select.className = 'users-edit__select'
 
-  const option = document.createElement('option')
-
-  select.append(option)
-
-  select.addEventListener('change', function () {
-    // this.value
-  })
+  fillSelectList(arrayUsers)
 
   const modalButtons = document.createElement('div')
   modalButtons.className = 'modalButtons'
@@ -41,8 +36,8 @@ export function initEditCardModalWindow (cardId) {
   const modalFooter = document.createElement('div')
   modalFooter.className = 'modalFooter'
 
-  modalButtons.append(createButton('cancel-modal', 'cancelBtn', 'Cancel', 'button'),
-    createButton('confirm-modal', 'confirmBtn', 'Confirm', 'button'))
+  modalButtons.append(createButton('cancel-modal', 'cancelBtn', 'Cancel', 'button', 'Cancel action'),
+    createButton('confirm-modal', 'confirmBtn', 'Confirm', 'submit', 'Confirm action'))
 
   modalFooter.append(select, modalButtons)
 
@@ -55,6 +50,6 @@ export function initEditCardModalWindow (cardId) {
       select.innerText(item.user)
     }
   })
-
-  return modalOverlay
+  const root = document.querySelector('#root')
+  root.append(modalOverlay)
 }
