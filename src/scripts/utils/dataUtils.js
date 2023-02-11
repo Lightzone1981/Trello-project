@@ -1,5 +1,4 @@
 export function getData (key) {
-  // return JSON.parse(localStorage.getItem(key) ?? '[]')
   const boardsArray = [
     {
       id: Date.now(),
@@ -127,7 +126,7 @@ export function getData (key) {
       ]
     }
   ]
-  return boardsArray
+  return JSON.parse(localStorage.getItem(key) ?? JSON.stringify(boardsArray))
 }
 
 export function setData (array, key) {
@@ -141,4 +140,32 @@ export function getTasksCount (tasksArray, panelType) {
 
 export function getUniqId () {
   return Date.now()
+}
+
+export function createNewCard(cardTitle, cardDescription, cardUser){
+  const boardsArray = getData()
+  const newCard =  {
+        type: 'todo',
+        id: getUniqId(),
+        title: cardTitle,
+        description: cardDescription,
+        user: cardUser,
+        creationTime: '17.12.2022 18:00',
+        getterTime: '21.12.2022 20:00'
+  }
+  boardsArray.forEach(item => item.tasksArray.push(newCard))
+  setData(boardsArray, getUniqId())
+  
+}
+
+export function createNewBoard(boardTitle){
+  const boardsArray = getData()
+  const newBoards = {
+        id: Date.now(),
+        title: boardTitle,
+        password: 1235,
+        color: 'blue',
+      }
+  boardsArray.push(newBoards)
+  setData(boardsArray, getUniqId())
 }
