@@ -1,4 +1,4 @@
-import { getCreationDate } from "./dataCreation.js"
+import { getCreationDate } from './dataCreation.js'
 
 export function getData (key) {
   const boardsArray = [
