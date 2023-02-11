@@ -1,6 +1,6 @@
 import { createButton } from '../components/button.js'
 import { getData } from '..//utils/dataUtils.js'
-import { fillSelectList } from './features/__usersEditWindow.js'
+import { fillSelectList } from './features/_usersEditWindow.js'
 
 export function initEditCardModalWindow (cardId) {
   const boardObjects = getData()
@@ -22,13 +22,13 @@ export function initEditCardModalWindow (cardId) {
   const modalDescription = document.createElement('textarea')
   modalDescription.className = 'modal-edit__description'
   modalDescription.placeholder = 'Description'
-  modalDescription.type = 'text'
+  modalDescription.maxLength = 500
 
   const select = document.createElement('select')
   select.id = 'select'
   select.className = 'users-edit__select'
 
-  fillSelectList(arrayUsers)
+  fillSelectList(arrayUsers,select)
 
   const modalButtons = document.createElement('div')
   modalButtons.className = 'modal-edit__buttons'
