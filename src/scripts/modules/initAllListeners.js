@@ -56,7 +56,7 @@ export const initAllListeners = (domElements) => {
     }
 
     // событие нажатия кнопки users в шапке доски
-    if (event.target.id === 'board-users-button') {
+    if (event.target.id === 'users-bar-button') {
       handlerEditBoardUsersList()
     }
   })

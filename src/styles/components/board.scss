@@ -14,6 +14,7 @@
         &__header {
             position: relative;
             display: flex;
+            gap: 1rem;
             align-items: center;
             justify-content: space-between;
             padding: 0.5rem 1rem;
@@ -26,7 +27,9 @@
             padding-left: 1.7rem;
             font-size: 1.2rem;
         }
-        
+        .divider{
+            flex-grow: 1;
+        }
         &__header-title::before {
             content: '';
             position: absolute;
@@ -39,11 +42,25 @@
             opacity: 0.8;
         }
 
-        &__menu-button {
-                width: 1.5rem;
-                height: 1rem;
-                background: url('../assets/icons/menu-icon.svg') center/contain no-repeat;
+        .board__settings-button, .board__delete-button{
+            width: 25px;
+            height: 25px;
+          transition: 0.3s;
+          opacity: 0.5;
+          cursor: pointer;
+          &:hover{
+            opacity: 1;
+          }
         }
+
+        .board__settings-button{
+            background: url('../assets/icons/settings-icon.svg') center/contain no-repeat;
+        }
+        .board__delete-button{
+            background: url('../assets/icons/basket-icon.svg') center/contain no-repeat;
+        }
+
+
 
         &__panels-container {
             flex-grow: 1;
