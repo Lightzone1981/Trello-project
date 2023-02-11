@@ -39,7 +39,7 @@ function fillUserContainer (boardUsersArray) {
   })
 }
 
-function fillSelectList (allUsers) {
+export function fillSelectList (allUsers) {
   const newUserSelect = document.querySelector('.users-edit__select')
   newUserSelect.innerHtml = ''
   const selectItem = document.createElement('option')
