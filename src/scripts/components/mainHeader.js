@@ -1,11 +1,12 @@
 import { createClock } from '../components/clock.js'
 import logoUrl from '../../assets/images/logo.svg'
+import { createBoardsSwitcher } from '../components/boardsSwitchers.js'
 
 // верстка главного header
 export function createHeader () {
   const header = document.createElement('header')
   header.className = 'main-header container'
-
+  header.append(createBoardsSwitcher())
   const logoImg = document.createElement('img')
   logoImg.className = 'main-header__logo'
   logoImg.src = logoUrl
