@@ -1,5 +1,6 @@
 import { getData, setData } from '../utils/dataUtils.js'
 import { getAllUsers } from '../utils/getAllUsers.js'
+import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { createUsersEditWindow } from '../components/usersEditWindow.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { fillUserContainer } from '../utils/fillUserContainer.js'
@@ -21,7 +22,8 @@ export const handlerEditBoardUsersList = () => {
   const domElements = getDomElements()
   const allUsers = getAllUsers()
   const boardsArray = getData()
-  const boardUsersArray = boardsArray[0].usersArray
+  const activeBoardIndex = getActiveBoardIndex()
+  const boardUsersArray = boardsArray[activeBoardIndex].usersArray
 
   const newUsersArray = boardUsersArray
 
@@ -30,13 +32,27 @@ export const handlerEditBoardUsersList = () => {
 
   // вешаем слушателя на окно редактирования пользователей
   domElements.usersEditWrapper.addEventListener('click', (event) => {
-    // событие нажатия кнопки "cancel" в окне редактирования пользователей
+    // событие нажатия кнопки "add to project"
+    if (event.target.id === 'user-edit-select-button') {
+      event.preventDefault()
+
+      allUsers.forEach((item) => {
+        if (domElements.newUserSelect.value === item.name) {
+          newUsersArray.push(item)
+          fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
+          fillUserContainer(newUsersArray, domElements.userEditContainer)
+        }
+      })
+    }
+
+    // событие нажатия кнопки "cancel"
     if (event.target.id === 'user-edit-cancel-button') {
       domElements.usersEditWrapper.remove()
     }
-    // событие нажатия кнопки "save" в окне редактирования пользователей
+    // событие нажатия кнопки "save"
     if (event.target.id === 'user-edit-save-button') {
-      boardsArray[0].usersArray = newUsersArray
+      boardsArray[activeBoardIndex].usersArray = newUsersArray
+
       setData(boardsArray)
       domElements.usersEditWrapper.remove()
       renderAllData()
