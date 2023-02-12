@@ -43,18 +43,20 @@
       gap: 1rem;
       padding: 0 1rem;
       .users-edit__select {
+        flex-grow: 1;
         border: 2px solid #7d7d7d;
         border-radius: 3px;
-        color: #151515;
         font-size: 1rem;
         padding: 0.3rem;
+        background-color: #fff;
+        color: #1c1c1c;
         cursor: pointer;
         &:hover {
-          border: 2px solid $color1;
+          border-color: $color1;
         }
       }
     }
-    .user-edit__container {
+    .users-edit__container {
         list-style-type: none;
       width: 100%;
       background-color: rgba(255, 255, 255, 0.7);

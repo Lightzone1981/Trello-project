@@ -108,8 +108,8 @@ export function getData (key) {
   return JSON.parse(localStorage.getItem(key) ?? JSON.stringify(boardsArray))
 }
 
-export function setData (array, key) {
-  localStorage.setItem(key, JSON.stringify(array))
+export function setData (array) {
+  localStorage.setItem('boardsArray', JSON.stringify(array))
 }
 
 export function getTasksCount (tasksArray, panelType) {
