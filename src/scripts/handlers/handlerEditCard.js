@@ -8,21 +8,19 @@ export function handlerEditCard (cardId) {
   const boardObjects = getData()
   const arrayCards = boardObjects[0].tasksArray
   const idNumber = cardId.split('-')[0]
-  
+
   arrayCards.forEach(item => {
     if (String(item.id) === String(idNumber)) {
       initEditCardModalWindow(item.id)
     }
   })
   const domElements = getDomElements()
-  
+
   domElements.modalContainer.addEventListener('click', (event) => {
     if (event.target.id === 'modal-edit-cancel') {
       domElements.modalOverlay.remove()
-      console.log(modalContainer)
     }
     if (event.target.id === 'modal-edit-confirm') {
-      
       domElements.modalOverlay.remove()
 
       renderAllData()

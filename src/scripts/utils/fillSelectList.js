@@ -1,6 +1,5 @@
 export function fillSelectList (allUsers, newUserSelect) {
   newUserSelect.innerHTML = ''
-  console.log(newUserSelect)
 
   const selectItem = document.createElement('option')
   selectItem.innerText = '----  select new user  ----'

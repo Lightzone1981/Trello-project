@@ -1,6 +1,6 @@
 import { getCreationDate } from './getCreationDate.js'
 
-export function getData (key) {
+export function getData () {
   const boardsArray = [
     {
       id: 1,
@@ -142,7 +142,7 @@ export function getData (key) {
       ]
     }
   ]
-  return JSON.parse(localStorage.getItem(key) ?? JSON.stringify(boardsArray))
+  return JSON.parse(localStorage.getItem('boardsArray')) ?? boardsArray
 }
 
 export function setData (array) {

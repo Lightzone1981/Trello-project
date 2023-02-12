@@ -1,5 +1,5 @@
 import { getData, getTasksCount } from '../utils/dataUtils.js'
-
+import { scrollDown } from '../utils/scrollDown.js'
 import { clear } from '../utils/clearComponent.js'
 import { renderTaskCard } from './renderTaskCard.js'
 
@@ -15,4 +15,5 @@ export const renderPanel = (domElements, panelType) => {
       renderTaskCard(panelType, item)
     }
   })
+  scrollDown(domElements[`${panelType}PanelContainer`])
 }

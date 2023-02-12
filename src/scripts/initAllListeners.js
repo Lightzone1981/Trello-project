@@ -22,26 +22,26 @@ export const initAllListeners = () => {
 
     // событие нажатия кнопки "Delete All"
     if (event.target.id === 'delete-all-button') {
-      // handlerDeleteCompletedCards(event.target.id, domElements)
+      // handlerDeleteCompletedCards()
     }
 
     // событие нажатия кнопки "удалить карточку"
-    if (event.target.id.indexOf('card-delete-button')) {
+    if (event.target.id.indexOf('card-delete-button') !== -1) {
       // handlerDeleteCard(event.target.id)
     }
 
     // событие нажатия кнопки "редактировать карточку"
-    if (event.target.id.indexOf('card-edit-button')) {
+    if (event.target.id.indexOf('card-edit-button') !== -1) {
       handlerEditCard(event.target.id)
     }
 
     // событие нажатия кнопки "переместить карточку вперед"
-    if (event.target.id.indexOf('card-forward-button')) {
+    if (event.target.id.indexOf('card-forward-button') !== -1) {
       // handlerMoveCardForward(event.target.id)
     }
 
     // событие нажатия кнопки "переместить карточку назад"
-    if (event.target.id.indexOf('card-back-button')) {
+    if (event.target.id.indexOf('card-back-button') !== -1) {
       // handlerMoveCardBack(event.target.id)
     }
   })
