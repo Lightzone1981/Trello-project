@@ -23,7 +23,10 @@ export const getDomElements = () => {
     clockInfo: document.querySelector('#clock-info'),
     usersEditWrapper: document.querySelector('.users-edit-wrapper'),
     newUserSelect: document.querySelector('.users-edit__select'),
-    userEditContainer: document.querySelector('.users-edit__container')
+    userEditContainer: document.querySelector('.users-edit__container'),
+
+    modalOverlay: document.querySelector('.modal-edit__overlay'),
+    modalContainer: document.querySelector('.modal-edit__container')
 
   }
 }
