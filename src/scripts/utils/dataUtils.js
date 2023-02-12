@@ -5,7 +5,7 @@ export function getData (key) {
     {
       id: Date.now(),
       title: 'Programming',
-      password: 1235,
+      background: 1,
       color: 'blue',
       status: 'active',
       tasksArray: [
@@ -16,7 +16,8 @@ export function getData (key) {
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
           user: 7,
           creationTime: '17.12.2022 18:00',
-          getterTime: '21.12.2022 20:00'
+          takenTime: '',
+          completedTime: ''
         },
         {
           type: 'progress',
@@ -24,8 +25,9 @@ export function getData (key) {
           title: 'Написание UI',
           description: 'Написать UI с помощью scss, использовать вложенность',
           user: 8,
-          creationTime: '20.12.2022 18:00',
-          getterTime: '30.12.2022 20:00'
+          creationTime: '17.12.2022 18:00',
+          takenTime: '17.12.2022 19:30',
+          completedTime: ''
         },
         {
           type: 'done',
@@ -33,8 +35,9 @@ export function getData (key) {
           title: 'Тест приложения',
           description: 'Протестировать приложение, найти баги, составить отчет',
           user: 7,
-          creationTime: '10.12.2022 18:00',
-          getterTime: '15.12.2022 20:00'
+          creationTime: '17.12.2022 18:00',
+          takenTime: '17.12.2022 19:30',
+          completedTime: '17.12.2022 12:30'
         },
         {
           type: 'todo',
@@ -42,8 +45,9 @@ export function getData (key) {
           title: '11111111',
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
           user: 11,
-          creationTime: '17.12.2022 18:00',
-          getterTime: '21.12.2022 20:00'
+          creationTime: '17.12.2022 18:10',
+          takenTime: '',
+          completedTime: ''
         },
         {
           type: 'todo',
@@ -51,8 +55,9 @@ export function getData (key) {
           title: '22222222',
           description: 'Написать UI с помощью scss, использовать вложенность',
           user: 10,
-          creationTime: '20.12.2022 18:00',
-          getterTime: '30.12.2022 20:00'
+          creationTime: '17.12.2022 18:15',
+          takenTime: '',
+          completedTime: ''
         },
         {
           type: 'todo',
@@ -60,8 +65,9 @@ export function getData (key) {
           title: '3333333',
           description: 'Протестировать приложение, найти баги, составить отчет',
           user: 9,
-          creationTime: '10.12.2022 18:00',
-          getterTime: '15.12.2022 20:00'
+          creationTime: '17.12.2022 18:20',
+          takenTime: '',
+          completedTime: ''
         }
       ],
       usersArray: [
