@@ -7,5 +7,5 @@ const root = document.querySelector('#root')
 
 initApp(root)
 // createUsersEditWindow()
-// initEditCardModalWindow('task-card-14')
+// initEditCardModalWindow('14')
 // initConfirmModalWindow('Convey something')
