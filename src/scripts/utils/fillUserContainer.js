@@ -1,7 +1,7 @@
 import { createButton } from '../components/button.js'
 
 export const fillUserContainer = (boardUsersArray, usersEditContainer) => {
-  usersEditContainer.innerHtml = ''
+  usersEditContainer.innerHTML = ''
   boardUsersArray.forEach((user) => {
     const userItem = document.createElement('li')
     userItem.classList = 'user-add__list-item'
