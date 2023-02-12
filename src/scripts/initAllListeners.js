@@ -1,12 +1,12 @@
-import { handlerCreateNewCard } from '../handlers/handlerCreateNewCard.js'
-import { handlerDeleteCompletedCards } from '../handlers/handlerDeleteCompletedCards.js'
-import { handlerDeleteCard } from '../handlers/handlerDeleteCard.js'
-import { handlerEditCard } from '../handlers/handlerEditCard.js'
-import { handlerMoveCardForward } from '../handlers/handlerMoveCardForward.js'
-import { handlerMoveCardBack } from '../handlers/handlerMoveCardBack.js'
-import { handlerDeleteBoard } from '../handlers/handlerDeleteBoard.js'
-import { handlerChangeBoardSettings } from '../handlers/handlerChangeBoardSettings.js'
-import { handlerEditBoardUsersList } from '../handlers/handlerEditBoardUsersList.js'
+import { handlerCreateNewCard } from './handlers/handlerCreateNewCard.js'
+import { handlerDeleteCompletedCards } from './handlers/handlerDeleteCompletedCards.js'
+import { handlerDeleteCard } from './handlers/handlerDeleteCard.js'
+import { handlerEditCard } from './handlers/handlerEditCard.js'
+import { handlerMoveCardForward } from './handlers/handlerMoveCardForward.js'
+import { handlerMoveCardBack } from './handlers/handlerMoveCardBack.js'
+import { handlerDeleteBoard } from './handlers/handlerDeleteBoard.js'
+import { handlerChangeBoardSettings } from './handlers/handlerChangeBoardSettings.js'
+import { handlerEditBoardUsersList } from './handlers/handlerEditBoardUsersList.js'
 
 // инициализация слушателей событий
 export const initAllListeners = (domElements) => {

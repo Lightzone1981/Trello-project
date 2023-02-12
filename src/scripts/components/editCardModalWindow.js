@@ -1,5 +1,5 @@
-import { createButton } from '../components/button.js'
-import { getData } from '..//utils/dataUtils.js'
+import { createButton } from './button.js'
+import { getData } from '../utils/dataUtils.js'
 import { fillSelectList } from '../utils/fillSelectList.js'
 
 export function initEditCardModalWindow (cardId) {
@@ -28,7 +28,7 @@ export function initEditCardModalWindow (cardId) {
   select.id = 'select'
   select.className = 'users-edit__select'
 
-  fillSelectList(arrayUsers,select)
+  fillSelectList(arrayUsers, select)
 
   const modalButtons = document.createElement('div')
   modalButtons.className = 'modal-edit_buttons'

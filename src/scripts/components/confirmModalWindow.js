@@ -1,5 +1,5 @@
 
-import { createButton } from '../components/button.js'
+import { createButton } from './button.js'
 
 export function initConfirmModalWindow (message) {
   const modalOverlayConfirm = document.createElement('div')

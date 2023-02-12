@@ -1,7 +1,7 @@
-import { createButton } from '../button.js'
-import { getAllUsers } from './_allUsers.js'
-import { getData } from '../../utils/dataUtils.js'
-import { fillSelectList } from '../../utils/fillSelectList.js'
+import { createButton } from './button.js'
+import { getAllUsers } from '../utils/getAllUsers.js'
+import { getData } from '../utils/dataUtils.js'
+import { fillSelectList } from '../utils/fillSelectList.js'
 
 function fillUserContainer (boardUsersArray) {
   const userEditContainer = document.querySelector('.user-edit__container')

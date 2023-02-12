@@ -7,28 +7,23 @@
   height: 100vh;
   padding-top: 2rem;
   background-color: rgba(0, 0, 0, 0.9);
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   .users-edit {
     max-height: 85%;
-    max-width: 22rem;
+    width: 30rem;
     margin: 0 auto;
     border-radius: 5px;
     padding-bottom: 1rem;
     border: 1px solid $color1;
-    // overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    padding-bottom: 1rem;
 
     .users-edit__header {
       position: relative;
       width: 100%;
-      background-color: rgb(44, 137, 208);
-      font-size: 1rem;
+      background-color: $color1;
+      font-size: 1.2rem;
       height: 1rem;
       padding: 1rem 1rem 2rem 2.5rem;
       color: #fff;
@@ -43,17 +38,19 @@
       }
     }
     .users-edit__add-form {
+      width: 100%;
       display: flex;
       gap: 1rem;
+      padding: 0 1rem;
       .users-edit__select {
-        border: 1px solid #7d7d7d;
+        border: 2px solid #7d7d7d;
         border-radius: 3px;
         color: #151515;
-        font-size: 0.8rem;
+        font-size: 1rem;
         padding: 0.3rem;
         cursor: pointer;
         &:hover {
-          border-color: $color1;
+          border: 2px solid $color1;
         }
       }
     }
@@ -67,7 +64,6 @@
       padding: 0 1rem;
       display: flex;
       flex-direction: column;
-      // gap: 2rem;
       .user-add__list-item {
         display: flex;
         gap: 1rem;
@@ -75,10 +71,11 @@
         border-bottom-color: #4d4d4d;
         padding: 1rem 0;
         .user-add__image-container {
+          flex-shrink: 0;
           position: relative;
           overflow: hidden;
-          width: 3rem;
-          height: 3rem;
+          width: 5rem;
+          height: 5rem;
           border-radius: 3px;
           transition: 0.3s;
           .user-add__list-image {
@@ -86,21 +83,22 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 3rem;
-            height: 3rem;
+            width: 5rem;
+            height: 5rem;
             object-fit: cover;
           }
           
         }
         .user-add__name{
             font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 1rem;
             padding-bottom: 0.3rem;
         }
         .user-add__job{
-            font-size: 0.7rem;
+            font-size: 0.8rem;
         }
         .delete-user-button{
+          flex-shrink: 0;
             width: 0.7rem;
             height: 0.7rem;
             margin-left: auto;
@@ -119,14 +117,21 @@
 }
 
 .user-edit__button {
-  background-color: $color1;
+  flex-grow: 1;
+  background-color: $color1-opacity;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 0.5rem 0.8rem;
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
   &:hover {
-    background-color: $color1-opacity;
+    background-color: $color1;
   }
+}
+#user-edit-save-button{
+  margin-left: 1rem;
+}
+#user-edit-cancel-button{
+  margin-right: 1rem;
 }

@@ -1,7 +1,7 @@
 import { createMainLayout } from './components/mainLayout.js'
-import { getDomElements } from './modules/getDomElements.js'
-import { renderAllData } from './modules/renderAllData.js'
-import { initAllListeners } from './modules/initAllListeners.js'
+import { getDomElements } from './utils/getDomElements.js'
+import { renderAllData } from './renderers/renderAllData.js'
+import { initAllListeners } from './initAllListeners.js'
 // инициализация приложения
 export function initApp (root) {
   createMainLayout(root)
