@@ -21,7 +21,7 @@ export function createBoardsSwitcher () {
     labelShowRadioButton.title = 'Show to Taskcard'
     labelShowRadioButton.className = 'label-button__radio'
 
-    boardSwitcher.append(labelShowRadioButton, boardRadioButton)
+    boardSwitcher.append(boardRadioButton, labelShowRadioButton)
   })
   boardSwitcher.append(createButton('boards-switcher', 'boards-switcher__button-add', '', 'button', 'Add new board'))
 

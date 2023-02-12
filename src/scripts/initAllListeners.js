@@ -7,9 +7,12 @@ import { handlerEditCard } from './handlers/handlerEditCard.js'
 // import { handlerDeleteBoard } from './handlers/handlerDeleteBoard.js'
 // import { handlerChangeBoardSettings } from './handlers/handlerChangeBoardSettings.js'
 import { handlerEditBoardUsersList } from './handlers/handlerEditBoardUsersList.js'
+import { getDomElements } from './utils/getDomElements.js'
 
 // инициализация слушателей событий
-export const initAllListeners = (domElements) => {
+export const initAllListeners = () => {
+  const domElements = getDomElements()
+
   // вешаем слушателей на основной контейнер доски
   domElements.boardContainer.addEventListener('click', (event) => {
     // событие нажатия кнопки "New Card"

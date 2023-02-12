@@ -1,11 +1,11 @@
 import { getData, setData } from '../utils/dataUtils.js'
 import { getAllUsers } from '../utils/getAllUsers.js'
-
 import { createUsersEditWindow } from '../components/usersEditWindow.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { fillUserContainer } from '../utils/fillUserContainer.js'
 import { fillSelectList } from '../utils/fillSelectList.js'
 import { renderAllData } from '../renderers/renderAllData.js'
+import { initAllListeners } from '../initAllListeners.js'
 
 function createSelectList (allUsers, newUsersArray) {
   const selectUsersArray = []
@@ -39,7 +39,8 @@ export const handlerEditBoardUsersList = () => {
       boardsArray[0].usersArray = newUsersArray
       setData(boardsArray)
       domElements.usersEditWrapper.remove()
-      renderAllData(domElements)
+      renderAllData()
+      initAllListeners()
     }
   })
 }

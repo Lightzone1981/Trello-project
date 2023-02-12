@@ -1,5 +1,4 @@
 import { createHeader } from '../components/mainHeader.js'
-import { createBoard } from '../components/board.js'
 
 // верстка основного шаблона приложения
 export function createMainLayout (root) {
@@ -11,8 +10,8 @@ export function createMainLayout (root) {
 
   const mainBoardsContainer = document.createElement('main')
   mainBoardsContainer.className = 'boards-container container'
+  mainBoardsContainer.id = 'boards-container'
 
-  mainBoardsContainer.append(createBoard())
   wrapper.append(mainBoardsContainer)
 
   root.append(wrapper)
