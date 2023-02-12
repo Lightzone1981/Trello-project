@@ -28,10 +28,6 @@
   border-radius: 1rem;
 }
 
-.modal-confirm__Message {
-  color: aliceblue;
-}
-
 .modal-edit__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,4 +35,18 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.modal-confirm__message {
+  color: white;
+}
+
+.modal-confirm__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }

@@ -7,11 +7,20 @@
   height: 100vh;
   padding-top: 2rem;
   background-color: rgba(0, 0, 0, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .modal-edit__container {
   padding: 2rem;
-  background-color: rgba(0, 3, 156, 0.742);
+  background-color: rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 0 0 0.4rem 0.4rem rgba(0, 0, 0, 0.241);
           box-shadow: 0 0 0.4rem 0.4rem rgba(0, 0, 0, 0.241);
   display: -webkit-box;
@@ -21,11 +30,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 30%;
   border-radius: 1rem;
+  border: 1px solid colo;
 }
 
 .modal-edit__title {
@@ -86,7 +93,7 @@
   color: white;
 }
 
-.users-edit____select {
+.users-edit__select {
   border: none;
   background: none;
   outline: none;
