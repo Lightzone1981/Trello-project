@@ -45,9 +45,9 @@ export function initEditCardModalWindow (cardId) {
 
   arrayCards.forEach(item => {
     if (item.id === cardId) {
-      modalTitle.innerText(item.title)
-      modalDescription.innerText(item.description)
-      select.innerText(item.user)
+      modalTitle.value = item.title
+      modalDescription.innerText = item.description
+      select.innerText = item.user
     }
   })
   const root = document.querySelector('#root')

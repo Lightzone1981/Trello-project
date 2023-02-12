@@ -22,5 +22,6 @@ export const getDomElements = () => {
     usersEditWrapper: document.querySelector('.users-edit-wrapper'),
     newUserSelect: document.querySelector('.users-edit__select'),
     userEditContainer: document.querySelector('.users-edit__container')
+
   }
 }
