@@ -27,6 +27,7 @@ export const handlerEditBoardUsersList = () => {
 
   const newUsersArray = boardUsersArray
 
+  domElements.usersEditHeader.innerText = `${boardsArray[activeBoardIndex].title}  |  users`
   fillUserContainer(newUsersArray, domElements.userEditContainer)
   fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
 
@@ -45,14 +46,27 @@ export const handlerEditBoardUsersList = () => {
       })
     }
 
+    if (event.target.id.indexOf('delete-user-button') !== -1) {
+      const idNum = event.target.id.split('-').at(-1)
+      const cardIndex = newUsersArray.reduce((res, item, index) => {
+        if (`${item.id}` === `${idNum}`) {
+          res = index
+        }
+        return res
+      }, 0)
+      newUsersArray.splice(cardIndex, 1)
+      fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
+      fillUserContainer(newUsersArray, domElements.userEditContainer)
+    }
+
     // событие нажатия кнопки "cancel"
     if (event.target.id === 'user-edit-cancel-button') {
       domElements.usersEditWrapper.remove()
     }
+
     // событие нажатия кнопки "save"
     if (event.target.id === 'user-edit-save-button') {
       boardsArray[activeBoardIndex].usersArray = newUsersArray
-
       setData(boardsArray)
       domElements.usersEditWrapper.remove()
       renderAllData()

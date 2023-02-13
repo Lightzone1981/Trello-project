@@ -1,4 +1,5 @@
 import { createButton } from '../components/button.js'
+import { scrollDown } from './scrollDown.js'
 
 export const fillUserContainer = (boardUsersArray, usersEditContainer) => {
   usersEditContainer.innerHTML = ''
@@ -30,8 +31,9 @@ export const fillUserContainer = (boardUsersArray, usersEditContainer) => {
     userInfoContainer.append(userName, userJob)
 
     userItem.append(userImgContainer, userInfoContainer,
-      createButton(`delete-user-button-${user.id}`, 'delete-user-button', '', 'button'))
+      createButton(`delete-user-button-${user.id}`, 'delete-user-button', '', 'button', 'Remove from project'))
 
     usersEditContainer.append(userItem)
   })
+  scrollDown(usersEditContainer)
 }

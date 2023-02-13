@@ -1,17 +1,77 @@
 export function getColors () {
   const colors = {
-    blue: '#2271b1',
-    'dark blue': '#0a4b78',
-    red: '#d63638',
-    'dark red': '#8a2424',
-    green: '#008a20',
-    'dark green': '#00450c',
-    gray: '#50575e',
-    'dark gray': '#2c3338',
-    orange: 'F23805',
-    'light orange': 'Ff6619',
-    purple: '#630091',
-    'light purple': 'AF3FE3'
+    1: {
+      color: 'blue',
+      normal: '#2271b1',
+      transparent: 'rgba(34, 112, 177, 0.5)',
+      dark: '#0a4b78'
+    },
+    2: {
+      color: 'red',
+      normal: '#d63638',
+      transparent: 'rgba(214, 54, 56, 0.5)',
+      dark: '#8a2424'
+    },
+    3: {
+      color: 'green',
+      normal: '#008a20',
+      transparent: 'rgba(0, 138, 33, 0.5)',
+      dark: '#00450c'
+    },
+    4: {
+      color: 'orange',
+      normal: '#ff6619',
+      transparent: 'rgba(255, 102, 25, 0.5)',
+      dark: '#f23805'
+    },
+    5: {
+      color: 'purple',
+      normal: '#AF3FE3',
+      transparent: 'rgba(175, 63, 277, 0.5)',
+      dark: '#630091'
+    },
+    6: {
+      color: 'gray',
+      normal: '#737373',
+      transparent: 'rgba(115, 115, 115, 0.5)',
+      dark: '#3B3B3B'
+    },
+    7: {
+      color: 'brown',
+      normal: '#B04632',
+      transparent: 'rgba(176, 70, 50, 0.5)',
+      dark: '#852F1D'
+    },
+    8: {
+      color: 'marine',
+      normal: '#02A17F',
+      transparent: 'rgba(0, 161, 127, 0.5)',
+      dark: '#006E56'
+    },
+    9: {
+      color: 'cream',
+      normal: '#FF9375',
+      transparent: 'rgba(255, 147, 117, 0.5)',
+      dark: '#E86D4B'
+    },
+    10: {
+      color: 'salad',
+      normal: '#26AD4C',
+      transparent: 'rgba(38, 173, 76, 0.5)',
+      dark: '#2E8C49'
+    },
+    11: {
+      color: 'violet',
+      normal: '#643DB8',
+      transparent: 'rgba(100, 60, 185, 0.5)',
+      dark: '#4F2D82'
+    },
+    12: {
+      color: 'military',
+      normal: '#627A0D',
+      transparent: 'rgba(100, 120, 15, 0.5)',
+      dark: '#415202'
+    }
   }
   return colors
 }

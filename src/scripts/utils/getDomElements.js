@@ -21,9 +21,13 @@ export const getDomElements = () => {
     donePanelContainer: document.querySelector('#panel-container-done'),
 
     clockInfo: document.querySelector('#clock-info'),
+
     usersEditWrapper: document.querySelector('.users-edit-wrapper'),
+    usersEditHeader: document.querySelector('.users-edit__header'),
     newUserSelect: document.querySelector('.users-edit__select'),
     userEditContainer: document.querySelector('.users-edit__container'),
+
+    boardSettingsTitle: document.querySelector('.board-settings__title'),
 
     modalOverlay: document.querySelector('.modal-edit__overlay'),
     modalContainer: document.querySelector('.modal-edit__container'),

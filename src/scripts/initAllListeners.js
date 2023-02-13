@@ -22,7 +22,7 @@ export const initAllListeners = () => {
 
     // событие нажатия кнопки "Delete All"
     if (event.target.id === 'delete-all-button') {
-      // handlerDeleteCompletedCards(event.target.id, domElements)
+      // handlerDeleteCompletedCards()
     }
 
     // событие нажатия кнопки "удалить карточку"

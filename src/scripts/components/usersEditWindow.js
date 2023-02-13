@@ -1,9 +1,6 @@
 import { createButton } from './button.js'
-import { getData } from '../utils/dataUtils.js'
 
 export const createUsersEditWindow = () => {
-  const boardsArray = getData()
-
   const usersEditWrapper = document.createElement('div')
   usersEditWrapper.classList = 'users-edit-wrapper'
 
@@ -13,7 +10,6 @@ export const createUsersEditWindow = () => {
 
   const usersEditHeader = document.createElement('p')
   usersEditHeader.classList = 'users-edit__header'
-  usersEditHeader.innerText = `${boardsArray[0].title}  |  users`
 
   const usersAddForm = document.createElement('form')
   usersAddForm.classList = 'users-edit__add-form'
