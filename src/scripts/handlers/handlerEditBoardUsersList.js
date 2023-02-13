@@ -27,6 +27,7 @@ export const handlerEditBoardUsersList = () => {
 
   const newUsersArray = boardUsersArray
 
+  domElements.usersEditHeader.innerText = `${boardsArray[activeBoardIndex].title}  |  users`
   fillUserContainer(newUsersArray, domElements.userEditContainer)
   fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
 

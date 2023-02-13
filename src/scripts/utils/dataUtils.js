@@ -6,7 +6,7 @@ export function getData () {
       id: 1,
       title: 'Programming',
       background: 1,
-      color: 'blue',
+      color: 1,
       status: 'active',
       tasksArray: [
         {
@@ -108,7 +108,7 @@ export function getData () {
       id: 2,
       title: 'Testing',
       background: 1,
-      color: 'blue',
+      color: 2,
       status: 'disable',
       tasksArray: [
         {
@@ -175,12 +175,15 @@ export function createNewCard (cardTitle, cardDescription, cardUser) {
 
 export function createNewBoard (boardTitle) {
   const boardsArray = getData()
-  const newBoards = {
-    id: Date.now(),
-    title: boardTitle,
-    password: 1235,
-    color: 'blue'
+  const newBoard = {
+    id: ++boardsArray.length,
+    title: 'New board',
+    background: 1,
+    color: 1,
+    status: 'disable',
+    tasksArray: [],
+    usersArray: []
   }
-  boardsArray.push(newBoards)
+  boardsArray.push(newBoard)
   setData(boardsArray, getUniqId())
 }
