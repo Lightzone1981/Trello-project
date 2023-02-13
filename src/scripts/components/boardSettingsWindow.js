@@ -80,7 +80,6 @@ export const createBoardSettingsWindow = () => {
 
   const colors = getColors()
   const boardColor = boardsArray[activeBoardIndex].color
-  console.log(boardColor)
   //   const newColor = boardColor
 
   for (let i = 1; i <= 12; i++) {

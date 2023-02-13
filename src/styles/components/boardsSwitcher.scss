@@ -5,11 +5,13 @@
   z-index: 0;
 }
 .board-radio-button {
-  display: none;
-//   &::before {
-//     content: '';
-//     background: url('../assets/icons/boards-icon.svg') center/contain no-repeat;
-// }
+  position:absolute;
+  z-index: -50;
+  opacity:0;
+  &:checked + .label-button__radio{
+    background-color: $color4;
+    color: $color1;
+  }
 }
 .label-button__radio {
   display: flex;
@@ -27,10 +29,7 @@
     z-index: 1;
     opacity: 0.8;
   }
-  &:checked {
-    background-color: $color4;
-    color: $color1;
-  }
+  
   &:hover {
     filter: brightness(1.5);
     transform: scale(1.1);
