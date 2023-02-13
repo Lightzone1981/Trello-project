@@ -13,6 +13,7 @@ export function createBoardsSwitcher () {
     const boardRadioButton = document.createElement('input')
     boardRadioButton.id = `board-radio-button-${element.id}`
     boardRadioButton.type = 'radio'
+    boardRadioButton.className = 'board-radio-button'
     if (element.status === 'active') {
       boardRadioButton.checked = true
     }
