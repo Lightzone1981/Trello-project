@@ -142,8 +142,6 @@ export function getData () {
       ]
     }
   ]
-  // return boardsArray
-  // console.log(JSON.parse(localStorage.getItem('boardsArray')))
   return JSON.parse(localStorage.getItem('boardsArray')) ?? boardsArray
 }
 

@@ -1,5 +1,5 @@
 // import { handlerCreateNewCard } from './handlers/handlerCreateNewCard.js'
-// import { handlerDeleteCompletedCards } from './handlers/handlerDeleteCompletedCards.js'
+import { handlerDeleteCompletedCards } from './handlers/handlerDeleteCompletedCards.js'
 // import { handlerDeleteCard } from './handlers/handlerDeleteCard.js'
 import { handlerEditCard } from './handlers/handlerEditCard.js'
 // import { handlerMoveCardForward } from './handlers/handlerMoveCardForward.js'
@@ -22,7 +22,7 @@ export const initAllListeners = () => {
 
     // событие нажатия кнопки "Delete All"
     if (event.target.id === 'delete-all-button') {
-      // handlerDeleteCompletedCards()
+      handlerDeleteCompletedCards()
     }
 
     // событие нажатия кнопки "удалить карточку"

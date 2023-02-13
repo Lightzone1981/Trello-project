@@ -1,23 +1,30 @@
 import { getDomElements } from '../utils/getDomElements.js'
-import { getData } from '../utils/dataUtils.js'
-import { arrayCards } from '../components/editCardModalWindow.js'
+import { getData, setData } from '../utils/dataUtils.js'
+import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 import { initAllListeners } from '../initAllListeners.js'
-import { getActiveBoardIndex } from '../renderers/renderBoard.js'
+import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 
-export function handlerRemoveAllDoneCards (id = '', elem) {
+export function handlerDeleteCompletedCards (id = '', elem) {
+  initConfirmModalWindow('Do you want to delete all completed tasks?')
+
   const domElements = getDomElements()
-  const boardsArray = getData()
-  const activeBoardIndex = getActiveBoardIndex()
-  const boardTasksArray = boardsArray[activeBoardIndex].tasksArray
+  domElements.modalOverlayConfirm.addEventListener('click', (event) => {
+    if (event.target.id === 'modal-confirm-cancel') {
+      domElements.modalOverlay.remove()
+    }
+    if (event.target.id === 'modal-confirm-confirm') {
+      const boardsArray = getData()
+      const activeBoardIndex = getActiveBoardIndex()
+      const boardTasksArray = boardsArray[activeBoardIndex].tasksArray
 
-  const newTasksArray = boardTasksArray
+      boardsArray[activeBoardIndex].tasksArray = boardTasksArray.map(item => {
+        if (item.type === 'done') { item.type = 'delete' }
+        return item
+      })
+      setData(boardsArray)
+      domElements.modalOverlay.remove()
 
-  arrayCards.forEach(item => {
-    if (item.type === item.done) {
-      newTasksArray.length = 0
-
-      domElements.donePanel.remove()
       renderAllData()
       initAllListeners()
     }
