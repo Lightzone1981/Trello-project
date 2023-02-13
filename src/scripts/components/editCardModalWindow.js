@@ -37,7 +37,7 @@ export function initEditCardModalWindow (cardId) {
   modalFooter.className = 'modal-edit__footer'
 
   modalButtons.append(createButton('modal-edit-cancel', 'modal-edit__cancel-btn', 'Cancel', 'button', 'Cancel action'),
-    createButton('modal-edit-confirm', 'modal-edit__confirm-btn', 'Confirm', 'submit', 'Confirm action'))
+    createButton('modal-edit-confirm', 'modal-edit__confirm-btn', 'Save', 'submit', 'Save action'))
 
   modalFooter.append(select, modalButtons)
 

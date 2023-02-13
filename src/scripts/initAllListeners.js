@@ -4,7 +4,7 @@
 import { handlerEditCard } from './handlers/handlerEditCard.js'
 // import { handlerMoveCardForward } from './handlers/handlerMoveCardForward.js'
 // import { handlerMoveCardBack } from './handlers/handlerMoveCardBack.js'
-// import { handlerDeleteBoard } from './handlers/handlerDeleteBoard.js'
+import { handlerDeleteBoard } from './handlers/handlerDeleteBoard.js'
 // import { handlerChangeBoardSettings } from './handlers/handlerChangeBoardSettings.js'
 import { handlerEditBoardUsersList } from './handlers/handlerEditBoardUsersList.js'
 import { getDomElements } from './utils/getDomElements.js'
@@ -26,22 +26,22 @@ export const initAllListeners = () => {
     }
 
     // событие нажатия кнопки "удалить карточку"
-    if (event.target.id.indexOf('card-delete-button')) {
+    if (event.target.id.indexOf('card-delete-button') !== -1) {
       // handlerDeleteCard(event.target.id)
     }
 
     // событие нажатия кнопки "редактировать карточку"
-    if (event.target.id.indexOf('card-edit-button')) {
+    if (event.target.id.indexOf('card-edit-button') !== -1) {
       handlerEditCard(event.target.id)
     }
 
     // событие нажатия кнопки "переместить карточку вперед"
-    if (event.target.id.indexOf('card-forward-button')) {
+    if (event.target.id.indexOf('card-forward-button') !== -1) {
       // handlerMoveCardForward(event.target.id)
     }
 
     // событие нажатия кнопки "переместить карточку назад"
-    if (event.target.id.indexOf('card-back-button')) {
+    if (event.target.id.indexOf('card-back-button') !== -1) {
       // handlerMoveCardBack(event.target.id)
     }
   })
@@ -50,7 +50,7 @@ export const initAllListeners = () => {
   domElements.boardHeader.addEventListener('click', (event) => {
     // событие нажатия кнопки удаления доски в шапке доски
     if (event.target.id === 'board-delete-button') {
-      // handlerDeleteBoard()
+      handlerDeleteBoard()
     }
 
     // событие нажатия кнопки settings в шапке доски

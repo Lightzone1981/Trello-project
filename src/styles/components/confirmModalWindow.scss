@@ -1,23 +1,23 @@
-.modal-confirm__overlay{
-    position: absolute;
-  top:0;
-  left: 0;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 2rem;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-.modal-confirm__container{
-    padding: 2rem;
-    background-color: rgba(0, 3, 156, 0.742);
-    box-shadow:0 0 0.4rem 0.4rem rgba(0, 0, 0, 0.241) ;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30%;
-    border-radius: 1rem;
-}
+// .modal-confirm__overlay{
+//     position: absolute;
+//   top:0;
+//   left: 0;
+//   z-index: 100;
+//   width: 100vw;
+//   height: 100vh;
+//   padding-top: 2rem;
+//   background-color: rgba(0, 0, 0, 0.9);
+// }
+// .modal-confirm__container{
+//     padding: 2rem;
+//     background-color: rgba(0, 3, 156, 0.742);
+//     box-shadow:0 0 0.4rem 0.4rem rgba(0, 0, 0, 0.241) ;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     width: 30%;
+//     border-radius: 1rem;
+// }
 .modal-edit__header{
     display: flex;
     justify-content: center;
