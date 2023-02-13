@@ -26,7 +26,9 @@ export const getDomElements = () => {
     userEditContainer: document.querySelector('.users-edit__container'),
 
     modalOverlay: document.querySelector('.modal-edit__overlay'),
-    modalContainer: document.querySelector('.modal-edit__container')
+    modalContainer: document.querySelector('.modal-edit__container'),
+
+    modalOverlayConfirm: document.querySelector('.modal-edit__container')
 
   }
 }
