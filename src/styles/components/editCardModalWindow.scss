@@ -16,6 +16,7 @@
     padding: 2rem;
     max-height: 85%;
     width: 30rem;
+    min-height: 15rem;
     margin: 0 auto;
     border-radius: 5px;
     padding-bottom: 1rem;
@@ -109,4 +110,7 @@
     &:hover {
       border-color: $color1;
     }
+  }
+  .modal-edit__buttons{
+    margin-left: 0.5rem;
   }

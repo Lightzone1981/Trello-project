@@ -30,7 +30,9 @@ export const getDomElements = () => {
     boardSettingsTitle: document.querySelector('.board-settings__title'),
 
     modalOverlay: document.querySelector('.modal-edit__overlay'),
-    modalContainer: document.querySelector('.modal-edit__container')
+    modalContainer: document.querySelector('.modal-edit__container'),
+
+    modalOverlayConfirm: document.querySelector('.modal-edit__container')
 
   }
 }
