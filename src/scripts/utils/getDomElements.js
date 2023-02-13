@@ -28,7 +28,7 @@ export const getDomElements = () => {
     modalOverlay: document.querySelector('.modal-edit__overlay'),
     modalContainer: document.querySelector('.modal-edit__container'),
 
-    modalOverlayConfirm: document.querySelector('.modal-edit__container'),
+    modalOverlayConfirm: document.querySelector('.modal-edit__container')
 
   }
 }
