@@ -13,7 +13,7 @@ export function createBoardsSwitcher () {
     const boardRadioButton = document.createElement('input')
     boardRadioButton.id = `board-radio-button-${element.id}`
     boardRadioButton.type = 'radio'
-    boardRadioButton.className = 'board-radio-button'
+    boardRadioButton.className = 'boards-switcher__radio-button'
     if (element.status === 'active') {
       boardRadioButton.checked = true
     }
@@ -24,11 +24,11 @@ export function createBoardsSwitcher () {
     labelShowRadioButton.setAttribute('for', `${boardRadioButton.id}`)
     labelShowRadioButton.title = `Show board-${index}`
     labelShowRadioButton.innerText = `board-${index}`
-    labelShowRadioButton.className = 'label-button__radio'
+    labelShowRadioButton.className = 'boards-switcher__radio-button-label'
 
     boardSwitcher.append(boardRadioButton, labelShowRadioButton)
   })
-  boardSwitcher.append(createButton('boards-switcher', 'boards-switcher__button-add', '+++', 'button', 'Add new board'))
+  boardSwitcher.append(createButton('boards-switcher-button-add', 'boards-switcher__button-add', '', 'button', 'Add new board'))
 
   return boardSwitcher
 }

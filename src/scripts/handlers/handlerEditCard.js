@@ -20,6 +20,12 @@ export function handlerEditCard (cardId) {
   })
   const domElements = getDomElements()
 
+  window.addEventListener('keydown', (event) => {
+    if (event.code === 'Escape') {
+      domElements.modalOverlay.remove()
+    }
+  }, true)
+
   domElements.modalContainer.addEventListener('click', (event) => {
     if (event.target.id === 'modal-edit-cancel') {
       domElements.modalOverlay.remove()
