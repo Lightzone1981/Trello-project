@@ -15,7 +15,7 @@
             position: relative;
             display: flex;
             gap: 1rem;
-            align-items: center;
+            align-items:center;
             justify-content: space-between;
             padding: 0.5rem 1rem;
             background-color: $color1;
@@ -42,16 +42,23 @@
             opacity: 0.8;
         }
 
-        .board__settings-button, .board__delete-button{
-            width: 20px;
-            height: 20px;
-          transition: 0.3s;
-          opacity: 0.5;
-          cursor: pointer;
-          &:hover{
-            opacity: 1;
-          }
+        .board__menu-container{
+            display: flex;
+           align-items: center;
+           gap: 0.5rem;
+            .board__settings-button, .board__delete-button{
+                width: 20px;
+                height: 20px;
+              transition: 0.3s;
+              opacity: 0.5;
+              cursor: pointer;
+              &:hover{
+                opacity: 1;
+              }
+            }
         }
+
+       
 
         .board__settings-button{
             background: url('../assets/icons/settings-icon.svg') center/contain no-repeat;

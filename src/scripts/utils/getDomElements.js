@@ -28,6 +28,7 @@ export const getDomElements = () => {
     newUserSelect: document.querySelector('.users-edit__select'),
     userEditContainer: document.querySelector('.users-edit__container'),
 
+    boardSettingsWrapper: document.querySelector('.board-settings-wrapper'),
     boardSettingsTitle: document.querySelector('.board-settings__title'),
 
     modalOverlay: document.querySelector('.modal-edit__overlay'),

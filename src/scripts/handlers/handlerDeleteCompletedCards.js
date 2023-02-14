@@ -9,6 +9,13 @@ export function handlerDeleteCompletedCards (id = '', elem) {
   initConfirmModalWindow('Do you want to delete all completed tasks?')
 
   const domElements = getDomElements()
+
+  window.addEventListener('keydown', (event) => {
+    if (event.code === 'Escape') {
+      domElements.modalOverlay.remove()
+    }
+  }, true)
+
   domElements.modalOverlayConfirm.addEventListener('click', (event) => {
     if (event.target.id === 'modal-confirm-cancel') {
       domElements.modalOverlay.remove()

@@ -5,7 +5,7 @@ import { handlerEditCard } from './handlers/handlerEditCard.js'
 // import { handlerMoveCardForward } from './handlers/handlerMoveCardForward.js'
 // import { handlerMoveCardBack } from './handlers/handlerMoveCardBack.js'
 import { handlerDeleteBoard } from './handlers/handlerDeleteBoard.js'
-// import { handlerChangeBoardSettings } from './handlers/handlerChangeBoardSettings.js'
+import { handlerChangeBoardSettings } from './handlers/handlerChangeBoardSettings.js'
 import { handlerEditBoardUsersList } from './handlers/handlerEditBoardUsersList.js'
 import { getDomElements } from './utils/getDomElements.js'
 
@@ -55,7 +55,7 @@ export const initAllListeners = () => {
 
     // событие нажатия кнопки settings в шапке доски
     if (event.target.id === 'board-settings-button') {
-      // handlerChangeBoardSettings()
+      handlerChangeBoardSettings()
     }
 
     // событие нажатия кнопки users в шапке доски

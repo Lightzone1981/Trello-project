@@ -1,48 +1,71 @@
 .boards-switcher {
-  display: flex;
-  gap: 0.5rem;
   position: relative;
-  z-index: 0;
-}
-.board-radio-button {
-  position:absolute;
-  z-index: -50;
-  opacity:0;
-  &:checked + .label-button__radio{
-    background-color: $color4;
-    color: $color1;
-  }
-}
-.label-button__radio {
+  transform: translateY(0.3rem);
   display: flex;
-  background-color: rgb(76, 195, 33);
-  border-radius: 5px 5px 0px 0px;
-  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-  transition: 0.3s;
-  &::before {
-    background: url('../assets/icons/boards-icon.svg') center/contain no-repeat ;
-    content: '';
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    right: 87px;
-    z-index: 1;
-    opacity: 0.8;
-  }
-  
-  &:hover {
-    filter: brightness(1.5);
-    transform: scale(1.1);
-  }
-}
+  align-items: center;
+  gap: 0.5rem;
 
-.boards-switcher__button-add {
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 5px 5px 0px 0px;
-  transition: 0.3s;
-  background-color: $color3;
-  &:hover {
-    filter: brightness(1.9);
-    transform: scale(1.1);
+  .boards-switcher__radio-button {
+    position: absolute;
+    z-index: -50;
+    opacity: 0;
+
+    &:checked+.boards-switcher__radio-button-label {
+      position: relative;
+      background-color: #fff;
+      opacity: 1;
+      color: $color1;
+
+      padding: 0.7rem 1.3rem 0.7rem 1.3rem;
+      transform: translateY(0.2rem);
+    }
+
+    &:checked+.boards-switcher__radio-button-label::before {
+      display: none;
+    }
+  }
+
+  .boards-switcher__radio-button-label {
+    flex-shrink: 0;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    color: #fff;
+    font-size: 0.8rem;
+    background-color: $color1-opacity;
+    opacity: 0.8;
+    border-radius: 5px 5px 0px 0px;
+    padding: 0.5rem 1.3rem 0.5rem 2rem;
+    transition: 0.3s;
+
+    &::before {
+      background: url('../assets/icons/boards-icon.svg') center/contain no-repeat;
+      content: '';
+      width: 0.7rem;
+      height: 0.7rem;
+      position: absolute;
+      top: 0.7rem;
+      left: 1rem;
+      z-index: 1;
+    }
+
+    &:hover {
+      background-color: $color1;
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  .boards-switcher__button-add {
+    background: url('../assets/icons/add-icon.svg') center/contain no-repeat;
+    width: 1.7rem;
+    height: 1.7rem;
+    opacity: 0.5;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
