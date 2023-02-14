@@ -173,10 +173,10 @@ export function createNewCard (cardTitle, cardDescription, cardUser) {
   setData(boardsArray, getUniqId())
 }
 
-export function createNewBoard (boardTitle) {
+export function createNewBoard () {
   const boardsArray = getData()
   const newBoard = {
-    id: ++boardsArray.length,
+    id: new Date(),
     title: 'New board',
     background: 1,
     color: 1,
