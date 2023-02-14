@@ -29,5 +29,6 @@ export const createUsersEditWindow = () => {
     createButton('user-edit-cancel-button', 'user-edit__button', 'Cancel', 'button'))
 
   const root = document.querySelector('#root')
+  document.body.style.overflow = 'hidden'
   root.append(usersEditWrapper)
 }

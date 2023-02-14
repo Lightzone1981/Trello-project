@@ -4,7 +4,7 @@ import { renderAllData } from '../renderers/renderAllData.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 
-export function handlerDeleteCard(cardId) {
+export function handlerDeleteCard (cardId) {
   initConfirmModalWindow('Do you want to delete all tasks?')
   const boardObjects = getData()
   const arrayCards = boardObjects[0].tasksArray
@@ -13,6 +13,7 @@ export function handlerDeleteCard(cardId) {
   domElements.modalOverlayConfirm.addEventListener('click', (event) => {
     if (event.target.id === 'modal-confirm-cancel') {
       domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
     }
     if (event.target.id === 'modal-confirm-confirm') {
       const idNumber = cardId.split('-')[0]
@@ -20,6 +21,7 @@ export function handlerDeleteCard(cardId) {
         if (String(item.id) === String(idNumber)) {
           item.type = 'delete'
           domElements.modalOverlay.remove()
+          document.body.style.overflow = 'auto'
 
           setData(boardObjects)
 

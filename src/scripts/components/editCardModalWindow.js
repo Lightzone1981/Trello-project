@@ -52,4 +52,5 @@ export function initEditCardModalWindow (cardId) {
   })
   const root = document.querySelector('#root')
   root.prepend(modalOverlay)
+  document.body.style.overflow = 'hidden'
 }

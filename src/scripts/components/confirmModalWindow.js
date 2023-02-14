@@ -26,4 +26,5 @@ export function initConfirmModalWindow (message) {
 
   const root = document.querySelector('#root')
   root.append(modalOverlayConfirm)
+  document.body.style.overflow = 'hidden'
 }

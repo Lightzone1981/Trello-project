@@ -4,7 +4,7 @@ export function getData () {
   const boardsArray = [
     {
       id: 1,
-      title: 'Programming',
+      title: 'Example',
       background: 1,
       color: 1,
       status: 'active',

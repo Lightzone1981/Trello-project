@@ -8,6 +8,7 @@ export const handlerChangeBoardSettings = () => {
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
       domElements.boardSettingsWrapper.remove()
+      document.body.style.overflow = 'auto'
     }
   }, true)
 }

@@ -21,16 +21,25 @@ export const createBoardSettingsWindow = () => {
   boardSettingsForm.classList = 'board-settings__form'
   boardSettingsWindow.append(boardSettingsForm)
 
+  const boardSettingsFormContainer = document.createElement('div')
+  boardSettingsFormContainer.classList = 'board-settings__form-container'
+
+  boardSettingsForm.append(boardSettingsFormContainer)
+
+  const boardSettingsTitleHeader = document.createElement('p')
+  boardSettingsTitleHeader.classList = 'board-settings__title-header'
+  boardSettingsTitleHeader.innerText = 'Title'
+
   const boardSettingsTitle = document.createElement('input')
   boardSettingsTitle.className = 'board-settings__title'
   boardSettingsTitle.type = 'text'
   boardSettingsTitle.focus = true
-  boardSettingsForm.append(boardSettingsTitle)
+  boardSettingsFormContainer.append(boardSettingsTitleHeader, boardSettingsTitle)
 
   //  контейнер с backround
   const boardSettingsBackgroundContainer = document.createElement('div')
   boardSettingsBackgroundContainer.classList = 'board-settings__background-container'
-  boardSettingsWindow.append(boardSettingsBackgroundContainer)
+  boardSettingsFormContainer.append(boardSettingsBackgroundContainer)
 
   const boardSettingsBackgroundHeader = document.createElement('p')
   boardSettingsBackgroundHeader.classList = 'board-settings__background-header'
@@ -43,7 +52,7 @@ export const createBoardSettingsWindow = () => {
 
   boardSettingsTitle.value = boardsArray[activeBoardIndex].title
 
-  const BoardBackground = boardsArray[activeBoardIndex].background
+  const boardBackground = boardsArray[activeBoardIndex].background
   //   const newBackground = BoardBackground
 
   for (let i = 1; i <= 12; i++) {
@@ -53,7 +62,7 @@ export const createBoardSettingsWindow = () => {
     backgroundRadio.name = 'background-radio'
     backgroundRadio.type = 'radio'
 
-    if (`${i}` === `${BoardBackground}`) {
+    if (`${i}` === `${boardBackground}`) {
       backgroundRadio.checked = true
     }
 
@@ -62,6 +71,7 @@ export const createBoardSettingsWindow = () => {
     backgroundLabel.id = `background-label-${i}`
     backgroundLabel.name = 'background-radio'
     backgroundLabel.setAttribute('for', `${backgroundRadio.id}`)
+
     backgroundLabel.style.background = backgrounds[`${i}`]
 
     boardSettingsBackgroundContainer.append(backgroundRadio, backgroundLabel)
@@ -71,7 +81,7 @@ export const createBoardSettingsWindow = () => {
 
   const boardSettingsColorsContainer = document.createElement('div')
   boardSettingsColorsContainer.classList = 'board-settings__colors-container'
-  boardSettingsWindow.append(boardSettingsColorsContainer)
+  boardSettingsFormContainer.append(boardSettingsColorsContainer)
 
   const boardSettingsColorsHeader = document.createElement('p')
   boardSettingsColorsHeader.classList = 'board-settings__colors-header'
@@ -103,10 +113,10 @@ export const createBoardSettingsWindow = () => {
   }
 
   boardSettingsForm.append(
-    boardSettingsBackgroundContainer, boardSettingsColorsContainer,
     createButton('board-settings-save-button', 'board-settings__button', 'Save', 'button'),
     createButton('board-settings-cancel-button', 'board-settings__button', 'Cancel', 'button'))
 
   const root = document.querySelector('#root')
   root.append(boardSettingsWrapper)
+  document.body.style.overflow = 'hidden'
 }

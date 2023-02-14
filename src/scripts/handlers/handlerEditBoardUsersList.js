@@ -35,6 +35,7 @@ export const handlerEditBoardUsersList = () => {
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
       domElements.usersEditWrapper.remove()
+      document.body.style.overflow = 'auto'
     }
   }, true)
 
@@ -68,6 +69,7 @@ export const handlerEditBoardUsersList = () => {
 
     // событие нажатия кнопки "cancel"
     if (event.target.id === 'user-edit-cancel-button') {
+      document.body.style.overflow = 'auto'
       domElements.usersEditWrapper.remove()
     }
 
@@ -77,6 +79,7 @@ export const handlerEditBoardUsersList = () => {
       boardsArray[activeBoardIndex].tasksArray = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].tasksArray)
       setData(boardsArray)
       domElements.usersEditWrapper.remove()
+      document.body.style.overflow = 'auto'
       renderAllData()
       initAllListeners()
     }
