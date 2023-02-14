@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/Lightzone1981/Trello-project#readme",
   "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.33.0",
