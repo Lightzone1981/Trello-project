@@ -62,5 +62,9 @@ export const initAllListeners = () => {
     if (event.target.id === 'users-bar-button') {
       handlerEditBoardUsersList()
     }
+    // события нажатия кнопки(радио) в main-header
+    if (event.target.id === 'boards-switcher') {
+      // handlerSwitcher()
+    }
   })
 }
