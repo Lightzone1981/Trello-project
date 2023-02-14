@@ -1,6 +1,6 @@
 // import { handlerCreateNewCard } from './handlers/handlerCreateNewCard.js'
 // import { handlerDeleteCompletedCards } from './handlers/handlerDeleteCompletedCards.js'
-// import { handlerDeleteCard } from './handlers/handlerDeleteCard.js'
+import { handlerDeleteCard } from './handlers/handlerDeleteCard.js'
 import { handlerEditCard } from './handlers/handlerEditCard.js'
 // import { handlerMoveCardForward } from './handlers/handlerMoveCardForward.js'
 // import { handlerMoveCardBack } from './handlers/handlerMoveCardBack.js'
@@ -27,7 +27,7 @@ export const initAllListeners = () => {
 
     // событие нажатия кнопки "удалить карточку"
     if (event.target.id.indexOf('card-delete-button') !== -1) {
-      // handlerDeleteCard(event.target.id)
+      handlerDeleteCard(event.target.id)
     }
 
     // событие нажатия кнопки "редактировать карточку"
