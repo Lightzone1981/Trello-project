@@ -11,10 +11,15 @@ export function createBoardHeader () {
   const divider = document.createElement('div')
   divider.classList = 'divider'
 
-  const boardSettingsButton = createButton('board-settings-button', 'board__settings-button', '', 'button', 'Board Settings')
-  const boardDeleteButton = createButton('board-delete-button', 'board__delete-button', '', 'button', 'Delete Board')
+  const boardHeaderMenuContainer = document.createElement('div')
+  boardHeaderMenuContainer.classList = 'board__menu-container'
 
-  boardHeader.append(boardHeaderTitle, divider, createUserBar(), boardSettingsButton, boardDeleteButton)
+  boardHeaderMenuContainer.append(
+    createUserBar(),
+    createButton('board-settings-button', 'board__settings-button', '', 'button', 'Board Settings'),
+    createButton('board-delete-button', 'board__delete-button', '', 'button', 'Delete Board')
+  )
+  boardHeader.append(boardHeaderTitle, divider, boardHeaderMenuContainer)
 
   return boardHeader
 }

@@ -1,23 +1,32 @@
-import { initEditCardModalWindow } from '../components/editCardModalWindow.js'
 import { initAllListeners } from '../initAllListeners.js'
 import { getData, setData } from '../utils/dataUtils.js'
-import { renderPanel } from '../renderers/renderPanel.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 import { getDomElements } from '../utils/getDomElements.js'
-import { fillSelectList } from '../utils/fillSelectList.js'
+import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 
-export function handlerDeleteCard(cardId){
-    const boardObjects = getData()
-    const arrayCards = boardObjects[0].tasksArray
+export function handlerDeleteCard(cardId) {
+  initConfirmModalWindow('Do you want to delete all tasks?')
+  const boardObjects = getData()
+  const arrayCards = boardObjects[0].tasksArray
+  const domElements = getDomElements()
 
-    const idNumber = cardId.split('-')[0]
-    arrayCards.forEach(item => {
+  domElements.modalOverlayConfirm.addEventListener('click', (event) => {
+    if (event.target.id === 'modal-confirm-cancel') {
+      domElements.modalOverlay.remove()
+    }
+    if (event.target.id === 'modal-confirm-confirm') {
+      const idNumber = cardId.split('-')[0]
+      arrayCards.forEach((item) => {
         if (String(item.id) === String(idNumber)) {
           item.type = 'delete'
+          domElements.modalOverlay.remove()
+
           setData(boardObjects)
+
           renderAllData()
           initAllListeners()
         }
       })
-      
+    }
+  })
 }

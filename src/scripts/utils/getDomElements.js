@@ -27,12 +27,14 @@ export const getDomElements = () => {
     newUserSelect: document.querySelector('.users-edit__select'),
     userEditContainer: document.querySelector('.users-edit__container'),
 
+    boardSettingsWrapper: document.querySelector('.board-settings-wrapper'),
     boardSettingsTitle: document.querySelector('.board-settings__title'),
 
     modalOverlay: document.querySelector('.modal-edit__overlay'),
     modalContainer: document.querySelector('.modal-edit__container'),
 
-    modalOverlayConfirm: document.querySelector('.modal-edit__container')
+    modalOverlayConfirm: document.querySelector('.modal-edit__container'),
+    deleteAllButton: document.querySelector('#delete-all-button')
 
   }
 }

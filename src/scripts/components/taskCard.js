@@ -30,6 +30,7 @@ export function createTaskCard (cardId, cardType) {
 
   const taskCardUserImgContainer = document.createElement('div')
   taskCardUserImgContainer.classList = 'task-card__user-img-container'
+  taskCardUserImgContainer.id = `task-card-user-img-container-${cardId}`
 
   const taskCardUserImg = document.createElement('img')
   taskCardUserImg.className = 'task-card__user-img'

@@ -5,6 +5,7 @@ import { createUsersEditWindow } from '../components/usersEditWindow.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { fillUserContainer } from '../utils/fillUserContainer.js'
 import { fillSelectList } from '../utils/fillSelectList.js'
+import { resetCardUsers } from '../utils/resetCardUsers.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 import { initAllListeners } from '../initAllListeners.js'
 
@@ -30,6 +31,12 @@ export const handlerEditBoardUsersList = () => {
   domElements.usersEditHeader.innerText = `${boardsArray[activeBoardIndex].title}  |  users`
   fillUserContainer(newUsersArray, domElements.userEditContainer)
   fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
+
+  window.addEventListener('keydown', (event) => {
+    if (event.code === 'Escape') {
+      domElements.usersEditWrapper.remove()
+    }
+  }, true)
 
   // вешаем слушателя на окно редактирования пользователей
   domElements.usersEditWrapper.addEventListener('click', (event) => {
@@ -67,6 +74,7 @@ export const handlerEditBoardUsersList = () => {
     // событие нажатия кнопки "save"
     if (event.target.id === 'user-edit-save-button') {
       boardsArray[activeBoardIndex].usersArray = newUsersArray
+      boardsArray[activeBoardIndex].tasksArray = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].tasksArray)
       setData(boardsArray)
       domElements.usersEditWrapper.remove()
       renderAllData()
