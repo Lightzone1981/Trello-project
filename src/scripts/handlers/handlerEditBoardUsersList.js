@@ -32,6 +32,12 @@ export const handlerEditBoardUsersList = () => {
   fillUserContainer(newUsersArray, domElements.userEditContainer)
   fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
 
+  window.addEventListener('keydown', (event) => {
+    if (event.code === 'Escape') {
+      domElements.usersEditWrapper.remove()
+    }
+  }, true)
+
   // вешаем слушателя на окно редактирования пользователей
   domElements.usersEditWrapper.addEventListener('click', (event) => {
     // событие нажатия кнопки "add to project"

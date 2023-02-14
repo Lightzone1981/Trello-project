@@ -13,6 +13,12 @@ export function handlerDeleteBoard () {
   initConfirmModalWindow(`Do you want to delete '${boardTitle}'?`)
   const domElements = getDomElements()
 
+  window.addEventListener('keydown', (event) => {
+    if (event.code === 'Escape') {
+      domElements.modalOverlay.remove()
+    }
+  }, true)
+
   domElements.modalOverlayConfirm.addEventListener('click', (event) => {
     if (event.target.id === 'modal-confirm-cancel') {
       domElements.modalOverlay.remove()
