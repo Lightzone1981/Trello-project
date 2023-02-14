@@ -5,6 +5,7 @@ import { createUsersEditWindow } from '../components/usersEditWindow.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { fillUserContainer } from '../utils/fillUserContainer.js'
 import { fillSelectList } from '../utils/fillSelectList.js'
+import { resetCardUsers } from '../utils/resetCardUsers.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 import { initAllListeners } from '../initAllListeners.js'
 
@@ -67,6 +68,7 @@ export const handlerEditBoardUsersList = () => {
     // событие нажатия кнопки "save"
     if (event.target.id === 'user-edit-save-button') {
       boardsArray[activeBoardIndex].usersArray = newUsersArray
+      boardsArray[activeBoardIndex].tasksArray = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].tasksArray)
       setData(boardsArray)
       domElements.usersEditWrapper.remove()
       renderAllData()

@@ -18,15 +18,23 @@ export const renderTaskCard = (panelType, cardObject) => {
   taskCardDescription.innerText = cardObject.description
 
   const taskCardUserImg = document.querySelector(`#task-card-user-img-${cardObject.id}`)
+  const userImgContainer = document.querySelector(`#task-card-user-img-container-${cardObject.id}`)
 
   const taskCardTime = document.querySelector(`#task-card-time-${cardObject.id}`)
   taskCardTime.innerText = `created: ${cardObject.creationTime}`
 
   const taskCardUser = document.querySelector(`#task-card-user-name-${cardObject.id}`)
-  usersArray.forEach(element => {
-    if (element.id === cardObject.user) {
-      taskCardUser.innerText = element.name
-      taskCardUserImg.src = element.src
-    }
-  })
+
+  if (cardObject.user !== 'user is not assigned') {
+    usersArray.forEach(element => {
+      if (element.id === cardObject.user) {
+        taskCardUser.innerText = element.name
+        taskCardUserImg.src = element.src
+      }
+    })
+  } else {
+    taskCardUser.innerText = 'user is not assigned'
+    taskCardUserImg.remove()
+    userImgContainer.remove()
+  }
 }
