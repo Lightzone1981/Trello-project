@@ -1,4 +1,4 @@
-// import { handlerCreateNewCard } from './handlers/handlerCreateNewCard.js'
+import { handlerCreateNewCard } from './handlers/handlerCreateNewCard.js'
 import { handlerDeleteCompletedCards } from './handlers/handlerDeleteCompletedCards.js'
 import { handlerDeleteCard } from './handlers/handlerDeleteCard.js'
 import { handlerEditCard } from './handlers/handlerEditCard.js'
@@ -17,7 +17,7 @@ export const initAllListeners = () => {
   domElements.boardContainer.addEventListener('click', (event) => {
     // событие нажатия кнопки "New Card"
     if (event.target.id === 'add-new-card-button') {
-      // handlerCreateNewCard(event.target.id, domElements)
+      handlerCreateNewCard(event.target.id, domElements)
     }
 
     // событие нажатия кнопки "Delete All"

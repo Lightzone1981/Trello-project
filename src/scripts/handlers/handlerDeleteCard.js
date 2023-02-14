@@ -4,7 +4,7 @@ import { renderAllData } from '../renderers/renderAllData.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 
-export function handlerDeleteCard(cardId) {
+export function handlerDeleteCard (cardId) {
   initConfirmModalWindow('Do you want to delete all tasks?')
   const boardObjects = getData()
   const arrayCards = boardObjects[0].tasksArray
