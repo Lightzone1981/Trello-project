@@ -2,8 +2,8 @@
 import { handlerDeleteCompletedCards } from './handlers/handlerDeleteCompletedCards.js'
 import { handlerDeleteCard } from './handlers/handlerDeleteCard.js'
 import { handlerEditCard } from './handlers/handlerEditCard.js'
-// import { handlerMoveCardForward } from './handlers/handlerMoveCardForward.js'
-// import { handlerMoveCardBack } from './handlers/handlerMoveCardBack.js'
+import { handlerMoveCardForward } from './handlers/handlerMoveCardForward.js'
+import { handlerMoveCardBack } from './handlers/handlerMoveCardBack.js'
 import { handlerDeleteBoard } from './handlers/handlerDeleteBoard.js'
 import { handlerChangeBoardSettings } from './handlers/handlerChangeBoardSettings.js'
 import { handlerEditBoardUsersList } from './handlers/handlerEditBoardUsersList.js'
@@ -37,12 +37,12 @@ export const initAllListeners = () => {
 
     // событие нажатия кнопки "переместить карточку вперед"
     if (event.target.id.indexOf('card-forward-button') !== -1) {
-      // handlerMoveCardForward(event.target.id)
+      handlerMoveCardForward(event.target.id)
     }
 
     // событие нажатия кнопки "переместить карточку назад"
     if (event.target.id.indexOf('card-back-button') !== -1) {
-      // handlerMoveCardBack(event.target.id)
+      handlerMoveCardBack(event.target.id)
     }
   })
 
