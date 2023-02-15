@@ -1,29 +1,31 @@
-
 import { createButton } from './button.js'
+import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
 
 export function initConfirmModalWindow (message) {
-  const modalOverlayConfirm = document.createElement('div')
-  modalOverlayConfirm.className = 'modal-edit__overlay'
+  const modalConfirmOverlay = document.createElement('div')
+  modalConfirmOverlay.className = 'modal-overlay'
 
-  const modalContainerConfirm = document.createElement('div')
-  modalContainerConfirm.className = 'modal-edit__container'
-  modalOverlayConfirm.append(modalContainerConfirm)
+  const modalConfirmContainer = document.createElement('div')
+  modalConfirmContainer.className = 'modal-confirm__container'
+  modalConfirmContainer.style.borderColor = getActiveBoardColor('normal')
+  modalConfirmOverlay.append(modalConfirmContainer)
 
-  const modalHeaderConfirm = document.createElement('div')
-  modalHeaderConfirm.className = 'modal-edit__header'
+  const modalConfirmHeader = document.createElement('h2')
+  modalConfirmHeader.className = 'modal-confirm__header'
+  modalConfirmHeader.innerText = message
 
-  const modalMessage = document.createElement('h2')
-  modalMessage.className = 'modal-confirm__message'
-  modalMessage.innerText = `${message}`
+  modalConfirmContainer.append(modalConfirmHeader)
 
-  const modalButtonsConfirm = document.createElement('div')
-  modalButtonsConfirm.className = 'modal-confirm__buttons'
+  const modalConfirmButtonsContainer = document.createElement('div')
+  modalConfirmButtonsContainer.className = 'modal-confirm__buttons-container'
 
-  modalButtonsConfirm.append(createButton('modal-confirm-confirm', 'modal-edit__confirm-btn', 'Confirm', 'button', 'Confirm action', 'fill'), createButton('modal-confirm-cancel', 'modal-edit__cancel-btn', 'Cancel', 'button', 'Cancel action', 'fill'))
-  modalHeaderConfirm.append(modalMessage)
-  modalContainerConfirm.append(modalHeaderConfirm, modalButtonsConfirm)
+  modalConfirmButtonsContainer.append(
+    createButton('modal-confirm', 'modal-button', 'Confirm', 'button', 'Confirm action', 'fill'),
+    createButton('modal-cancel', 'modal-button', 'Cancel', 'button', 'Cancel action', 'fill'))
+
+  modalConfirmContainer.append(modalConfirmButtonsContainer)
 
   const root = document.querySelector('#root')
-  root.append(modalOverlayConfirm)
+  root.append(modalConfirmOverlay)
   document.body.style.overflow = 'hidden'
 }

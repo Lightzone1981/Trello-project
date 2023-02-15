@@ -1,5 +1,6 @@
 import { initAllListeners } from '../initAllListeners.js'
 import { getData, setData } from '../utils/dataUtils.js'
+import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
@@ -7,15 +8,15 @@ import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 export function handlerDeleteCard (cardId) {
   initConfirmModalWindow('Do you want to delete current task?')
   const boardObjects = getData()
-  const arrayCards = boardObjects[0].tasksArray
+  const arrayCards = boardObjects[getActiveBoardIndex()].tasksArray
   const domElements = getDomElements()
 
-  domElements.modalOverlayConfirm.addEventListener('click', (event) => {
-    if (event.target.id === 'modal-confirm-cancel') {
+  domElements.modalConfirmContainer.addEventListener('click', (event) => {
+    if (event.target.id === 'modal-cancel') {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
     }
-    if (event.target.id === 'modal-confirm-confirm') {
+    if (event.target.id === 'modal-confirm') {
       const idNumber = cardId.split('-')[0]
       arrayCards.forEach((item) => {
         if (String(item.id) === String(idNumber)) {
@@ -31,4 +32,11 @@ export function handlerDeleteCard (cardId) {
       })
     }
   })
+
+  window.addEventListener('keydown', (event) => {
+    if (event.code === 'Escape') {
+      domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
+    }
+  }, true)
 }

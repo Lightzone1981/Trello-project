@@ -125,8 +125,8 @@ export const createBoardSettingsWindow = () => {
   }
 
   boardSettingsForm.append(
-    createButton('board-settings-save-button', 'board-settings__button', 'Save', 'submit', 'Save changes', 'fill'),
-    createButton('board-settings-cancel-button', 'board-settings__button', 'Cancel', 'button', 'Cancel changes', 'fill'))
+    createButton('board-settings-save-button', 'modal-button', 'Save', 'submit', 'Save changes', 'fill'),
+    createButton('board-settings-cancel-button', 'modal-button', 'Cancel', 'button', 'Cancel changes', 'fill'))
 
   const root = document.querySelector('#root')
   root.append(boardSettingsWrapper)

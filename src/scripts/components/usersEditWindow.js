@@ -31,13 +31,13 @@ export const createUsersEditWindow = () => {
   }
 
   usersAddForm.append(newUserSelect,
-    createButton('user-edit-select-button', 'user-edit__button', 'Add to project', 'submit', '', 'fill'))
+    createButton('user-edit-select-button', 'modal-button', 'Add to project', 'submit', '', 'fill'))
 
   const usersEditContainer = document.createElement('ul')
   usersEditContainer.classList = 'users-edit__container'
 
   usersEditWindow.append(usersEditHeader, usersAddForm, usersEditContainer,
-    createButton('user-edit-save-button', 'user-edit__button', 'Save', 'button', 'Save changes', 'fill'),
+    createButton('user-edit-save-button', 'modal-button', 'Save', 'button', 'Save changes', 'fill'),
     createButton('user-edit-cancel-button', 'user-edit__button', 'Cancel', 'button', 'Cancel changes', 'fill'))
 
   const root = document.querySelector('#root')

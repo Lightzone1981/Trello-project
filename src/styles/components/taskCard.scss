@@ -85,17 +85,17 @@
     gap: 0.7rem;
     padding: 0.5rem 0;
     min-width: 2rem;
-    border-left: 1px solid #b4b4b4;
+    border-left: 1px solid #929292;
 
     .card__button {
       width: 0.75rem;
       height: 0.75rem;
       cursor: pointer;
       transition: 0.3s;
-      filter: brightness(0.7);
+      filter: brightness(0.6);
 
       &:hover {
-        filter: brightness(0.5);
+        filter: brightness(0.3);
         transform: scale(1.1);
       }
     }

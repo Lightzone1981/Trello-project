@@ -31,10 +31,10 @@ export const getDomElements = () => {
     boardSettingsWrapper: document.querySelector('.board-settings-wrapper'),
     boardSettingsTitle: document.querySelector('.board-settings__title'),
 
-    modalOverlay: document.querySelector('.modal-edit__overlay'),
     modalContainer: document.querySelector('.modal-edit__container'),
 
-    modalOverlayConfirm: document.querySelector('.modal-edit__container'),
+    modalOverlay: document.querySelector('.modal-overlay'),
+    modalConfirmContainer: document.querySelector('.modal-confirm__container'),
     deleteAllButton: document.querySelector('#delete-all-button')
 
   }
