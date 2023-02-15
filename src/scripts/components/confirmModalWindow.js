@@ -19,11 +19,11 @@ export function initConfirmModalWindow (message) {
   const modalButtonsConfirm = document.createElement('div')
   modalButtonsConfirm.className = 'modal-confirm__buttons'
 
-  modalButtonsConfirm.append(createButton('modal-confirm-cancel', 'modal-edit__cancel-btn', 'Cancel', 'button', 'Cancel action'),
-    createButton('modal-confirm-confirm', 'modal-edit__confirm-btn', 'Confirm', 'button', 'Confirm action'))
+  modalButtonsConfirm.append(createButton('modal-confirm-confirm', 'modal-edit__confirm-btn', 'Confirm', 'button', 'Confirm action', 'fill'), createButton('modal-confirm-cancel', 'modal-edit__cancel-btn', 'Cancel', 'button', 'Cancel action', 'fill'))
   modalHeaderConfirm.append(modalMessage)
   modalContainerConfirm.append(modalHeaderConfirm, modalButtonsConfirm)
 
   const root = document.querySelector('#root')
   root.append(modalOverlayConfirm)
+  document.body.style.overflow = 'hidden'
 }

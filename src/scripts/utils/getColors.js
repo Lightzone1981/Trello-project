@@ -8,8 +8,8 @@ export function getColors () {
     },
     2: {
       color: 'red',
-      normal: '#d63638',
-      transparent: 'rgba(214, 54, 56, 0.5)',
+      normal: '#D40F12',
+      transparent: 'rgba(210, 15, 18, 0.5)',
       dark: '#8a2424'
     },
     3: {
@@ -32,14 +32,14 @@ export function getColors () {
     },
     6: {
       color: 'gray',
-      normal: '#737373',
-      transparent: 'rgba(115, 115, 115, 0.5)',
+      normal: '#474747',
+      transparent: 'rgba(70, 70, 70, 0.5)',
       dark: '#3B3B3B'
     },
     7: {
       color: 'brown',
-      normal: '#B04632',
-      transparent: 'rgba(176, 70, 50, 0.5)',
+      normal: '#7A1F0D',
+      transparent: 'rgba(122, 30, 15, 0.5)',
       dark: '#852F1D'
     },
     8: {
@@ -50,8 +50,8 @@ export function getColors () {
     },
     9: {
       color: 'cream',
-      normal: '#FF9375',
-      transparent: 'rgba(255, 147, 117, 0.5)',
+      normal: '#FC7E5B',
+      transparent: 'rgba(255, 126, 91, 0.5)',
       dark: '#E86D4B'
     },
     10: {

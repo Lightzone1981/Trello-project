@@ -15,23 +15,13 @@
   }
 
   &--done {
-    background-color: #d1d1d1;
-    color: #777777;
+    background-color: #c0c0c0;
+    color: #6a6a6a;
     .task-card__title {
       text-decoration: line-through;
     }
   }
-  &--progress {
-    .task-card__buttons-container {
-      background-color: $color1;
-      .card__button {
-        filter: brightness(0.1);
-        &:hover {
-          filter: brightness(0);
-        }
-      }
-    }
-  }
+ 
 
   &__info-container {
     flex-grow: 1;
@@ -129,7 +119,20 @@
     .card__button-move-back {
       width: 1.2rem;
       height: 1.2rem;
-      background: url('../assets/icons/move-back-icon.svg') center/contain no-repeat;
+      background: url('../assets/icons/move-back-icon.svg') center/cover no-repeat;
+    }
+  }
+
+  &--progress {
+    .task-card__buttons-container {
+      .card__button {
+        filter: brightness(1);
+        opacity: 0.5;
+        &:hover {
+          filter: brightness(1);
+          opacity: 1;
+        }
+      }
     }
   }
 }

@@ -1,3 +1,5 @@
+// меняет пользователя на неопределено, если пользователя нету в списке пользователей, закрепленных к доске
+
 export const resetCardUsers = (usersArray, tasksArray) => {
   return tasksArray.map((element) => {
     const cardUser = element.user

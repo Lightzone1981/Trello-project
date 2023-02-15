@@ -23,15 +23,18 @@ export function handlerEditCard (cardId) {
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
       domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
     }
   }, true)
 
   domElements.modalContainer.addEventListener('click', (event) => {
     if (event.target.id === 'modal-edit-cancel') {
       domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
     }
     if (event.target.id === 'modal-edit-confirm') {
       domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
 
       renderAllData()
       initAllListeners()

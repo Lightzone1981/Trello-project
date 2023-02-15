@@ -16,15 +16,18 @@ export function handlerDeleteBoard () {
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
       domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
     }
   }, true)
 
   domElements.modalOverlayConfirm.addEventListener('click', (event) => {
     if (event.target.id === 'modal-confirm-cancel') {
       domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
     }
     if (event.target.id === 'modal-confirm-confirm') {
       domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
 
       renderAllData()
       initAllListeners()

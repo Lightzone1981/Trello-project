@@ -2,35 +2,58 @@ import { createButton } from './button.js'
 import { getData } from '../utils/dataUtils.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { getColors } from '../utils/getColors.js'
-import { getBackgrounds } from '../utils/getBackgrouds.js'
+import { getBackgrounds } from '../utils/getBackgrounds.js'
+import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
 
 export const createBoardSettingsWindow = () => {
+  const mainColor = getActiveBoardColor('normal')
+
   const boardSettingsWrapper = document.createElement('div')
   boardSettingsWrapper.classList = 'board-settings-wrapper'
 
   const boardSettingsWindow = document.createElement('div')
   boardSettingsWindow.classList = 'board-settings'
+  boardSettingsWindow.style.borderColor = mainColor
+
   boardSettingsWrapper.append(boardSettingsWindow)
 
   const boardSettingsHeader = document.createElement('p')
   boardSettingsHeader.classList = 'board-settings__header'
   boardSettingsHeader.innerText = 'board settings'
+  boardSettingsHeader.style.background = mainColor
+
   boardSettingsWindow.append(boardSettingsHeader)
 
   const boardSettingsForm = document.createElement('form')
   boardSettingsForm.classList = 'board-settings__form'
   boardSettingsWindow.append(boardSettingsForm)
 
+  const boardSettingsFormContainer = document.createElement('div')
+  boardSettingsFormContainer.classList = 'board-settings__form-container'
+
+  boardSettingsForm.append(boardSettingsFormContainer)
+
+  const boardSettingsTitleHeader = document.createElement('p')
+  boardSettingsTitleHeader.classList = 'board-settings__title-header'
+  boardSettingsTitleHeader.innerText = 'Title'
+
   const boardSettingsTitle = document.createElement('input')
   boardSettingsTitle.className = 'board-settings__title'
   boardSettingsTitle.type = 'text'
-  boardSettingsTitle.focus = true
-  boardSettingsForm.append(boardSettingsTitle)
+
+  boardSettingsTitle.onmouseover = function () {
+    boardSettingsTitle.style.borderColor = mainColor
+  }
+  boardSettingsTitle.onmouseout = function () {
+    boardSettingsTitle.style.borderColor = '#737373'
+  }
+
+  boardSettingsFormContainer.append(boardSettingsTitleHeader, boardSettingsTitle)
 
   //  контейнер с backround
   const boardSettingsBackgroundContainer = document.createElement('div')
   boardSettingsBackgroundContainer.classList = 'board-settings__background-container'
-  boardSettingsWindow.append(boardSettingsBackgroundContainer)
+  boardSettingsFormContainer.append(boardSettingsBackgroundContainer)
 
   const boardSettingsBackgroundHeader = document.createElement('p')
   boardSettingsBackgroundHeader.classList = 'board-settings__background-header'
@@ -43,8 +66,7 @@ export const createBoardSettingsWindow = () => {
 
   boardSettingsTitle.value = boardsArray[activeBoardIndex].title
 
-  const BoardBackground = boardsArray[activeBoardIndex].background
-  //   const newBackground = BoardBackground
+  const boardBackground = boardsArray[activeBoardIndex].background
 
   for (let i = 1; i <= 12; i++) {
     const backgroundRadio = document.createElement('input')
@@ -53,7 +75,7 @@ export const createBoardSettingsWindow = () => {
     backgroundRadio.name = 'background-radio'
     backgroundRadio.type = 'radio'
 
-    if (`${i}` === `${BoardBackground}`) {
+    if (`${i}` === `${boardBackground}`) {
       backgroundRadio.checked = true
     }
 
@@ -62,6 +84,7 @@ export const createBoardSettingsWindow = () => {
     backgroundLabel.id = `background-label-${i}`
     backgroundLabel.name = 'background-radio'
     backgroundLabel.setAttribute('for', `${backgroundRadio.id}`)
+
     backgroundLabel.style.background = backgrounds[`${i}`]
 
     boardSettingsBackgroundContainer.append(backgroundRadio, backgroundLabel)
@@ -71,7 +94,7 @@ export const createBoardSettingsWindow = () => {
 
   const boardSettingsColorsContainer = document.createElement('div')
   boardSettingsColorsContainer.classList = 'board-settings__colors-container'
-  boardSettingsWindow.append(boardSettingsColorsContainer)
+  boardSettingsFormContainer.append(boardSettingsColorsContainer)
 
   const boardSettingsColorsHeader = document.createElement('p')
   boardSettingsColorsHeader.classList = 'board-settings__colors-header'
@@ -80,7 +103,6 @@ export const createBoardSettingsWindow = () => {
 
   const colors = getColors()
   const boardColor = boardsArray[activeBoardIndex].color
-  //   const newColor = boardColor
 
   for (let i = 1; i <= 12; i++) {
     const colorsRadio = document.createElement('input')
@@ -103,10 +125,10 @@ export const createBoardSettingsWindow = () => {
   }
 
   boardSettingsForm.append(
-    boardSettingsBackgroundContainer, boardSettingsColorsContainer,
-    createButton('board-settings-save-button', 'board-settings__button', 'Save', 'button'),
-    createButton('board-settings-cancel-button', 'board-settings__button', 'Cancel', 'button'))
+    createButton('board-settings-save-button', 'board-settings__button', 'Save', 'submit', 'Save changes', 'fill'),
+    createButton('board-settings-cancel-button', 'board-settings__button', 'Cancel', 'button', 'Cancel changes', 'fill'))
 
   const root = document.querySelector('#root')
   root.append(boardSettingsWrapper)
+  document.body.style.overflow = 'hidden'
 }

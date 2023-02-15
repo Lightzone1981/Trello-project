@@ -1,4 +1,5 @@
 import { createButton } from '../components/button.js'
+import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
 
 // верстка карточки задания
 export function createTaskCard (cardId, cardType) {
@@ -70,6 +71,8 @@ export function createTaskCard (cardId, cardType) {
     taskCardButtonsContainer.append(divider)
     taskCardButtonsContainer.append(createButton(`${cardId}-card-forward-button`, 'card__button card__button-move-forward', '', 'button', 'Move to done'))
     taskCardButtonsContainer.append(createButton(`${cardId}-card-back-button`, 'card__button card__button-move-back', '', 'button', 'Move back to todo'))
+
+    taskCardButtonsContainer.style.backgroundColor = getActiveBoardColor('normal')
   }
 
   return taskCard
