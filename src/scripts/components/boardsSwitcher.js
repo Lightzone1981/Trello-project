@@ -1,6 +1,8 @@
 
 import { getData } from '../utils/dataUtils.js'
-import { createButton } from '../components/button.js'
+import { createButton } from './button.js'
+import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
+import { getColors } from '../utils/getColors.js'
 
 export function createBoardsSwitcher () {
   const boardsArray = getData()
@@ -10,21 +12,24 @@ export function createBoardsSwitcher () {
 
   boardsArray.forEach((element, index) => {
     index++
+    const labelShowRadioButton = document.createElement('label')
+    labelShowRadioButton.name = 'radio-show-button'
+    labelShowRadioButton.setAttribute('for', `board-radio-button-${element.id}`)
+    labelShowRadioButton.title = `Show board-${index}`
+    labelShowRadioButton.innerText = `board-${index}`
+    labelShowRadioButton.className = 'boards-switcher__radio-button-label'
+
     const boardRadioButton = document.createElement('input')
     boardRadioButton.id = `board-radio-button-${element.id}`
     boardRadioButton.type = 'radio'
     boardRadioButton.className = 'boards-switcher__radio-button'
     if (element.status === 'active') {
       boardRadioButton.checked = true
+      labelShowRadioButton.style.color = getActiveBoardColor('normal')
+    } else {
+      labelShowRadioButton.style.background = getColors()[element.color].transparent
     }
     boardRadioButton.name = 'radio-show-button'
-
-    const labelShowRadioButton = document.createElement('label')
-    labelShowRadioButton.name = 'radio-show-button'
-    labelShowRadioButton.setAttribute('for', `${boardRadioButton.id}`)
-    labelShowRadioButton.title = `Show board-${index}`
-    labelShowRadioButton.innerText = `board-${index}`
-    labelShowRadioButton.className = 'boards-switcher__radio-button-label'
 
     boardSwitcher.append(boardRadioButton, labelShowRadioButton)
   })

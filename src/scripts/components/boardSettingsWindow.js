@@ -53,7 +53,6 @@ export const createBoardSettingsWindow = () => {
   boardSettingsTitle.value = boardsArray[activeBoardIndex].title
 
   const boardBackground = boardsArray[activeBoardIndex].background
-  //   const newBackground = BoardBackground
 
   for (let i = 1; i <= 12; i++) {
     const backgroundRadio = document.createElement('input')
@@ -90,7 +89,6 @@ export const createBoardSettingsWindow = () => {
 
   const colors = getColors()
   const boardColor = boardsArray[activeBoardIndex].color
-  //   const newColor = boardColor
 
   for (let i = 1; i <= 12; i++) {
     const colorsRadio = document.createElement('input')
@@ -113,7 +111,7 @@ export const createBoardSettingsWindow = () => {
   }
 
   boardSettingsForm.append(
-    createButton('board-settings-save-button', 'board-settings__button', 'Save', 'button'),
+    createButton('board-settings-save-button', 'board-settings__button', 'Save', 'submit'),
     createButton('board-settings-cancel-button', 'board-settings__button', 'Cancel', 'button'))
 
   const root = document.querySelector('#root')

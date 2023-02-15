@@ -6,6 +6,7 @@ import { getDomElements } from '../utils/getDomElements.js'
 // верстка доски
 export function renderBoard () {
   const domElements = getDomElements()
+
   domElements.boardsContainer.innerHTML = ''
 
   const board = document.createElement('main')

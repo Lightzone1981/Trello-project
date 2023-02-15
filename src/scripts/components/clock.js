@@ -1,3 +1,5 @@
+import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
+
 // генерирует и отображает текущее время
 export const updateTime = () => {
   const date = new Date()
@@ -13,10 +15,12 @@ export const updateTime = () => {
 export const createClock = () => {
   const clock = document.createElement('div')
   clock.className = 'clock'
-
+  clock.id = 'clock'
   const clockInfo = document.createElement('p')
   clockInfo.className = 'clock__info'
   clockInfo.id = 'clock-info'
+  clockInfo.style.borderColor = getActiveBoardColor('normal')
+
   clock.append(clockInfo)
 
   setInterval(updateTime, 1000)
