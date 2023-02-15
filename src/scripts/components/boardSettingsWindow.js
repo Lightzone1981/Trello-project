@@ -3,18 +3,25 @@ import { getData } from '../utils/dataUtils.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { getColors } from '../utils/getColors.js'
 import { getBackgrounds } from '../utils/getBackgrouds.js'
+import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
 
 export const createBoardSettingsWindow = () => {
+  const mainColor = getActiveBoardColor('normal')
+
   const boardSettingsWrapper = document.createElement('div')
   boardSettingsWrapper.classList = 'board-settings-wrapper'
 
   const boardSettingsWindow = document.createElement('div')
   boardSettingsWindow.classList = 'board-settings'
+  boardSettingsWindow.style.borderColor = mainColor
+
   boardSettingsWrapper.append(boardSettingsWindow)
 
   const boardSettingsHeader = document.createElement('p')
   boardSettingsHeader.classList = 'board-settings__header'
   boardSettingsHeader.innerText = 'board settings'
+  boardSettingsHeader.style.background = mainColor
+
   boardSettingsWindow.append(boardSettingsHeader)
 
   const boardSettingsForm = document.createElement('form')
@@ -111,8 +118,8 @@ export const createBoardSettingsWindow = () => {
   }
 
   boardSettingsForm.append(
-    createButton('board-settings-save-button', 'board-settings__button', 'Save', 'submit'),
-    createButton('board-settings-cancel-button', 'board-settings__button', 'Cancel', 'button'))
+    createButton('board-settings-save-button', 'board-settings__button', 'Save', 'submit', 'Save changes', 'fill'),
+    createButton('board-settings-cancel-button', 'board-settings__button', 'Cancel', 'button', 'Cancel changes', 'fill'))
 
   const root = document.querySelector('#root')
   root.append(boardSettingsWrapper)

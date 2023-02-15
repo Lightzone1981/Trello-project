@@ -28,27 +28,12 @@ export function createPanel (type) {
 
   switch (type) {
     case 'todo': {
-      const addCardButton = createButton('add-new-card-button', 'panel__button', 'Add new card', 'button', 'Create new task')
-      addCardButton.style.backgroundColor = getActiveBoardColor('transparent')
-
-      addCardButton.onmouseover = function () {
-        addCardButton.style.backgroundColor = getActiveBoardColor('normal')
-      }
-      addCardButton.onmouseout = function () {
-        addCardButton.style.backgroundColor = getActiveBoardColor('transparent')
-      }
+      const addCardButton = createButton('add-new-card-button', 'panel__button', 'Add new card', 'button', 'Create new task', 'fill')
       panel.append(addCardButton)
       break
     }
     case 'done': {
-      const deleteCardButton = createButton('delete-all-button', 'panel__button', 'Delete All', 'button', 'Delete all completed cards')
-      deleteCardButton.style.backgroundColor = getActiveBoardColor('transparent')
-      deleteCardButton.onmouseover = function () {
-        deleteCardButton.style.backgroundColor = getActiveBoardColor('normal')
-      }
-      deleteCardButton.onmouseout = function () {
-        deleteCardButton.style.backgroundColor = getActiveBoardColor('transparent')
-      }
+      const deleteCardButton = createButton('delete-all-button', 'panel__button', 'Delete All', 'button', 'Delete all completed cards', 'fill')
       panel.append(deleteCardButton)
       panelContainer.style.backgroundColor = getActiveBoardColor('transparent')
       panelContainer.onmouseover = function () {

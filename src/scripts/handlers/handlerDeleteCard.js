@@ -5,7 +5,7 @@ import { getDomElements } from '../utils/getDomElements.js'
 import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 
 export function handlerDeleteCard (cardId) {
-  initConfirmModalWindow('Do you want to delete all tasks?')
+  initConfirmModalWindow('Do you want to delete current task?')
   const boardObjects = getData()
   const arrayCards = boardObjects[0].tasksArray
   const domElements = getDomElements()
