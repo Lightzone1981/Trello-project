@@ -33,6 +33,7 @@ export function handlerEditCard (cardId) {
       document.body.style.overflow = 'auto'
     }
     if (event.target.id === 'modal-edit-confirm') {
+      event.preventDefault()
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
 

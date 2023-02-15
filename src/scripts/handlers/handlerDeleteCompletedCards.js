@@ -6,7 +6,7 @@ import { initAllListeners } from '../initAllListeners.js'
 import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 
 export function handlerDeleteCompletedCards (id = '', elem) {
-  initConfirmModalWindow('Do you want to delete all completed tasks?')
+  initConfirmModalWindow('Delete all completed tasks?')
 
   const domElements = getDomElements()
 
@@ -17,12 +17,12 @@ export function handlerDeleteCompletedCards (id = '', elem) {
     }
   }, true)
 
-  domElements.modalOverlayConfirm.addEventListener('click', (event) => {
-    if (event.target.id === 'modal-confirm-cancel') {
+  domElements.modalConfirmContainer.addEventListener('click', (event) => {
+    if (event.target.id === 'modal-cancel') {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
     }
-    if (event.target.id === 'modal-confirm-confirm') {
+    if (event.target.id === 'modal-confirm') {
       const boardsArray = getData()
       const activeBoardIndex = getActiveBoardIndex()
       const boardTasksArray = boardsArray[activeBoardIndex].tasksArray
