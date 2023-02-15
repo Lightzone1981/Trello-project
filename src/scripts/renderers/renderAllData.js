@@ -5,8 +5,10 @@ import { renderBoard } from './renderBoard.js'
 import { getDomElements } from '../utils/getDomElements'
 import { renderBoardsSwitcher } from './renderBoardSwitcher.js'
 import { renderClock } from './renderClock.js'
+import { renderBoardBackground } from './renderBoardBackground.js'
 
 export const renderAllData = () => {
+  renderBoardBackground()
   renderBoard()
   renderBoardsSwitcher()
   renderClock()

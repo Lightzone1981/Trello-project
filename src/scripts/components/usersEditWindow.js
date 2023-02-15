@@ -23,6 +23,13 @@ export const createUsersEditWindow = () => {
   newUserSelect.classList = 'users-edit__select'
   newUserSelect.name = 'users-edit-select'
 
+  newUserSelect.onmouseover = function () {
+    newUserSelect.style.borderColor = mainColor
+  }
+  newUserSelect.onmouseout = function () {
+    newUserSelect.style.borderColor = 'transparent'
+  }
+
   usersAddForm.append(newUserSelect,
     createButton('user-edit-select-button', 'user-edit__button', 'Add to project', 'submit', '', 'fill'))
 

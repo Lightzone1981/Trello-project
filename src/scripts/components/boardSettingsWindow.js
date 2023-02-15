@@ -2,7 +2,7 @@ import { createButton } from './button.js'
 import { getData } from '../utils/dataUtils.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { getColors } from '../utils/getColors.js'
-import { getBackgrounds } from '../utils/getBackgrouds.js'
+import { getBackgrounds } from '../utils/getBackgrounds.js'
 import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
 
 export const createBoardSettingsWindow = () => {
@@ -40,7 +40,14 @@ export const createBoardSettingsWindow = () => {
   const boardSettingsTitle = document.createElement('input')
   boardSettingsTitle.className = 'board-settings__title'
   boardSettingsTitle.type = 'text'
-  boardSettingsTitle.focus = true
+
+  boardSettingsTitle.onmouseover = function () {
+    boardSettingsTitle.style.borderColor = mainColor
+  }
+  boardSettingsTitle.onmouseout = function () {
+    boardSettingsTitle.style.borderColor = '#737373'
+  }
+
   boardSettingsFormContainer.append(boardSettingsTitleHeader, boardSettingsTitle)
 
   //  контейнер с backround

@@ -27,6 +27,7 @@ export const handlerChangeBoardSettings = () => {
     // событие нажатия кнопки "save"
     if (event.target.id === 'board-settings-save-button') {
       event.preventDefault()
+      newBoard.title = domElements.boardSettingsTitle.value
 
       const backgroundLabels = document.querySelectorAll('.board-settings__background-radio')
       backgroundLabels.forEach((item) => {
