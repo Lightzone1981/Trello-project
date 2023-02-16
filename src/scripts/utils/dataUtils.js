@@ -159,18 +159,17 @@ export function getUniqId () {
 }
 
 export function createNewCard (cardTitle, cardDescription, cardUser) {
-  const boardsArray = getData()
-  const newCard = {
+  return {
     type: 'todo',
     id: getUniqId(),
+    panelIndex: 0,
     title: cardTitle,
     description: cardDescription,
     user: cardUser,
     creationTime: getCreationDate(),
-    getterTime: '21.12.2022 20:00'
+    takenTime: '',
+    completedTime: ''
   }
-  boardsArray.forEach(item => item.tasksArray.push(newCard))
-  setData(boardsArray, getUniqId())
 }
 
 export function createNewBoard () {

@@ -20,6 +20,15 @@ export function initEditCardModalWindow (cardId) {
 
   modalOverlay.append(modalContainer)
 
+  const modalMessage = document.createElement('h2')
+  modalMessage.classList = 'modal-edit__message'
+  if (cardId !== 'new') {
+    modalMessage.innerText = 'Changing task information'
+  } else {
+    modalMessage.innerText = 'Create new task'
+  }
+  modalContainer.append(modalMessage)
+
   const cardInfo = document.createElement('div')
   cardInfo.className = 'modal-edit__card-info'
   modalContainer.append(cardInfo)
@@ -39,8 +48,6 @@ export function initEditCardModalWindow (cardId) {
   userSelect.id = 'select'
   userSelect.className = 'users-edit__select'
 
-  fillSelectList(arrayUsers, userSelect)
-
   cardInfo.append(modalTitle, modalDescription, userSelect)
 
   const modalFooter = document.createElement('div')
@@ -50,14 +57,19 @@ export function initEditCardModalWindow (cardId) {
 
   modalContainer.append(cardInfo, modalFooter)
 
-  arrayCards.forEach(item => {
-    if (item.id === cardId) {
-      modalTitle.value = item.title
-      modalDescription.innerText = item.description
-      userSelect.innerText = item.user
-    }
-  })
   const root = document.querySelector('#root')
   root.prepend(modalOverlay)
   document.body.style.overflow = 'hidden'
+
+  if (cardId !== 'new') {
+    arrayCards.forEach(item => {
+      if (item.id === cardId) {
+        modalTitle.value = item.title
+        modalDescription.innerText = item.description
+        fillSelectList(arrayUsers, userSelect, item.user)
+      }
+    })
+  } else {
+    fillSelectList(arrayUsers, userSelect, 'empty')
+  }
 }

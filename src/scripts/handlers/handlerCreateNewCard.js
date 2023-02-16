@@ -1,14 +1,14 @@
 import { initEditCardModalWindow } from '../components/editCardModalWindow.js'
 import { initAllListeners } from '../initAllListeners.js'
-// import { getData } from '../utils/dataUtils.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 import { getDomElements } from '../utils/getDomElements.js'
-// import { fillSelectList } from '../utils/fillSelectList.js'
+import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
+import { getData, setData, createNewCard } from '../utils/dataUtils.js'
 
 export const handlerCreateNewCard = () => {
 //   const boardObjects = getData()
 
-  initEditCardModalWindow()
+  initEditCardModalWindow('new')
   const domElements = getDomElements()
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
@@ -22,6 +22,18 @@ export const handlerCreateNewCard = () => {
     }
     if (event.target.id === 'modal-edit-confirm') {
       domElements.modalOverlay.remove()
+      const boardsArray = getData()
+      const activeBoardIndex = getActiveBoardIndex()
+
+      const userData = domElements.newUserSelect.value !== 'empty' || 'user is not assigned'
+
+      boardsArray[activeBoardIndex].tasksArray.push(createNewCard(
+        domElements.modalTitle.value,
+        domElements.modalDescription.value,
+        userData
+      ))
+
+      setData(boardsArray)
 
       renderAllData()
       initAllListeners()

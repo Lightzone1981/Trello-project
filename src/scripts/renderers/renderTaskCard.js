@@ -1,10 +1,11 @@
 import { createTaskCard } from '../components/taskCard.js'
 import { getData } from '../utils/dataUtils.js'
+import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 
 // отрисовывает карточку задачи в соответствиями с типом панели и данными карточки
 export const renderTaskCard = (panelType, cardObject) => {
   const boardsArray = getData()
-  const usersArray = boardsArray[0].usersArray
+  const usersArray = boardsArray[getActiveBoardIndex()].usersArray
 
   const panelContainer = document.querySelector(`#panel-container-${panelType}`)
 
@@ -27,14 +28,13 @@ export const renderTaskCard = (panelType, cardObject) => {
 
   if (cardObject.user !== 'user is not assigned') {
     usersArray.forEach(element => {
-      if (element.id === cardObject.user) {
+      if (`${element.id}` === `${cardObject.user}`) {
         taskCardUser.innerText = element.name
         taskCardUserImg.src = element.src
       }
     })
   } else {
-    taskCardUser.innerText = 'user is not assigned'
-    taskCardUserImg.remove()
+    taskCardUser.remove()
     userImgContainer.remove()
   }
 }

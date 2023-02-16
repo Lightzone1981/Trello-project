@@ -35,6 +35,10 @@ export const getDomElements = () => {
 
     modalOverlay: document.querySelector('.modal-overlay'),
     modalConfirmContainer: document.querySelector('.modal-confirm__container'),
+
+    modalTitle: document.querySelector('.modal-edit__title'),
+    modalDescription: document.querySelector('.modal-edit__description'),
+
     deleteAllButton: document.querySelector('#delete-all-button')
 
   }

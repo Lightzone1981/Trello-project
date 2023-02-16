@@ -1,21 +1,20 @@
 import { initEditCardModalWindow } from '../components/editCardModalWindow.js'
 import { initAllListeners } from '../initAllListeners.js'
-import { getData } from '../utils/dataUtils.js'
+import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
+import { getData, setData } from '../utils/dataUtils.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 import { getDomElements } from '../utils/getDomElements.js'
-import { fillSelectList } from '../utils/fillSelectList.js'
 
 export function handlerEditCard (cardId) {
-  const boardObjects = getData()
-  const arrayCards = boardObjects[0].tasksArray
-  const arrayUsers = boardObjects[0].usersArray
+  const boardsArray = getData()
+  const activeBoardIndex = getActiveBoardIndex()
+  const cardsArray = boardsArray[activeBoardIndex].tasksArray
+
   const idNumber = cardId.split('-')[0]
 
-  arrayCards.forEach(item => {
+  cardsArray.forEach(item => {
     if (String(item.id) === String(idNumber)) {
       initEditCardModalWindow(item.id)
-      const select = document.querySelector('#select')
-      fillSelectList(arrayUsers, select)
     }
   })
   const domElements = getDomElements()
@@ -37,6 +36,21 @@ export function handlerEditCard (cardId) {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
 
+      cardsArray.forEach(item => {
+        if (String(item.id) === String(idNumber)) {
+          item.title = domElements.modalTitle.value
+          item.description = domElements.modalDescription.value
+
+          if (domElements.newUserSelect.value === 'empty') {
+            item.user = 'user is not assigned'
+          } else {
+            item.user = domElements.newUserSelect.value
+          }
+        }
+      })
+
+      boardsArray[activeBoardIndex].tasksArray = cardsArray
+      setData(boardsArray)
       renderAllData()
       initAllListeners()
     }

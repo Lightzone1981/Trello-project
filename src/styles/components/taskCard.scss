@@ -25,18 +25,23 @@
 
   &__info-container {
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
     gap: 0.5rem;
-    padding: 1rem;
+    width: 80%;
+    margin-right:auto;
+    padding: 1rem 0.5rem 1rem 1rem;
 
     .task-card__title {
       font-size: 0.9rem;
       font-weight: 700;
+      overflow-wrap: break-word;
+      padding-bottom: 1rem;
     }
 
     .taskCard__description {
       font-size: 0.8rem;
+      word-wrap:break-word;
+      padding-bottom: 1rem;
+
     }
     .task-card__footer {
       display: flex;

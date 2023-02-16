@@ -5,6 +5,12 @@
     flex-direction: column;
     gap: 2rem;
 
+    .modal-edit__message{
+        color:#fff;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
     .modal-edit__card-info {
 
         background-color: #fff;
@@ -32,7 +38,7 @@
             }
 
             &:hover {
-                border-color: $color1;
+                border-color: #151515;
             }
 
             &::placeholder {
@@ -41,6 +47,7 @@
         }
 
         .modal-edit__description {
+            
             resize:none;
             min-height: 10rem;
             font-size: 1rem;

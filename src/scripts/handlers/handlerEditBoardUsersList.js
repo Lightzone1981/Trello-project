@@ -30,7 +30,7 @@ export const handlerEditBoardUsersList = () => {
 
   domElements.usersEditHeader.innerText = `${boardsArray[activeBoardIndex].title}  |  users`
   fillUserContainer(newUsersArray, domElements.userEditContainer)
-  fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
+  fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect, 'empty')
 
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
@@ -46,7 +46,7 @@ export const handlerEditBoardUsersList = () => {
       event.preventDefault()
 
       allUsers.forEach((item) => {
-        if (domElements.newUserSelect.value === item.name) {
+        if (`${domElements.newUserSelect.value}` === `${item.id}`) {
           newUsersArray.push(item)
           fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
           fillUserContainer(newUsersArray, domElements.userEditContainer)
