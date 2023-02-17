@@ -1,14 +1,14 @@
-import { initAllListeners } from '../initAllListeners.js'
 import { getData, setData } from '../utils/dataUtils.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
-import { renderAllData } from '../renderers/renderAllData.js'
+import { renderPanel } from '../renderers/renderPanel.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 
-export function handlerDeleteCard (cardId) {
+export function handlerDeleteCard (cardId, cardType) {
   initConfirmModalWindow('Do you want to delete current task?')
-  const boardObjects = getData()
-  const arrayCards = boardObjects[getActiveBoardIndex()].tasksArray
+  const boardsArray = getData()
+  const activeBoardIndex = getActiveBoardIndex()
+  const cardsArray = boardsArray[activeBoardIndex][`${cardType}Tasks`]
   const domElements = getDomElements()
 
   domElements.modalConfirmContainer.addEventListener('click', (event) => {
@@ -18,18 +18,20 @@ export function handlerDeleteCard (cardId) {
     }
     if (event.target.id === 'modal-confirm') {
       const idNumber = cardId.split('-')[0]
-      arrayCards.forEach((item) => {
+
+      cardsArray.forEach((item, index) => {
         if (String(item.id) === String(idNumber)) {
+          const panelType = item.type
           item.type = 'delete'
-          domElements.modalOverlay.remove()
-          document.body.style.overflow = 'auto'
-
-          setData(boardObjects)
-
-          renderAllData()
-          initAllListeners()
+          boardsArray[activeBoardIndex].deleteTasks.push(item)
+          cardsArray.splice(index, 1)
+          setData(boardsArray)
+          renderPanel(domElements, panelType)
         }
       })
+
+      domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
     }
   })
 

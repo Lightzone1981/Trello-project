@@ -1,5 +1,4 @@
 import { getData, getTasksCount } from '../utils/dataUtils.js'
-import { scrollDown } from '../utils/scrollDown.js'
 import { clear } from '../utils/clearComponent.js'
 import { renderTaskCard } from './renderTaskCard.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
@@ -14,19 +13,18 @@ function getCompletedCardsCount (cardsArray) {
 export const renderPanel = (domElements, panelType) => {
   const boardsArray = getData()
   const activeBoardIndex = getActiveBoardIndex()
-  const cardsArray = boardsArray[activeBoardIndex].tasksArray
-
-  domElements[`${panelType}Count`].innerText = getTasksCount(cardsArray, panelType)
+  const cardsArray = boardsArray[activeBoardIndex][`${panelType}Tasks`]
+  const taskCount = getTasksCount(cardsArray, panelType)
+  domElements[`${panelType}Count`].innerText = taskCount
   clear(domElements[`${panelType}PanelContainer`])
 
-  cardsArray.forEach(item => {
-    if (item.type === panelType) {
-      renderTaskCard(panelType, item)
-    }
-  })
-  scrollDown(domElements[`${panelType}PanelContainer`])
+  cardsArray.forEach(item => renderTaskCard(panelType, item))
 
-  if (!getCompletedCardsCount(cardsArray)) {
-    domElements.deleteAllButton.style.display = 'none'
+  if (panelType === 'done') {
+    if (!getCompletedCardsCount(cardsArray)) {
+      domElements.deleteAllButton.style.display = 'none'
+    } else {
+      domElements.deleteAllButton.style.display = 'block'
+    }
   }
 }

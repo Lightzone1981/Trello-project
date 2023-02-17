@@ -8,7 +8,7 @@ export function initEditCardModalWindow (cardId) {
   const boardsArray = getData()
   const activeBoardIndex = getActiveBoardIndex()
 
-  const arrayCards = boardsArray[activeBoardIndex].tasksArray
+  const arrayCards = boardsArray[activeBoardIndex].todoTasks
   const arrayUsers = boardsArray[activeBoardIndex].usersArray
 
   const modalOverlay = document.createElement('div')

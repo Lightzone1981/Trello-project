@@ -1,25 +1,33 @@
-import { initAllListeners } from '../initAllListeners.js'
 import { getData, setData } from '../utils/dataUtils.js'
-import { renderAllData } from '../renderers/renderAllData.js'
+import { renderPanel } from '../renderers/renderPanel.js'
+import { scrollDown } from '../utils/scrollDown.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
-
 import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 
-export function handlerMoveCardForward (cardId) {
+export function handlerMoveCardForward (cardId, cardType) {
   const boardsArray = getData()
-  const cardsArray = boardsArray[getActiveBoardIndex()].tasksArray
-
+  const activeBoardIndex = getActiveBoardIndex()
+  const cardsArray = boardsArray[activeBoardIndex][`${cardType}Tasks`]
+  const domElements = getDomElements()
   const idNumber = cardId.split('-')[0]
-  cardsArray.forEach((item) => {
+
+  cardsArray.forEach((item, index) => {
     if (String(item.id) === String(idNumber)) {
       if (item.type === 'todo') {
         item.type = 'progress'
-        boardsArray[getActiveBoardIndex()].tasksArray = cardsArray
+        boardsArray[activeBoardIndex].progressTasks.push(item)
+        cardsArray.splice(index, 1)
+
         setData(boardsArray)
-        renderAllData()
-        initAllListeners()
-      } else if (item.type === 'progress') {
+        renderPanel(domElements, 'todo')
+        renderPanel(domElements, 'progress')
+        scrollDown(domElements.progressPanelContainer)
+
+        return
+      }
+
+      if (item.type === 'progress') {
         initConfirmModalWindow('Move task to completed?')
         const domElements = getDomElements()
 
@@ -36,11 +44,15 @@ export function handlerMoveCardForward (cardId) {
           }
           if (event.target.id === 'modal-confirm') {
             item.type = 'done'
+            boardsArray[activeBoardIndex].doneTasks.push(item)
+            cardsArray.splice(index, 1)
+
             domElements.modalOverlay.remove()
-            boardsArray[getActiveBoardIndex()].tasksArray = cardsArray
+
             setData(boardsArray)
-            renderAllData()
-            initAllListeners()
+            renderPanel(domElements, 'progress')
+            renderPanel(domElements, 'done')
+            scrollDown(domElements.donePanelContainer)
           }
         })
       }

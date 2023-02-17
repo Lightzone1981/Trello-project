@@ -2,7 +2,6 @@ import { createBoardSettingsWindow } from '../components/boardSettingsWindow.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { getData, setData } from '../utils/dataUtils.js'
-
 import { renderAllData } from '../renderers/renderAllData.js'
 import { initAllListeners } from '../initAllListeners.js'
 

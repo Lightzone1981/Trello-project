@@ -76,7 +76,9 @@ export const handlerEditBoardUsersList = () => {
     // событие нажатия кнопки "save"
     if (event.target.id === 'user-edit-save-button') {
       boardsArray[activeBoardIndex].usersArray = newUsersArray
-      boardsArray[activeBoardIndex].tasksArray = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].tasksArray)
+      boardsArray[activeBoardIndex].todoTasks = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].todoTasks)
+      boardsArray[activeBoardIndex].progressTasks = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].progressTasks)
+      boardsArray[activeBoardIndex].doneTasks = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].doneTasks)
       setData(boardsArray)
       domElements.usersEditWrapper.remove()
       document.body.style.overflow = 'auto'

@@ -27,7 +27,14 @@ export const initAllListeners = () => {
 
     // событие нажатия кнопки "удалить карточку"
     if (event.target.id.indexOf('card-delete-button') !== -1) {
-      handlerDeleteCard(event.target.id)
+      const allCards = document.querySelectorAll('.task-card')
+      const idNumber = event.target.id.split('-')[0]
+
+      allCards.forEach((card) => {
+        if (card.id.indexOf(idNumber) !== -1) {
+          handlerDeleteCard(event.target.id, card.classList.value.split('--').at(-1))
+        }
+      })
     }
 
     // событие нажатия кнопки "редактировать карточку"
@@ -36,8 +43,16 @@ export const initAllListeners = () => {
     }
 
     // событие нажатия кнопки "переместить карточку вперед"
+
     if (event.target.id.indexOf('card-forward-button') !== -1) {
-      handlerMoveCardForward(event.target.id)
+      const allCards = document.querySelectorAll('.task-card')
+      const idNumber = event.target.id.split('-')[0]
+
+      allCards.forEach((card) => {
+        if (card.id.indexOf(idNumber) !== -1) {
+          handlerMoveCardForward(event.target.id, card.classList.value.split('--').at(-1))
+        }
+      })
     }
 
     // событие нажатия кнопки "переместить карточку назад"

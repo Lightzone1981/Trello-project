@@ -1,13 +1,11 @@
 import { initEditCardModalWindow } from '../components/editCardModalWindow.js'
-import { initAllListeners } from '../initAllListeners.js'
-import { renderAllData } from '../renderers/renderAllData.js'
+import { renderPanel } from '../renderers/renderPanel.js'
 import { getDomElements } from '../utils/getDomElements.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { getData, setData, createNewCard } from '../utils/dataUtils.js'
+import { scrollDown } from '../utils/scrollDown.js'
 
 export const handlerCreateNewCard = () => {
-//   const boardObjects = getData()
-
   initEditCardModalWindow('new')
   const domElements = getDomElements()
   window.addEventListener('keydown', (event) => {
@@ -25,18 +23,23 @@ export const handlerCreateNewCard = () => {
       const boardsArray = getData()
       const activeBoardIndex = getActiveBoardIndex()
 
-      const userData = domElements.newUserSelect.value !== 'empty' || 'user is not assigned'
-
-      boardsArray[activeBoardIndex].tasksArray.push(createNewCard(
-        domElements.modalTitle.value,
-        domElements.modalDescription.value,
-        userData
-      ))
+      if (domElements.newUserSelect.value === 'empty') {
+        boardsArray[activeBoardIndex].todoTasks.push(createNewCard(
+          domElements.modalTitle.value,
+          domElements.modalDescription.value,
+          'user is not assigned'
+        ))
+      } else {
+        boardsArray[activeBoardIndex].todoTasks.push(createNewCard(
+          domElements.modalTitle.value,
+          domElements.modalDescription.value,
+          domElements.newUserSelect.value
+        ))
+      }
 
       setData(boardsArray)
-
-      renderAllData()
-      initAllListeners()
+      renderPanel(domElements, 'todo')
+      scrollDown(domElements.todoPanelContainer)
     }
   })
 }

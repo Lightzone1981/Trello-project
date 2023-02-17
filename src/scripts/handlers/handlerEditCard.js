@@ -1,14 +1,13 @@
 import { initEditCardModalWindow } from '../components/editCardModalWindow.js'
-import { initAllListeners } from '../initAllListeners.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { getData, setData } from '../utils/dataUtils.js'
-import { renderAllData } from '../renderers/renderAllData.js'
+import { renderPanel } from '../renderers/renderPanel.js'
 import { getDomElements } from '../utils/getDomElements.js'
 
 export function handlerEditCard (cardId) {
   const boardsArray = getData()
   const activeBoardIndex = getActiveBoardIndex()
-  const cardsArray = boardsArray[activeBoardIndex].tasksArray
+  const cardsArray = boardsArray[activeBoardIndex].todoTasks
 
   const idNumber = cardId.split('-')[0]
 
@@ -33,8 +32,6 @@ export function handlerEditCard (cardId) {
     }
     if (event.target.id === 'modal-edit-confirm') {
       event.preventDefault()
-      domElements.modalOverlay.remove()
-      document.body.style.overflow = 'auto'
 
       cardsArray.forEach(item => {
         if (String(item.id) === String(idNumber)) {
@@ -49,10 +46,11 @@ export function handlerEditCard (cardId) {
         }
       })
 
-      boardsArray[activeBoardIndex].tasksArray = cardsArray
+      domElements.modalOverlay.remove()
+      document.body.style.overflow = 'auto'
+
       setData(boardsArray)
-      renderAllData()
-      initAllListeners()
+      renderPanel(domElements, 'todo')
     }
   })
 }

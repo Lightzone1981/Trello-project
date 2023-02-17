@@ -8,10 +8,11 @@ export function getData () {
       background: 1,
       color: 1,
       status: 'active',
-      tasksArray: [
+      todoTasks: [
         {
           type: 'todo',
           id: 11,
+          panelIndex: 0,
           title: 'Разработка динамической верстки',
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
           user: 7,
@@ -20,8 +21,9 @@ export function getData () {
           completedTime: ''
         },
         {
-          type: 'progress',
+          type: 'todo',
           id: 12,
+          panelIndex: 1,
           title: 'Написание UI',
           description: 'Написать UI с помощью scss, использовать вложенность',
           user: 8,
@@ -30,8 +32,9 @@ export function getData () {
           completedTime: ''
         },
         {
-          type: 'done',
+          type: 'todo',
           id: 13,
+          panelIndex: 2,
           title: 'Тест приложения',
           description: 'Протестировать приложение, найти баги, составить отчет',
           user: 7,
@@ -42,6 +45,7 @@ export function getData () {
         {
           type: 'todo',
           id: 14,
+          panelIndex: 3,
           title: '11111111',
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
           user: 11,
@@ -52,6 +56,7 @@ export function getData () {
         {
           type: 'todo',
           id: 15,
+          panelIndex: 4,
           title: '22222222',
           description: 'Написать UI с помощью scss, использовать вложенность',
           user: 10,
@@ -62,6 +67,7 @@ export function getData () {
         {
           type: 'todo',
           id: 16,
+          panelIndex: 5,
           title: '3333333',
           description: 'Протестировать приложение, найти баги, составить отчет',
           user: 9,
@@ -70,6 +76,9 @@ export function getData () {
           completedTime: ''
         }
       ],
+      progressTasks: [],
+      doneTasks: [],
+      deleteTasks: [],
       usersArray: [
         {
           id: 7,
@@ -180,7 +189,10 @@ export function createNewBoard () {
     background: 1,
     color: 1,
     status: 'disable',
-    tasksArray: [],
+    todoTasks: [],
+    progressTasks: [],
+    doneTasks: [],
+    deleteTasks: [],
     usersArray: []
   }
   boardsArray.push(newBoard)
