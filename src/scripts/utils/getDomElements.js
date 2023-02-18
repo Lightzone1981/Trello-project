@@ -45,7 +45,11 @@ export const getDomElements = () => {
     modalTitle: document.querySelector('.modal-edit__title'),
     modalDescription: document.querySelector('.modal-edit__description'),
 
-    deleteAllButton: document.querySelector('#delete-all-button')
+    deleteAllButton: document.querySelector('#delete-all-button'),
+
+    todoArrowTop: document.querySelector('#arrow-top-todo'),
+    progressArrowTop: document.querySelector('#arrow-top-progress'),
+    doneArrowTop: document.querySelector('#arrow-top-done')
 
   }
 }

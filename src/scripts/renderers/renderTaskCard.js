@@ -46,6 +46,10 @@ export const renderTaskCard = (panelType, cardObject) => {
         taskCardUserImg.src = element.src
       }
     })
+    if (cardObject.user === 'user is not assigned') {
+      taskCardUser.remove()
+      userImgContainer.remove()
+    }
   } else {
     if (cardObject.user !== 'user is not assigned') {
       usersArray.forEach(element => {

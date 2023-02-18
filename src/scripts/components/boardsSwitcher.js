@@ -35,7 +35,7 @@ export function createBoardsSwitcher () {
       boardSwitcher.append(boardRadioButton, labelShowRadioButton)
     })
   }
-  if (boardsArray.length < 5) {
+  if (boardsArray.length < 3) {
     boardSwitcher.append(createButton('boards-switcher-button-add', 'boards-switcher__button-add', '', 'button', 'Add new board'))
   }
   return boardSwitcher

@@ -2,6 +2,8 @@ import { getData } from '../utils/dataUtils.js'
 import { clear } from '../utils/clearComponent.js'
 import { renderTaskCard } from './renderTaskCard.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
+import { initScrollArrow } from './initScrollArrow.js'
+import { createArrowTop } from '../components/arrowTop.js'
 
 function getCompletedCardsCount (cardsArray) {
   return cardsArray.reduce((acc, item) => {
@@ -18,6 +20,8 @@ export const renderPanel = (domElements, panelType) => {
   domElements[`${panelType}Count`].innerText = taskCount
   clear(domElements[`${panelType}PanelContainer`])
 
+  domElements[`${panelType}PanelContainer`].append(createArrowTop(panelType))
+
   cardsArray.forEach(item => renderTaskCard(panelType, item))
 
   if (panelType === 'done') {
@@ -27,4 +31,5 @@ export const renderPanel = (domElements, panelType) => {
       domElements.deleteAllButton.style.display = 'block'
     }
   }
+  initScrollArrow(panelType)
 }

@@ -1,5 +1,6 @@
 import { createButton } from './button.js'
 import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
+import { createArrowTop } from './arrowTop.js'
 
 // верстка панели для карточек
 export function createPanel (type) {
@@ -24,6 +25,7 @@ export function createPanel (type) {
   const panelContainer = document.createElement('div')
   panelContainer.className = 'panel__container'
   panelContainer.id = `panel-container-${type}`
+  panelContainer.append(createArrowTop(type))
   panel.append(panelContainer)
 
   switch (type) {
