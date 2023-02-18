@@ -1,4 +1,4 @@
-import { getData, getTasksCount } from '../utils/dataUtils.js'
+import { getData } from '../utils/dataUtils.js'
 import { clear } from '../utils/clearComponent.js'
 import { renderTaskCard } from './renderTaskCard.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
@@ -14,7 +14,7 @@ export const renderPanel = (domElements, panelType) => {
   const boardsArray = getData()
   const activeBoardIndex = getActiveBoardIndex()
   const cardsArray = boardsArray[activeBoardIndex][`${panelType}Tasks`]
-  const taskCount = getTasksCount(cardsArray, panelType)
+  const taskCount = cardsArray.length
   domElements[`${panelType}Count`].innerText = taskCount
   clear(domElements[`${panelType}PanelContainer`])
 

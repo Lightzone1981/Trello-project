@@ -1,4 +1,5 @@
 import { initEditCardModalWindow } from '../components/editCardModalWindow.js'
+import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { getData, setData } from '../utils/dataUtils.js'
 import { renderPanel } from '../renderers/renderPanel.js'
@@ -11,46 +12,74 @@ export function handlerEditCard (cardId) {
 
   const idNumber = cardId.split('-')[0]
 
-  cardsArray.forEach(item => {
+  cardsArray.forEach((item) => {
     if (String(item.id) === String(idNumber)) {
       initEditCardModalWindow(item.id)
     }
   })
   const domElements = getDomElements()
 
-  window.addEventListener('keydown', (event) => {
-    if (event.code === 'Escape') {
-      domElements.modalOverlay.remove()
-      document.body.style.overflow = 'auto'
-    }
-  }, true)
+  window.addEventListener(
+    'keydown',
+    (event) => {
+      if (event.code === 'Escape') {
+        domElements.editModalOverlay.remove()
+        document.body.style.overflow = 'auto'
+      }
+    },
+    { once: true }
+  )
 
   domElements.modalContainer.addEventListener('click', (event) => {
     if (event.target.id === 'modal-edit-cancel') {
-      domElements.modalOverlay.remove()
+      domElements.editModalOverlay.remove()
       document.body.style.overflow = 'auto'
     }
     if (event.target.id === 'modal-edit-confirm') {
       event.preventDefault()
 
-      cardsArray.forEach(item => {
-        if (String(item.id) === String(idNumber)) {
-          item.title = domElements.modalTitle.value
-          item.description = domElements.modalDescription.value
+      if (
+        domElements.modalTitle.value.replace(/ /g, '') === '' &&
+        domElements.modalDescription.value.replace(/ /g, '') === ''
+      ) {
+        initConfirmModalWindow('Please, enter a task title or description', 'alert')
+        const domElements = getDomElements()
 
-          if (domElements.newUserSelect.value === 'empty') {
-            item.user = 'user is not assigned'
-          } else {
-            item.user = domElements.newUserSelect.value
+        domElements.modalConfirmContainer.addEventListener('click', (event) => {
+          if (event.target.id === 'modal-cancel') {
+            domElements.modalOverlay.remove()
           }
-        }
-      })
+        })
+        window.addEventListener(
+          'keydown',
+          (event) => {
+            if (event.code === 'Escape') {
+              domElements.modalOverlay.remove()
+              document.body.style.overflow = 'auto'
+            }
+          },
+          { once: true }
+        )
+      } else {
+        cardsArray.forEach((item) => {
+          if (String(item.id) === String(idNumber)) {
+            item.title = domElements.modalTitle.value
+            item.description = domElements.modalDescription.value
 
-      domElements.modalOverlay.remove()
-      document.body.style.overflow = 'auto'
+            if (domElements.newUserSelect.value === 'empty') {
+              item.user = 'user is not assigned'
+            } else {
+              item.user = domElements.newUserSelect.value
+            }
+          }
+        })
 
-      setData(boardsArray)
-      renderPanel(domElements, 'todo')
+        domElements.editModalOverlay.remove()
+        document.body.style.overflow = 'auto'
+
+        setData(boardsArray)
+        renderPanel(domElements, 'todo')
+      }
     }
   })
 }

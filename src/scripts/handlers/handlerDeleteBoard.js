@@ -10,7 +10,7 @@ export function handlerDeleteBoard () {
   const activeBoardIndex = getActiveBoardIndex()
   const boardTitle = boardsArray[activeBoardIndex].title
 
-  initConfirmModalWindow(`Do you want to delete '${boardTitle}'?`)
+  initConfirmModalWindow(`Delete  board '${boardTitle}'?`)
   const domElements = getDomElements()
 
   window.addEventListener('keydown', (event) => {
@@ -20,15 +20,15 @@ export function handlerDeleteBoard () {
     }
   }, true)
 
-  domElements.modalOverlayConfirm.addEventListener('click', (event) => {
-    if (event.target.id === 'modal-confirm-cancel') {
+  domElements.modalConfirmContainer.addEventListener('click', (event) => {
+    if (event.target.id === 'modal-cancel') {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
     }
-    if (event.target.id === 'modal-confirm-confirm') {
+    if (event.target.id === 'modal-confirm') {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
-
+      // deleting
       renderAllData()
       initAllListeners()
     }

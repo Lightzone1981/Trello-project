@@ -11,14 +11,14 @@ export function initEditCardModalWindow (cardId) {
   const arrayCards = boardsArray[activeBoardIndex].todoTasks
   const arrayUsers = boardsArray[activeBoardIndex].usersArray
 
-  const modalOverlay = document.createElement('div')
-  modalOverlay.className = 'modal-overlay'
+  const editModalOverlay = document.createElement('div')
+  editModalOverlay.className = 'edit-modal-overlay'
 
   const modalContainer = document.createElement('form')
   modalContainer.className = 'modal-edit__container'
   modalContainer.style.borderColor = getActiveBoardColor('normal')
 
-  modalOverlay.append(modalContainer)
+  editModalOverlay.append(modalContainer)
 
   const modalMessage = document.createElement('h2')
   modalMessage.classList = 'modal-edit__message'
@@ -58,7 +58,7 @@ export function initEditCardModalWindow (cardId) {
   modalContainer.append(cardInfo, modalFooter)
 
   const root = document.querySelector('#root')
-  root.prepend(modalOverlay)
+  root.prepend(editModalOverlay)
   document.body.style.overflow = 'hidden'
 
   if (cardId !== 'new') {

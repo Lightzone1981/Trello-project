@@ -1,7 +1,7 @@
 import { createButton } from './button.js'
 import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
 
-export function initConfirmModalWindow (message) {
+export function initConfirmModalWindow (message, type) {
   const modalConfirmOverlay = document.createElement('div')
   modalConfirmOverlay.className = 'modal-overlay'
 
@@ -19,10 +19,14 @@ export function initConfirmModalWindow (message) {
   const modalConfirmButtonsContainer = document.createElement('div')
   modalConfirmButtonsContainer.className = 'modal-confirm__buttons-container'
 
-  modalConfirmButtonsContainer.append(
-    createButton('modal-confirm', 'modal-button', 'Confirm', 'button', 'Confirm action', 'fill'),
-    createButton('modal-cancel', 'modal-button', 'Cancel', 'button', 'Cancel action', 'fill'))
-
+  if (type !== 'alert') {
+    modalConfirmButtonsContainer.append(
+      createButton('modal-confirm', 'modal-button', 'Confirm', 'button', 'Confirm action', 'fill'),
+      createButton('modal-cancel', 'modal-button', 'Cancel', 'button', 'Cancel action', 'fill'))
+  } else {
+    modalConfirmButtonsContainer.append(
+      createButton('modal-cancel', 'modal-button', 'OK', 'button', '', 'fill'))
+  }
   modalConfirmContainer.append(modalConfirmButtonsContainer)
 
   const root = document.querySelector('#root')

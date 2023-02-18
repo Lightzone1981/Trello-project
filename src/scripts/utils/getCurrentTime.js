@@ -1,4 +1,4 @@
-export const getCreationDate = () => {
+export const getCurrentTime = () => {
   const dateOptions = {
     weekend: 'long',
     day: 'numeric',

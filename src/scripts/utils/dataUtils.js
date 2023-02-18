@@ -1,4 +1,4 @@
-import { getCreationDate } from './getCreationDate.js'
+import { getCurrentTime } from './getCurrentTime.js'
 
 export function getData () {
   const boardsArray = [
@@ -16,7 +16,7 @@ export function getData () {
           title: 'Разработка динамической верстки',
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
           user: 7,
-          creationTime: '17.12.2022 18:00',
+          creationTime: '18 Feb, 09:32',
           takenTime: '',
           completedTime: ''
         },
@@ -27,8 +27,8 @@ export function getData () {
           title: 'Написание UI',
           description: 'Написать UI с помощью scss, использовать вложенность',
           user: 8,
-          creationTime: '17.12.2022 18:00',
-          takenTime: '17.12.2022 19:30',
+          creationTime: '18 Feb, 09:45',
+          takenTime: '',
           completedTime: ''
         },
         {
@@ -38,9 +38,9 @@ export function getData () {
           title: 'Тест приложения',
           description: 'Протестировать приложение, найти баги, составить отчет',
           user: 7,
-          creationTime: '17.12.2022 18:00',
-          takenTime: '17.12.2022 19:30',
-          completedTime: '17.12.2022 12:30'
+          creationTime: '18 Feb, 09:50',
+          takenTime: '',
+          completedTime: ''
         },
         {
           type: 'todo',
@@ -49,7 +49,7 @@ export function getData () {
           title: '11111111',
           description: 'Написать на js динамическую верстку, использовать методологию бэм',
           user: 11,
-          creationTime: '17.12.2022 18:10',
+          creationTime: '18 Feb, 10:20',
           takenTime: '',
           completedTime: ''
         },
@@ -60,7 +60,7 @@ export function getData () {
           title: '22222222',
           description: 'Написать UI с помощью scss, использовать вложенность',
           user: 10,
-          creationTime: '17.12.2022 18:15',
+          creationTime: '18 Feb, 10:50',
           takenTime: '',
           completedTime: ''
         },
@@ -71,7 +71,7 @@ export function getData () {
           title: '3333333',
           description: 'Протестировать приложение, найти баги, составить отчет',
           user: 9,
-          creationTime: '17.12.2022 18:20',
+          creationTime: '18 Feb, 11:14',
           takenTime: '',
           completedTime: ''
         }
@@ -175,7 +175,7 @@ export function createNewCard (cardTitle, cardDescription, cardUser) {
     title: cardTitle,
     description: cardDescription,
     user: cardUser,
-    creationTime: getCreationDate(),
+    creationTime: getCurrentTime(),
     takenTime: '',
     completedTime: ''
   }

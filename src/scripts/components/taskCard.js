@@ -47,10 +47,19 @@ export function createTaskCard (cardId, cardType) {
   taskCardUserName.id = `task-card-user-name-${cardId}`
   taskCardUserContainer.append(taskCardUserName)
 
-  const taskCardTime = document.createElement('p')
-  taskCardTime.className = 'task-card__time'
-  taskCardTime.id = `task-card-time-${cardId}`
-  taskCardFooter.append(taskCardTime)
+  const taskCardCreateTime = document.createElement('p')
+  taskCardCreateTime.className = 'task-card__time'
+  taskCardCreateTime.id = `task-card-create-time-${cardId}`
+
+  const taskCardTakeTime = document.createElement('p')
+  taskCardTakeTime.className = 'task-card__time'
+  taskCardTakeTime.id = `task-card-take-time-${cardId}`
+
+  const taskCardCompleteTime = document.createElement('p')
+  taskCardCompleteTime.className = 'task-card__time'
+  taskCardCompleteTime.id = `task-card-complete-time-${cardId}`
+
+  taskCardFooter.append(taskCardCreateTime, taskCardTakeTime, taskCardCompleteTime)
 
   const taskCardButtonsContainer = document.createElement('div')
   taskCardButtonsContainer.className = 'task-card__buttons-container'

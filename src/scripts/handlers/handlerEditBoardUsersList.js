@@ -78,7 +78,6 @@ export const handlerEditBoardUsersList = () => {
       boardsArray[activeBoardIndex].usersArray = newUsersArray
       boardsArray[activeBoardIndex].todoTasks = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].todoTasks)
       boardsArray[activeBoardIndex].progressTasks = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].progressTasks)
-      boardsArray[activeBoardIndex].doneTasks = resetCardUsers(newUsersArray, boardsArray[activeBoardIndex].doneTasks)
       setData(boardsArray)
       domElements.usersEditWrapper.remove()
       document.body.style.overflow = 'auto'
