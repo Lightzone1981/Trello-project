@@ -112,43 +112,6 @@ export function getData () {
           job: 'маркетолог'
         }
       ]
-    },
-    {
-      id: 2,
-      title: 'Testing',
-      background: 1,
-      color: 2,
-      status: 'disable',
-      tasksArray: [
-        {
-          type: 'todo',
-          id: 11,
-          title: 'Разработка динамической верстки',
-          description: 'Написать на js динамическую верстку, использовать методологию бэм',
-          user: 7,
-          creationTime: '17.12.2022 18:00',
-          takenTime: '',
-          completedTime: ''
-        },
-        {
-          type: 'progress',
-          id: 12,
-          title: 'Написание UI',
-          description: 'Написать UI с помощью scss, использовать вложенность',
-          user: 7,
-          creationTime: '17.12.2022 18:00',
-          takenTime: '17.12.2022 19:30',
-          completedTime: ''
-        }
-      ],
-      usersArray: [
-        {
-          id: 7,
-          src: 'https://ingyen-hatterkep.hu/hatterkepek_tablet/szep-selena-gomez-hatterkep-53927.jpg',
-          name: 'Бондарева Валерия',
-          job: 'UI/UX дизайнер'
-        }
-      ]
     }
   ]
   return JSON.parse(localStorage.getItem('boardsArray')) ?? boardsArray
@@ -182,9 +145,8 @@ export function createNewCard (cardTitle, cardDescription, cardUser) {
 }
 
 export function createNewBoard () {
-  const boardsArray = getData()
-  const newBoard = {
-    id: new Date(),
+  return {
+    id: getUniqId(),
     title: 'New board',
     background: 1,
     color: 1,
@@ -195,6 +157,4 @@ export function createNewBoard () {
     deleteTasks: [],
     usersArray: []
   }
-  boardsArray.push(newBoard)
-  setData(boardsArray, getUniqId())
 }

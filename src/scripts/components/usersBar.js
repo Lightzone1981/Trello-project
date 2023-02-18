@@ -1,10 +1,11 @@
 import { createButton } from '../components/button.js'
 import { getData } from '..//utils/dataUtils.js'
+import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 
 // верстка блока с аватарами пользователей
 export function createUserBar () {
-  const boardObjects = getData()
-  const usersArray = boardObjects[0].usersArray
+  const boardsArray = getData()
+  const usersArray = boardsArray[getActiveBoardIndex()].usersArray
 
   const usersBar = document.createElement('div')
   usersBar.id = 'users-bar'

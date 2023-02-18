@@ -1,6 +1,5 @@
 import { createBoardHeader } from '../components/boardHeader.js'
 import { createPanel } from '../components/panel.js'
-import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
 import { getDomElements } from '../utils/getDomElements.js'
 
 // верстка доски
@@ -11,7 +10,6 @@ export function renderBoard () {
 
   const board = document.createElement('main')
   board.className = 'board'
-  board.id = getActiveBoardIndex()
 
   const boardPanelsContainer = document.createElement('div')
   boardPanelsContainer.className = 'board__panels-container'

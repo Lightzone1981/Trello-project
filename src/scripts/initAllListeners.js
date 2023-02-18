@@ -1,3 +1,4 @@
+import { handlerCreateNewBoard } from './handlers/handlerCreateNewBoard.js'
 import { handlerCreateNewCard } from './handlers/handlerCreateNewCard.js'
 import { handlerDeleteCompletedCards } from './handlers/handlerDeleteCompletedCards.js'
 import { handlerDeleteCard } from './handlers/handlerDeleteCard.js'
@@ -7,6 +8,7 @@ import { handlerMoveCardBack } from './handlers/handlerMoveCardBack.js'
 import { handlerDeleteBoard } from './handlers/handlerDeleteBoard.js'
 import { handlerChangeBoardSettings } from './handlers/handlerChangeBoardSettings.js'
 import { handlerEditBoardUsersList } from './handlers/handlerEditBoardUsersList.js'
+import { handlerSwitchBoard } from './handlers/handlerSwitchBoard.js'
 import { getDomElements } from './utils/getDomElements.js'
 
 // инициализация слушателей событий
@@ -14,7 +16,7 @@ export const initAllListeners = () => {
   const domElements = getDomElements()
 
   // вешаем слушателей на основной контейнер доски
-  domElements.boardContainer.addEventListener('click', (event) => {
+  domElements.boardsContainer.addEventListener('click', (event) => {
     // событие нажатия кнопки "New Card"
     if (event.target.id === 'add-new-card-button') {
       handlerCreateNewCard(event.target.id, domElements)
@@ -59,10 +61,7 @@ export const initAllListeners = () => {
     if (event.target.id.indexOf('card-back-button') !== -1) {
       handlerMoveCardBack(event.target.id)
     }
-  })
 
-  // вешаем слушателей на header доски
-  domElements.boardHeader.addEventListener('click', (event) => {
     // событие нажатия кнопки удаления доски в шапке доски
     if (event.target.id === 'board-delete-button') {
       handlerDeleteBoard()
@@ -77,9 +76,18 @@ export const initAllListeners = () => {
     if (event.target.id === 'users-bar-button') {
       handlerEditBoardUsersList()
     }
-    // события нажатия кнопки(радио) в main-header
-    if (event.target.id === 'boards-switcher') {
-      // handlerSwitcher()
+  })
+
+  // вешаем слушателей на main header приложения
+  domElements.boardSwitcherWrapper.addEventListener('click', (event) => {
+    // события нажатия кнопки Add new board
+    if (event.target.id === 'boards-switcher-button-add') {
+      handlerCreateNewBoard()
+    }
+
+    if (event.target.id.includes('board-radio-button')) {
+      const boardId = event.target.id.split('-').at(-1)
+      handlerSwitchBoard(boardId)
     }
   })
 }

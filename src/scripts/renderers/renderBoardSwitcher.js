@@ -1,8 +1,8 @@
 import { createBoardsSwitcher } from '../components/boardsSwitcher.js'
+import { getDomElements } from '../utils/getDomElements.js'
 
 export function renderBoardsSwitcher () {
-  const boardSwitcher = document.querySelector('#boards-switcher')
-  const header = document.querySelector('#main-header')
-  boardSwitcher.remove()
-  header.prepend(createBoardsSwitcher())
+  const domElements = getDomElements()
+  domElements.boardSwitcher.remove()
+  domElements.boardSwitcherWrapper.append(createBoardsSwitcher())
 }

@@ -1,13 +1,14 @@
 import { getData } from './dataUtils.js'
 
+// возвращает индекс активной доски в массиве всех досок
 export const getActiveBoardIndex = () => {
   const boardsArray = getData()
 
-  const activeId = boardsArray.reduce((res, element, index) => {
+  const activeIndex = boardsArray.reduce((res, element, index) => {
     if (element.status === 'active') {
       res = index
     }
     return res
   }, 0)
-  return activeId
+  return activeIndex
 }

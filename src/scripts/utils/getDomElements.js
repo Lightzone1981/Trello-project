@@ -1,11 +1,16 @@
 // возвращаем обЪект с DOM эл-ми приложения
 export const getDomElements = () => {
   return {
+
+    mainHeader: document.querySelector('#main-header'),
     boardsContainer: document.querySelector('#boards-container'),
 
     boardHeader: document.querySelector('.board__header'),
     boardTitle: document.querySelector('.board__header-title'),
+    usersBarWrapper: document.querySelector('#users-bar-wrapper'),
     usersBar: document.querySelector('#users-bar'),
+
+    boardSwitcherWrapper: document.querySelector('.boards-switcher-wrapper'),
     boardSwitcher: document.querySelector('.boards-switcher'),
     boardContainer: document.querySelector('.board__panels-container'),
 

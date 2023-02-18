@@ -1,16 +1,18 @@
 import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
-import { initAllListeners } from '../initAllListeners.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 import { getDomElements } from '../utils/getDomElements.js'
-import { getData } from '../utils/dataUtils.js'
+import { getData, setData } from '../utils/dataUtils.js'
 import { getActiveBoardIndex } from '../utils/getActiveBoardIndex.js'
+import { makeBoardActive } from '../utils/makeBoardActive.js'
+import { renderBoardsSwitcher } from '../renderers/renderBoardSwitcher.js'
 
 export function handlerDeleteBoard () {
   const boardsArray = getData()
   const activeBoardIndex = getActiveBoardIndex()
+  const deletingBoard = boardsArray[activeBoardIndex]
   const boardTitle = boardsArray[activeBoardIndex].title
 
-  initConfirmModalWindow(`Delete  board '${boardTitle}'?`)
+  initConfirmModalWindow(`Delete  board '${boardTitle}' ?`)
   const domElements = getDomElements()
 
   window.addEventListener('keydown', (event) => {
@@ -28,9 +30,14 @@ export function handlerDeleteBoard () {
     if (event.target.id === 'modal-confirm') {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
-      // deleting
+
+      boardsArray.splice(boardsArray.indexOf(deletingBoard), 1)
+      setData(boardsArray)
+
+      if (boardsArray.length > 0) makeBoardActive(boardsArray.at(-1).id)
+
+      renderBoardsSwitcher()
       renderAllData()
-      initAllListeners()
     }
   })
 }

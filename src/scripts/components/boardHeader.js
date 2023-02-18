@@ -13,9 +13,12 @@ export function createBoardHeader () {
 
   const boardHeaderMenuContainer = document.createElement('div')
   boardHeaderMenuContainer.classList = 'board__menu-container'
+  const usersBarWrapper = document.createElement('div')
+  usersBarWrapper.classList = 'users-bar-wrapper'
+  usersBarWrapper.append(createUserBar())
 
   boardHeaderMenuContainer.append(
-    createUserBar(),
+    usersBarWrapper,
     createButton('board-settings-button', 'board__settings-button', '', 'button', 'Board Settings'),
     createButton('board-delete-button', 'board__delete-button', '', 'button', 'Delete Board')
   )

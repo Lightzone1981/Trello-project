@@ -7,7 +7,6 @@ import { fillUserContainer } from '../utils/fillUserContainer.js'
 import { fillSelectList } from '../utils/fillSelectList.js'
 import { resetCardUsers } from '../utils/resetCardUsers.js'
 import { renderAllData } from '../renderers/renderAllData.js'
-import { initAllListeners } from '../initAllListeners.js'
 
 function createSelectList (allUsers, newUsersArray) {
   const selectUsersArray = []
@@ -82,7 +81,6 @@ export const handlerEditBoardUsersList = () => {
       domElements.usersEditWrapper.remove()
       document.body.style.overflow = 'auto'
       renderAllData()
-      initAllListeners()
     }
   })
 }

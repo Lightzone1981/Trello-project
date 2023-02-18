@@ -42,7 +42,7 @@ export function handlerEditCard (cardId) {
         domElements.modalTitle.value.replace(/ /g, '') === '' &&
         domElements.modalDescription.value.replace(/ /g, '') === ''
       ) {
-        initConfirmModalWindow('Please, enter a task title or description', 'alert')
+        initConfirmModalWindow('Please, enter task title or task description!', 'alert')
         const domElements = getDomElements()
 
         domElements.modalConfirmContainer.addEventListener('click', (event) => {
