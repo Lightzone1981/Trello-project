@@ -7,6 +7,7 @@ import { renderBoardBackground } from './renderBoardBackground.js'
 import { getData } from '../utils/dataUtils.js'
 import { clear } from '../utils/clearComponent.js'
 import { renderClock } from './renderClock.js'
+import { dargAndDrop } from '../utils/dargAndDrop.js'
 
 export const renderAllData = () => {
   const boardsArray = getData()
@@ -37,4 +38,5 @@ export const renderAllData = () => {
     clear(domElements.boardsContainer)
     document.body.style.background = '#000'
   }
+  dargAndDrop()
 }

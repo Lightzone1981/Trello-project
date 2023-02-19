@@ -1,11 +1,11 @@
 import { getData, setData } from './dataUtils.js'
 import { getActiveBoardIndex } from './getActiveBoardIndex.js'
-import { renderPanel } from '../renderers/renderPanel.js'
-import { getDomElements } from '../utils/getDomElements.js'
+// import { renderPanel } from '../renderers/renderPanel.js'
+// import { getDomElements } from '../utils/getDomElements.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 
 let draggedItem = null
-export function dargAndDrop() {
+export function dargAndDrop () {
   const panel = document.querySelectorAll('.panel__container')
   const card = document.querySelectorAll('.task-card')
 
@@ -16,7 +16,7 @@ export function dargAndDrop() {
       const typeCard = draggedItem.className.split('--').pop()
       const boardsArray = getData()
       const activeBoardIndex = getActiveBoardIndex()
-      const domElements = getDomElements()
+      // const domElements = getDomElements()
 
       if (typeCard === 'todo') {
         const cardsArray = boardsArray[activeBoardIndex].todoTasks
@@ -26,7 +26,6 @@ export function dargAndDrop() {
             boardsArray[activeBoardIndex].progressTasks.push(ite)
             cardsArray.splice(index, 1)
             setData(boardsArray)
-            
 
             panel.forEach((i) => {
               i.addEventListener('dragover', (e) => e.preventDefault())
@@ -66,44 +65,35 @@ export function dargAndDrop() {
                       cardsArray.splice(index, 1)
                       setData(boardsArray)
                       this.append(draggedItem)
-                    //   renderPanel(domElements, 'progress')
-                    //   renderPanel(domElements, 'todo')
-                    renderAllData()
+                      //   renderPanel(domElements, 'progress')
+                      //   renderPanel(domElements, 'todo')
+                      renderAllData()
                     }
                   })
                 }
 
                 if (panelType === 'done') {
-                    cardsArray.forEach((items, index) => {
-                      if (String(items.id) === String(idNumber)) {
-                        items.type = 'done'
-                        boardsArray[activeBoardIndex].doneTasks.push(items)
-                        cardsArray.splice(index, 1)
-                        setData(boardsArray)
-                        this.append(draggedItem)
-                        // renderPanel(domElements, 'progress')
-                        // renderPanel(domElements, 'done')
-                        renderAllData()
-                      }
-                    })
-                  }
-
+                  cardsArray.forEach((items, index) => {
+                    if (String(items.id) === String(idNumber)) {
+                      items.type = 'done'
+                      boardsArray[activeBoardIndex].doneTasks.push(items)
+                      cardsArray.splice(index, 1)
+                      setData(boardsArray)
+                      this.append(draggedItem)
+                      // renderPanel(domElements, 'progress')
+                      // renderPanel(domElements, 'done')
+                      renderAllData()
+                    }
+                  })
+                }
               })
             })
           }
         })
       }
 
-
-
-
-
-
-      
-
       setTimeout(() => {
         item.style.display = 'none'
-        
       }, 0)
     })
     item.addEventListener('dragend', () => {
@@ -114,5 +104,4 @@ export function dargAndDrop() {
       }, 0)
     })
   })
-  
 }
