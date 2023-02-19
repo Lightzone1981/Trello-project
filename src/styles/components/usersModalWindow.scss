@@ -65,11 +65,15 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      padding: 1rem 0;
+      padding: 1rem;
 
       @media (max-width: 768px) {
         padding: 0.5rem 0;
         gap: 0.5rem;
+      }
+
+      @media (max-height: 420px) {
+        padding: 0.5rem 0;
       }
       .users-edit__select {
         flex-grow: 1;
