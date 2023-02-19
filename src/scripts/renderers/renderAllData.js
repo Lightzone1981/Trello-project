@@ -24,7 +24,6 @@ export const renderAllData = () => {
 
       domElements.switchPanelLeft.setAttribute('disable', '')
       domElements.switchPanelRight.removeAttribute('disable', '')
-      domElements.switchPanelLeft.style.display = 'none'
     } else {
       domElements.switchPanelLeft.style.display = 'none'
       domElements.switchPanelRight.style.display = 'none'

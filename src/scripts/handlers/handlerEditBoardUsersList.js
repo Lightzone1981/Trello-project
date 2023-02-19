@@ -47,7 +47,7 @@ export const handlerEditBoardUsersList = () => {
       allUsers.forEach((item) => {
         if (`${domElements.newUserSelect.value}` === `${item.id}`) {
           newUsersArray.push(item)
-          fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
+          fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect, 'empty')
           fillUserContainer(newUsersArray, domElements.userEditContainer)
         }
       })
@@ -62,7 +62,7 @@ export const handlerEditBoardUsersList = () => {
         return res
       }, 0)
       newUsersArray.splice(cardIndex, 1)
-      fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect)
+      fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect, 'empty')
       fillUserContainer(newUsersArray, domElements.userEditContainer)
     }
 

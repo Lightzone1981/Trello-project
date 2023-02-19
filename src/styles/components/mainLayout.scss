@@ -4,7 +4,6 @@
   flex-direction: column;
   max-width: 70%;
   min-width: 700px;
-  min-height: 500px;
   height: 100vh;
   margin: 0 auto;
   padding: 1rem 0 2rem 0;
@@ -20,6 +19,9 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0.5rem;
+    @media (max-height: 420px) {
+        display: none;
+    }
     &__logo {
       width: 8rem;
       @media (max-width: 768px) {

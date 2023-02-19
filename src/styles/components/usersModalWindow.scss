@@ -23,10 +23,15 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    margin-bottom: 6vh;
 
     @media (max-width: 768px) {
       width: auto;
       height: 80vh;
+      border: none;
+    }
+    @media (max-height: 420px) {
+      border: none;
     }
 
     .users-edit__header {
@@ -36,9 +41,14 @@
       font-size: 1.2rem;
       padding: 1rem 1rem 1rem 2.5rem;
       color: #fff;
+
+      @media (max-height: 420px) {
+        display: none;
+      }
       @media (max-width: 768px) {
         padding: 0.5rem 1rem 0.5rem 2.5rem;
       }
+
       &::before {
         content: '';
         position: absolute;
@@ -55,9 +65,11 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      padding: 1rem 1rem;
+      padding: 1rem 0;
+
       @media (max-width: 768px) {
-        padding: 0.5rem;
+        padding: 0.5rem 0;
+        gap: 0.5rem;
       }
       .users-edit__select {
         flex-grow: 1;
@@ -150,7 +162,7 @@
       justify-content: center;
       flex-wrap: wrap;
       @media (max-width: 768px) {
-        padding: 0.5rem;
+        padding: 0.5rem 1rem;
       }
 
       .modal__button {

@@ -1,6 +1,7 @@
 .boards-container {
   margin: 0 auto;
   width: 100%;
+  padding-bottom: 5vh;
   flex-grow: 1;
   display: flex;
 
@@ -23,6 +24,9 @@
 
       @media (max-width: 768px) {
         row-gap: 0.5rem;
+      }
+      @media (max-height: 420px) {
+        display: none;
       }
     }
 
@@ -97,9 +101,9 @@
         z-index: 10;
 
         @media (max-width: 400px) {
-        top: 0.3rem;
-        width: 2rem;
-        height: 0.8rem;
+          top: 0.3rem;
+          width: 2rem;
+          height: 0.8rem;
         }
         &:hover {
           cursor: pointer;
