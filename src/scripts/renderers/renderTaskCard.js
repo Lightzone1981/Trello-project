@@ -27,7 +27,7 @@ export const renderTaskCard = (panelType, cardObject) => {
   const taskCardCreateTime = document.querySelector(`#task-card-create-time-${cardObject.id}`)
   const taskCardTakeTime = document.querySelector(`#task-card-take-time-${cardObject.id}`)
   const taskCardCompleteTime = document.querySelector(`#task-card-complete-time-${cardObject.id}`)
-  taskCardCreateTime.innerText = `created: ${cardObject.creationTime}`
+  taskCardCreateTime.innerText = `created:   ${cardObject.creationTime}`
 
   if (cardObject.takenTime !== '') {
     taskCardTakeTime.innerText = `taken: ${cardObject.takenTime}`

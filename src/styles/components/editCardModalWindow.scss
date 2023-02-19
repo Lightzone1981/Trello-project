@@ -5,6 +5,11 @@
     flex-direction: column;
     gap: 2rem;
 
+    @media (max-width: 768px) {
+        width: 100vw;
+        padding: 0 1rem;
+    }
+
     .modal-edit__message{
         color:#fff;
         font-size: 1.2rem;
@@ -12,13 +17,16 @@
     }
 
     .modal-edit__card-info {
-
-        background-color: #fff;
+        background-color: #e2e2e2;
         border-radius: 1rem;
         padding: 2rem;
         display: flex;
         gap: 2rem;
         flex-direction: column;
+
+        @media (max-width: 768px) {
+            padding: 1rem;
+        }
 
         .modal-edit__title{
             font-weight: bold;
@@ -59,10 +67,14 @@
 
         .users-edit__select {
             margin-right: auto;
+            width: 100%;
+
             cursor: pointer;
-            &:hover {
-                // border-color: $color1;
+            @media (max-width: 768px) {
+                font-size: 1rem;
+                text-align: center;
             }
+            
         }
     }
     .modal-edit__footer {

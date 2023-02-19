@@ -49,7 +49,10 @@ export const getDomElements = () => {
 
     todoArrowTop: document.querySelector('#arrow-top-todo'),
     progressArrowTop: document.querySelector('#arrow-top-progress'),
-    doneArrowTop: document.querySelector('#arrow-top-done')
+    doneArrowTop: document.querySelector('#arrow-top-done'),
+
+    switchPanelLeft: document.querySelector('#switch-panel-left'),
+    switchPanelRight: document.querySelector('#switch-panel-right')
 
   }
 }

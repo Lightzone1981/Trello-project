@@ -8,8 +8,6 @@ export function createBoardHeader () {
 
   const boardHeaderTitle = document.createElement('h1')
   boardHeaderTitle.className = 'board__header-title'
-  const divider = document.createElement('div')
-  divider.classList = 'divider'
 
   const boardHeaderMenuContainer = document.createElement('div')
   boardHeaderMenuContainer.classList = 'board__menu-container'
@@ -22,7 +20,7 @@ export function createBoardHeader () {
     createButton('board-settings-button', 'board__settings-button', '', 'button', 'Board Settings'),
     createButton('board-delete-button', 'board__delete-button', '', 'button', 'Delete Board')
   )
-  boardHeader.append(boardHeaderTitle, divider, boardHeaderMenuContainer)
+  boardHeader.append(boardHeaderTitle, boardHeaderMenuContainer)
 
   return boardHeader
 }

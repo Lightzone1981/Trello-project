@@ -1,5 +1,6 @@
 .panel {
     position:relative;
+    flex-grow: 1;
     width: calc(33% - 0.5rem);
     display: flex;
     flex-direction: column;
@@ -12,6 +13,9 @@
         .panel__title, .panel__count{
             color:#fff;
             font-size: 1rem;
+            @media (max-width: 768px) {
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -58,9 +62,15 @@
         color: #fff;
         transition: 0.3s;
         cursor: pointer;
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+        }
         &:hover{
             background-color: $color1;
-
         }
     }
+    &[disable]{
+        display: none;
+    }
 }
+

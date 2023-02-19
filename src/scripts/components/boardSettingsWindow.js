@@ -124,9 +124,13 @@ export const createBoardSettingsWindow = () => {
     boardSettingsColorsContainer.append(colorsRadio, colorsLabel)
   }
 
-  boardSettingsForm.append(
+  const buttonsContainer = document.createElement('div')
+  buttonsContainer.classList = 'board-settings__buttons-container'
+  buttonsContainer.append(
     createButton('board-settings-save-button', 'modal-button', 'Save', 'submit', 'Save changes', 'fill'),
     createButton('board-settings-cancel-button', 'modal-button', 'Cancel', 'button', 'Cancel changes', 'fill'))
+
+  boardSettingsForm.append(buttonsContainer)
 
   const root = document.querySelector('#root')
   root.append(boardSettingsWrapper)

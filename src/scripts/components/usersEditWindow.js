@@ -36,9 +36,13 @@ export const createUsersEditWindow = () => {
   const usersEditContainer = document.createElement('ul')
   usersEditContainer.classList = 'users-edit__container'
 
-  usersEditWindow.append(usersEditHeader, usersAddForm, usersEditContainer,
+  const buttonsContainer = document.createElement('div')
+  buttonsContainer.classList = 'users-edit__buttons-container'
+  buttonsContainer.append(
     createButton('user-edit-save-button', 'modal-button', 'Save', 'button', 'Save changes', 'fill'),
-    createButton('user-edit-cancel-button', 'user-edit__button', 'Cancel', 'button', 'Cancel changes', 'fill'))
+    createButton('user-edit-cancel-button', 'modal-button', 'Cancel', 'button', 'Cancel changes', 'fill'))
+
+  usersEditWindow.append(usersEditHeader, usersAddForm, usersEditContainer, buttonsContainer)
 
   const root = document.querySelector('#root')
   document.body.style.overflow = 'hidden'

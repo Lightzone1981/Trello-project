@@ -1,36 +1,43 @@
 .main-wrapper {
-    overflow: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  min-width: 700px;
+  min-height: 500px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 1rem 0 2rem 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    min-width: auto;
+    padding: 0.5rem 0;
+  }
+
+  .main-header {
     display: flex;
-    flex-direction: column;
-    max-width: 70%;
-    min-width: 700px;
-    min-height: 500px;
-    height: 100vh;
-    margin: 0 auto;
-    padding: 1rem 0 2rem 0;
-    background-color: rgba(0,0,0,0.7);
-    @media (max-width: 1024px) {
-        max-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    &__logo {
+      width: 8rem;
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
-
-
-    .main-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 0.5rem;
-        &__logo {
-            width: 8rem;
-        }
-        .clock__info {
-            text-align: center;
-            width: 7rem;
-            padding: 0.5rem;
-            font-size: 1.2 rem;
-            border: 2px solid $color1;
-            border-radius: 1.5rem;
-            color: #fff;
-            background-color: rgba(0,0,0,0.2);
-        }
+    .clock__info {
+      text-align: center;
+      width: 7rem;
+      padding: 0.5rem;
+      font-size: 1.2 rem;
+      border: 2px solid $color1;
+      border-radius: 1.5rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.2);
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
+  }
 }

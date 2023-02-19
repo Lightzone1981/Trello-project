@@ -1,6 +1,6 @@
 .board-settings-wrapper {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   z-index: 100;
   width: 100vw;
@@ -8,14 +8,26 @@
   overflow-y: auto;
   padding: 2rem 1rem;
   background-color: rgba(0, 0, 0, 0.9);
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
   .board-settings {
     width: 23rem;
     margin: 0 auto;
     border-radius: 5px;
-    padding-bottom: 1rem;
     border: 1px solid $color1;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+      width: auto;
+      flex-grow: 1;
+      padding: 0;
+    }
 
     .board-settings__header {
       position: relative;
@@ -25,6 +37,7 @@
       height: 1rem;
       padding: 1rem 1rem 2rem 2.5rem;
       color: #fff;
+
       &::before {
         content: '';
         position: absolute;
@@ -38,9 +51,14 @@
 
     .board-settings__form {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+      flex-direction: column;
+
+      @media (max-width: 768px) {
+        flex-grow: 1;
+      }
+
       .board-settings__form-container {
+        flex-grow: 1;
         background-color: #f0f0f0;
         width: 100%;
         display: flex;
@@ -48,36 +66,46 @@
         gap: 1rem;
         padding: 1rem;
 
+        @media (max-width: 768px) {
+          max-height: 78vh;
+          overflow: auto;
+        }
+
         .board-settings__title-header {
           font-size: 1rem;
         }
 
         .board-settings__title {
+          width: 100%;
           font-size: 1.2rem;
           padding: 0.5rem 0.5rem;
           border: 1px solid #a5a5a5;
           border-radius: 5px;
-          color:#a5a5a5;
+          color: #a5a5a5;
 
-          &:focus{
-          color:#151515;
-          border-color: #151515;
+          &:focus {
+            color: #151515;
+            border-color: #151515;
           }
         }
+
         .board-settings__background-container {
           width: 100%;
           display: flex;
           flex-wrap: wrap;
           gap: 0.5rem;
+
           .board-settings__background-header {
             width: 100%;
             font-size: 1rem;
             padding-bottom: 0.3rem;
           }
+
           .board-settings__background-radio {
             position: absolute;
             z-index: -80;
             opacity: 0;
+
             &:checked + .board-settings__background-label::before {
               background: url('../assets/icons/check-icon.svg') center/contain no-repeat;
               content: '';
@@ -100,16 +128,17 @@
             border-radius: 5px;
             transition: 0.2s;
             cursor: pointer;
-            &:hover{
+            &:hover {
               transform: scale(1.1);
             }
           }
         }
+
         .board-settings__colors-container {
-          width: 100%;
           display: flex;
           flex-wrap: wrap;
           gap: 0.5rem;
+
           .board-settings__colors-header {
             font-size: 1rem;
             width: 100%;
@@ -131,6 +160,7 @@
               z-index: 1;
             }
           }
+
           .board-settings__colors-label {
             position: relative;
             flex-shrink: 0;
@@ -141,20 +171,26 @@
             border-radius: 5px;
             transition: 0.2s;
             cursor: pointer;
-            &:hover{
+            &:hover {
               transform: scale(1.1);
             }
           }
         }
       }
+
+      .board-settings__buttons-container {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem 0;
+
+        #board-settings-save-button {
+          margin-left: 1rem;
+        }
+
+        #board-settings-cancel-button {
+          margin-right: 1rem;
+        }
+      }
     }
   }
-}
-
-
-#board-settings-save-button {
-  margin-left: 1rem;
-}
-#board-settings-cancel-button {
-  margin-right: 1rem;
 }

@@ -2,7 +2,7 @@ export function fillSelectList (allUsers, newUserSelect, userValue) {
   newUserSelect.innerHTML = ''
 
   const selectItem = document.createElement('option')
-  selectItem.innerText = '----  select new user  ----'
+  selectItem.innerText = '----  select user  ----'
   selectItem.value = 'empty'
   newUserSelect.append(selectItem)
 

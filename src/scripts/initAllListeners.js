@@ -9,7 +9,10 @@ import { handlerDeleteBoard } from './handlers/handlerDeleteBoard.js'
 import { handlerChangeBoardSettings } from './handlers/handlerChangeBoardSettings.js'
 import { handlerEditBoardUsersList } from './handlers/handlerEditBoardUsersList.js'
 import { handlerSwitchBoard } from './handlers/handlerSwitchBoard.js'
+import { handlerSwitchPanelRight } from './handlers/handlerSwitchPanelRight.js'
+import { handlerSwitchPanelLeft } from './handlers/handlerSwitchPanelLeft.js'
 import { getDomElements } from './utils/getDomElements.js'
+import { handlerWindowResize } from './handlers/handlerWindowResize.js'
 
 // инициализация слушателей событий
 export const initAllListeners = () => {
@@ -76,6 +79,16 @@ export const initAllListeners = () => {
     if (event.target.id === 'users-bar-button') {
       handlerEditBoardUsersList()
     }
+
+    // события нажатия кнопки переключения панели вправо
+    if (event.target.id === 'switch-panel-right') {
+      handlerSwitchPanelRight()
+    }
+
+    // события нажатия кнопки переключения панели влево
+    if (event.target.id === 'switch-panel-left') {
+      handlerSwitchPanelLeft()
+    }
   })
 
   // вешаем слушателей на main header приложения
@@ -84,10 +97,15 @@ export const initAllListeners = () => {
     if (event.target.id === 'boards-switcher-button-add') {
       handlerCreateNewBoard()
     }
-
+    // события нажатия радио кнопки переключения доски
     if (event.target.id.includes('board-radio-button')) {
       const boardId = event.target.id.split('-').at(-1)
       handlerSwitchBoard(boardId)
     }
+  })
+
+  // событие изменения размеров окна (управляет отображением меню на экране)
+  window.addEventListener('resize', () => {
+    handlerWindowResize()
   })
 }

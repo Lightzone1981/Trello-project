@@ -18,6 +18,18 @@ export const renderAllData = () => {
     renderBoardHeader()
     const domElements = getDomElements()
 
+    if (window.innerWidth < 768) {
+      domElements.progressPanel.setAttribute('disable', '')
+      domElements.donePanel.setAttribute('disable', '')
+
+      domElements.switchPanelLeft.setAttribute('disable', '')
+      domElements.switchPanelRight.removeAttribute('disable', '')
+      domElements.switchPanelLeft.style.display = 'none'
+    } else {
+      domElements.switchPanelLeft.style.display = 'none'
+      domElements.switchPanelRight.style.display = 'none'
+    }
+
     renderPanel(domElements, 'todo')
     renderPanel(domElements, 'progress')
     renderPanel(domElements, 'done')

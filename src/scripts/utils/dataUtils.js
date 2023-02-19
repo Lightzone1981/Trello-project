@@ -147,7 +147,7 @@ export function createNewCard (cardTitle, cardDescription, cardUser) {
 export function createNewBoard () {
   return {
     id: getUniqId(),
-    title: 'New board',
+    title: 'New project',
     background: 1,
     color: 1,
     status: 'disable',
