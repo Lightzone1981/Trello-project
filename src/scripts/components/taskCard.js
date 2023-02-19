@@ -6,7 +6,7 @@ export function createTaskCard (cardId, cardType) {
   const taskCard = document.createElement('div')
   taskCard.className = `task-card task-card--${cardType}`
   taskCard.id = `task-card-${cardId}`
-  taskCard.draggable = 'true'
+  if(cardType === 'todo' || cardType === 'progress' ){taskCard.draggable = 'true'}
 
   const taskCardInfoContainer = document.createElement('div')
   taskCardInfoContainer.className = 'task-card__info-container'
