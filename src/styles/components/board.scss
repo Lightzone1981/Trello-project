@@ -1,9 +1,14 @@
 .boards-container {
   margin: 0 auto;
   width: 100%;
-  padding-bottom: 5vh;
+  height: 100%;
   flex-grow: 1;
   display: flex;
+
+  @media (max-width: 768px) {
+    padding-bottom: 5vh;
+
+  }
 
   .board {
     flex-grow: 1;

@@ -10,6 +10,7 @@ export function handlerDragAndDrop (cardNode, cardId, cardType) {
   const panel = document.querySelectorAll('.panel__container')
   const boardsArray = getData()
   const activeBoardIndex = getActiveBoardIndex()
+  const domElements = getDomElements()
 
   const cardsArray = boardsArray[activeBoardIndex][`${cardType}Tasks`]
   cardsArray.forEach((item, index) => {
@@ -40,6 +41,7 @@ export function handlerDragAndDrop (cardNode, cardId, cardType) {
                 boardsArray[activeBoardIndex].todoTasks.push(item)
                 cardsArray.splice(index, 1)
                 setData(boardsArray)
+                domElements.swipeSound.play()
               }
               break
             }
@@ -52,12 +54,15 @@ export function handlerDragAndDrop (cardNode, cardId, cardType) {
                   boardsArray[activeBoardIndex].progressTasks.push(item)
                   cardsArray.splice(index, 1)
                   setData(boardsArray)
+                  domElements.swipeSound.play()
+                  domElements.ringSound.play()
                 } else {
                   initConfirmModalWindow(
                     "You can't add more than 6 tasks to progress panel! Please, complete progress tasks",
                     'alert'
                   )
                   const domElements = getDomElements()
+                  domElements.errorSound.play()
 
                   window.addEventListener(
                     'keydown',
@@ -84,6 +89,7 @@ export function handlerDragAndDrop (cardNode, cardId, cardType) {
               if (cardType === 'todo') {
                 initConfirmModalWindow("You can't move current task to completed!", 'alert')
                 const domElements = getDomElements()
+                domElements.errorSound.play()
 
                 window.addEventListener(
                   'keydown',
@@ -107,6 +113,7 @@ export function handlerDragAndDrop (cardNode, cardId, cardType) {
               if (cardType === 'progress') {
                 initConfirmModalWindow('Move task to completed?')
                 const domElements = getDomElements()
+                domElements.clickSound.play()
 
                 window.addEventListener(
                   'keydown',
@@ -134,6 +141,8 @@ export function handlerDragAndDrop (cardNode, cardId, cardType) {
                     renderAllData()
                     const domElemUpdate = getDomElements()
                     scrollDown(domElemUpdate[`${panelDropType}PanelContainer`])
+                    domElements.swipeSound.play()
+                    domElements.wowSound.play()
                   }
                 })
                 break

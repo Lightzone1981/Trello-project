@@ -18,6 +18,7 @@ export function handlerEditCard (cardId) {
     }
   })
   const domElements = getDomElements()
+  domElements.clickSound.play()
 
   window.addEventListener(
     'keydown',
@@ -34,6 +35,7 @@ export function handlerEditCard (cardId) {
     if (event.target.id === 'modal-edit-cancel') {
       domElements.editModalOverlay.remove()
       document.body.style.overflow = 'auto'
+      domElements.clickSound.play()
     }
     if (event.target.id === 'modal-edit-confirm') {
       event.preventDefault()
@@ -44,10 +46,12 @@ export function handlerEditCard (cardId) {
       ) {
         initConfirmModalWindow('Please, enter task title or task description!', 'alert')
         const domElements = getDomElements()
+        domElements.errorSound.play()
 
         domElements.modalConfirmContainer.addEventListener('click', (event) => {
           if (event.target.id === 'modal-cancel') {
             domElements.modalOverlay.remove()
+            domElements.clickSound.play()
           }
         })
         window.addEventListener(
@@ -79,6 +83,7 @@ export function handlerEditCard (cardId) {
 
         setData(boardsArray)
         renderPanel(domElements, 'todo')
+        domElements.ringSound.play()
       }
     }
   })

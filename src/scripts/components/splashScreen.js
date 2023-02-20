@@ -35,6 +35,7 @@ export const createSplashScreen = () => {
 
   const bug = document.createElement('div')
   bug.className = 'bug'
+  bug.id = 'bug'
   copyRight.append(bug)
 
   splash.append(titleContainer, copyRight)

@@ -20,6 +20,8 @@ export const handlerEditBoardUsersList = () => {
   createUsersEditWindow()
 
   const domElements = getDomElements()
+  domElements.clickSound.play()
+
   const allUsers = getAllUsers()
   const boardsArray = getData()
   const activeBoardIndex = getActiveBoardIndex()
@@ -43,6 +45,7 @@ export const handlerEditBoardUsersList = () => {
     // событие нажатия кнопки "add to project"
     if (event.target.id === 'user-edit-select-button') {
       event.preventDefault()
+      domElements.clickSound.play()
 
       allUsers.forEach((item) => {
         if (`${domElements.newUserSelect.value}` === `${item.id}`) {
@@ -64,12 +67,14 @@ export const handlerEditBoardUsersList = () => {
       newUsersArray.splice(cardIndex, 1)
       fillSelectList(createSelectList(allUsers, newUsersArray), domElements.newUserSelect, 'empty')
       fillUserContainer(newUsersArray, domElements.userEditContainer)
+      domElements.clickSound.play()
     }
 
     // событие нажатия кнопки "cancel"
     if (event.target.id === 'user-edit-cancel-button') {
       document.body.style.overflow = 'auto'
       domElements.usersEditWrapper.remove()
+      domElements.clickSound.play()
     }
 
     // событие нажатия кнопки "save"
@@ -81,6 +86,7 @@ export const handlerEditBoardUsersList = () => {
       domElements.usersEditWrapper.remove()
       document.body.style.overflow = 'auto'
       renderAllData()
+      domElements.ringSound.play()
     }
   })
 }

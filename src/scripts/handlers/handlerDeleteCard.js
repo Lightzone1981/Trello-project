@@ -10,11 +10,13 @@ export function handlerDeleteCard (cardId, cardType) {
   const activeBoardIndex = getActiveBoardIndex()
   const cardsArray = boardsArray[activeBoardIndex][`${cardType}Tasks`]
   const domElements = getDomElements()
+  domElements.trashSound.play()
 
   domElements.modalConfirmContainer.addEventListener('click', (event) => {
     if (event.target.id === 'modal-cancel') {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
+      domElements.clickSound.play()
     }
     if (event.target.id === 'modal-confirm') {
       const idNumber = cardId.split('-')[0]
@@ -32,6 +34,7 @@ export function handlerDeleteCard (cardId, cardType) {
 
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
+      domElements.ringSound.play()
     }
   })
 

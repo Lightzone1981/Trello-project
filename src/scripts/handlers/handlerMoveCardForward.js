@@ -25,11 +25,14 @@ export function handlerMoveCardForward (cardId, cardType) {
           renderPanel(domElements, 'todo')
           renderPanel(domElements, 'progress')
           scrollDown(domElements.progressPanelContainer)
+          domElements.swipeSound.play()
+          domElements.ringSound.play()
 
           return
         } else {
           initConfirmModalWindow('You can\'t add more than 6 tasks to progress panel! Please, complete progress tasks', 'alert')
           const domElements = getDomElements()
+          domElements.errorSound.play()
 
           window.addEventListener('keydown', (event) => {
             if (event.code === 'Escape') {
@@ -49,6 +52,7 @@ export function handlerMoveCardForward (cardId, cardType) {
       if (item.type === 'progress') {
         initConfirmModalWindow('Move task to completed?')
         const domElements = getDomElements()
+        domElements.clickSound.play()
 
         window.addEventListener('keydown', (event) => {
           if (event.code === 'Escape') {
@@ -60,6 +64,7 @@ export function handlerMoveCardForward (cardId, cardType) {
         domElements.modalConfirmContainer.addEventListener('click', (event) => {
           if (event.target.id === 'modal-cancel') {
             domElements.modalOverlay.remove()
+            domElements.clickSound.play()
           }
           if (event.target.id === 'modal-confirm') {
             item.type = 'done'
@@ -73,6 +78,8 @@ export function handlerMoveCardForward (cardId, cardType) {
             renderPanel(domElements, 'progress')
             renderPanel(domElements, 'done')
             scrollDown(domElements.donePanelContainer)
+            domElements.swipeSound.play()
+            domElements.wowSound.play()
           }
         })
       }

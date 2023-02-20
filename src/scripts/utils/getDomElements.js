@@ -58,6 +58,15 @@ export const getDomElements = () => {
 
     switchPanelLeft: document.querySelector('#switch-panel-left'),
     switchPanelRight: document.querySelector('#switch-panel-right'),
-    splash: document.querySelector('.splash')
+    splash: document.querySelector('.splash'),
+
+    clickSound: document.querySelector('#click'),
+    swipeSound: document.querySelector('#swipe'),
+    swipeLargeSound: document.querySelector('#swipe-large'),
+    wowSound: document.querySelector('#wow'),
+    ringSound: document.querySelector('#ring'),
+    trashSound: document.querySelector('#trash'),
+    bugSound: document.querySelector('#bug-sound'),
+    errorSound: document.querySelector('#error')
   }
 }

@@ -8,6 +8,7 @@ import { renderBoardsSwitcher } from '../renderers/renderBoardSwitcher.js'
 export const handlerChangeBoardSettings = (flag) => {
   createBoardSettingsWindow()
   const domElements = getDomElements()
+  domElements.clickSound.play()
 
   const boardsArray = getData()
 
@@ -31,6 +32,7 @@ export const handlerChangeBoardSettings = (flag) => {
     if (event.target.id === 'board-settings-save-button') {
       event.preventDefault()
       activeBoard.title = domElements.boardSettingsTitle.value
+      domElements.ringSound.play()
 
       const backgroundLabels = document.querySelectorAll('.board-settings__background-radio')
       backgroundLabels.forEach((item) => {
@@ -57,6 +59,7 @@ export const handlerChangeBoardSettings = (flag) => {
     if (event.target.id === 'board-settings-cancel-button') {
       domElements.boardSettingsWrapper.remove()
       document.body.style.overflow = 'auto'
+      domElements.clickSound.play()
     }
   })
 }

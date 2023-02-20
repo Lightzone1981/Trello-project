@@ -14,6 +14,7 @@ export function handlerMoveCardBack (cardId) {
   cardsArray.forEach((item, index) => {
     if (String(item.id) === String(idNumber)) {
       item.type = 'todo'
+      item.takenTime = ''
       boardsArray[activeBoardIndex].todoTasks.push(item)
       cardsArray.splice(index, 1)
 
@@ -21,6 +22,7 @@ export function handlerMoveCardBack (cardId) {
       renderPanel(domElements, 'todo')
       scrollDown(domElements.todoPanelContainer)
       renderPanel(domElements, 'progress')
+      domElements.swipeSound.play()
     }
   })
 }

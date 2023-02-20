@@ -2,6 +2,8 @@ import { getDomElements } from '../utils/getDomElements'
 
 export const handlerSwitchPanelLeft = () => {
   const domElements = getDomElements()
+  domElements.clickSound.play()
+
   if (!domElements.donePanel.hasAttribute('disable')) {
     domElements.donePanel.setAttribute('disable', '')
     domElements.progressPanel.removeAttribute('disable', '')

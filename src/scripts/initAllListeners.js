@@ -97,11 +97,13 @@ export const initAllListeners = () => {
     // события нажатия кнопки переключения панели вправо
     if (event.target.id === 'switch-panel-right') {
       handlerSwitchPanelRight()
+      domElements.clickSound.play()
     }
 
     // события нажатия кнопки переключения панели влево
     if (event.target.id === 'switch-panel-left') {
       handlerSwitchPanelLeft()
+      domElements.clickSound.play()
     }
   })
 
@@ -120,6 +122,7 @@ export const initAllListeners = () => {
 
   // вешаем слушателей на нажатие логотипа
   domElements.boardHeaderLogo.addEventListener('click', (event) => {
+    domElements.clickSound.play()
     handlerShowSplashScreen()
   })
 

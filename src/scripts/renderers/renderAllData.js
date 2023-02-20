@@ -46,5 +46,9 @@ export const renderAllData = () => {
       'url(\'https://cashtech.com.au/wp-content/uploads/2017/05/Untitled-19.jpg\') center/cover no-repeat'
 
     domElements.boardsContainer.append(createSplashScreen())
+    const bug = document.querySelector('#bug')
+    bug.addEventListener('mouseover', () => {
+      domElements.bugSound.play()
+    })
   }
 }

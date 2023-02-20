@@ -8,6 +8,7 @@ export function handlerDeleteCompletedCards () {
   initConfirmModalWindow('Delete all completed tasks?')
 
   const domElements = getDomElements()
+  domElements.clickSound.play()
 
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
@@ -20,6 +21,7 @@ export function handlerDeleteCompletedCards () {
     if (event.target.id === 'modal-cancel') {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
+      domElements.clickSound.play()
     }
     if (event.target.id === 'modal-confirm') {
       const boardsArray = getData()
@@ -30,11 +32,13 @@ export function handlerDeleteCompletedCards () {
         boardsArray[activeBoardIndex].deleteTasks.push(element)
       })
       boardsArray[activeBoardIndex].doneTasks = []
+      domElements.swipeLargeSound.play()
 
       setData(boardsArray)
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
       renderPanel(domElements, 'done')
+      domElements.ringSound.play()
     }
   })
 }

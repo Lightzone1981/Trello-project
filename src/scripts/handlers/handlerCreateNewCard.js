@@ -9,6 +9,7 @@ import { scrollDown } from '../utils/scrollDown.js'
 export const handlerCreateNewCard = () => {
   initEditCardModalWindow('new')
   const domElements = getDomElements()
+  domElements.clickSound.play()
 
   window.addEventListener(
     'keydown',
@@ -24,6 +25,7 @@ export const handlerCreateNewCard = () => {
   domElements.modalContainer.addEventListener('click', (event) => {
     if (event.target.id === 'modal-edit-cancel') {
       domElements.editModalOverlay.remove()
+      domElements.clickSound.play()
     }
     if (event.target.id === 'modal-edit-confirm') {
       event.preventDefault()
@@ -32,10 +34,12 @@ export const handlerCreateNewCard = () => {
         domElements.modalDescription.value.replace(/ /g, '') === '') {
         initConfirmModalWindow('Please, enter task title or task description!', 'alert')
         const domElements = getDomElements()
+        domElements.errorSound.play()
 
         domElements.modalConfirmContainer.addEventListener('click', (event) => {
           if (event.target.id === 'modal-cancel') {
             domElements.modalOverlay.remove()
+            domElements.clickSound.play()
           }
         })
         window.addEventListener(
@@ -52,6 +56,7 @@ export const handlerCreateNewCard = () => {
         domElements.editModalOverlay.remove()
         const boardsArray = getData()
         const activeBoardIndex = getActiveBoardIndex()
+        domElements.ringSound.play()
 
         if (domElements.newUserSelect.value === 'empty') {
           boardsArray[activeBoardIndex].todoTasks.push(

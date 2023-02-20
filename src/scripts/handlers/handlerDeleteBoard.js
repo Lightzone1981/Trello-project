@@ -14,6 +14,7 @@ export function handlerDeleteBoard () {
 
   initConfirmModalWindow(`Delete  board '${boardTitle}' ?`)
   const domElements = getDomElements()
+  domElements.trashSound.play()
 
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
@@ -26,10 +27,12 @@ export function handlerDeleteBoard () {
     if (event.target.id === 'modal-cancel') {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
+      domElements.clickSound.play()
     }
     if (event.target.id === 'modal-confirm') {
       domElements.modalOverlay.remove()
       document.body.style.overflow = 'auto'
+      domElements.ringSound.play()
 
       boardsArray.splice(boardsArray.indexOf(deletingBoard), 1)
       setData(boardsArray)

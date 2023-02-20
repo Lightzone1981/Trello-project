@@ -7,7 +7,7 @@ export const handlerShowSplashScreen = () => {
   const domElements = getDomElements()
   domElements.splash.style.position = 'absolute'
   domElements.splash.style.zIndex = '150'
-  domElements.splash.style.backgroundColor = 'rgba(0,0,0,0.5)'
+  domElements.splash.style.backgroundColor = 'rgba(0,0,0,0.9)'
 
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
@@ -17,5 +17,10 @@ export const handlerShowSplashScreen = () => {
 
   window.addEventListener('click', (event) => {
     if (event.target !== domElements.boardHeaderLogo) { domElements.splash.remove() }
+  })
+
+  const bug = document.querySelector('#bug')
+  bug.addEventListener('mouseover', () => {
+    domElements.bugSound.play()
   })
 }

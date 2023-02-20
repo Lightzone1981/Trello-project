@@ -6,12 +6,11 @@
   min-width: 700px;
   height: 100vh;
   margin: 0 auto;
-  padding: 1rem 0 2rem 0;
+  padding: 1rem 0 1rem 0;
   background-color: rgba(0, 0, 0, 0.7);
   @media (max-width: 1024px) {
     max-width: 100%;
     min-width: auto;
-    padding: 0.5rem 0;
   }
 
   .main-header {
