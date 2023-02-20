@@ -1,11 +1,12 @@
 import { getData, setData } from './dataUtils.js'
 import { getActiveBoardIndex } from './getActiveBoardIndex.js'
-// import { renderPanel } from '../renderers/renderPanel.js'
-// import { getDomElements } from '../utils/getDomElements.js'
 import { renderAllData } from '../renderers/renderAllData.js'
+import { initConfirmModalWindow } from '../components/confirmModalWindow.js'
+import { getDomElements } from './getDomElements.js'
+import { getCurrentTime } from './getCurrentTime.js'
 
 let draggedItem = null
-export function dargAndDrop () {
+export function dargAndDrop() {
   const panel = document.querySelectorAll('.panel__container')
   const card = document.querySelectorAll('.task-card')
 
@@ -16,29 +17,87 @@ export function dargAndDrop () {
       const typeCard = draggedItem.className.split('--').pop()
       const boardsArray = getData()
       const activeBoardIndex = getActiveBoardIndex()
-      // const domElements = getDomElements()
 
       if (typeCard === 'todo') {
         const cardsArray = boardsArray[activeBoardIndex].todoTasks
-        cardsArray.forEach((ite, index) => {
-          if (String(ite.id) === String(idNumber)) {
-            ite.type = 'progress'
-            boardsArray[activeBoardIndex].progressTasks.push(ite)
-            cardsArray.splice(index, 1)
-            setData(boardsArray)
-
-            panel.forEach((i) => {
-              i.addEventListener('dragover', (e) => e.preventDefault())
-              i.addEventListener('dragenter', function (e) {
+        cardsArray.forEach((value, index) => {
+          if (String(value.id) === String(idNumber)) {
+            panel.forEach((items) => {
+              items.addEventListener('dragover', (e) => e.preventDefault())
+              items.addEventListener('dragenter', function (e) {
                 e.preventDefault()
               })
-              i.addEventListener('drop', function (e) {
+              items.addEventListener('drop', function (e) {
                 e.preventDefault()
-                this.append(draggedItem)
-                // renderPanel(domElements, 'todo')
-                // renderPanel(domElements, 'progress')
-                // scrollDown(domElements.donePanelContainer)
-                renderAllData()
+                const panelType = items.id.split('-')[2]
+                if (panelType === 'progress') {
+                  if (boardsArray[activeBoardIndex].progressTasks.length < 6) {
+                    value.completedTime = getCurrentTime()
+                    value.type = 'progress'
+                    boardsArray[activeBoardIndex].progressTasks.push(value)
+                    cardsArray.splice(index, 1)
+                    setData(boardsArray)
+                    this.append(draggedItem)
+                    renderAllData()
+                  } else {
+                    initConfirmModalWindow(
+                      "You can't add more than 6 tasks to progress panel! Please, complete current tasks",
+                      'alert',
+                    )
+                    const domElements = getDomElements()
+
+                    window.addEventListener(
+                      'keydown',
+                      (event) => {
+                        if (event.code === 'Escape') {
+                          domElements.modalOverlay.remove()
+                          document.body.style.overflow = 'auto'
+                          renderAllData()
+                        }
+                      },
+                      true,
+                    )
+
+                    domElements.modalConfirmContainer.addEventListener('click', (event) => {
+                      if (event.target.id === 'modal-cancel') {
+                        domElements.modalOverlay.remove()
+                        renderAllData()
+                      }
+                    })
+                  }
+                }
+                if (panelType === 'done') {
+                  initConfirmModalWindow("You can't move current task to done panel", 'alert')
+                  const domElements = getDomElements()
+                  window.addEventListener(
+                    'keydown',
+                    (event) => {
+                      if (event.code === 'Escape') {
+                        domElements.modalOverlay.remove()
+                        document.body.style.overflow = 'auto'
+                        renderAllData()
+                      }
+                    },
+                    true,
+                  )
+                  window.addEventListener(
+                    'keydown',
+                    (event) => {
+                      if (event.code === 'Escape') {
+                        domElements.modalOverlay.remove()
+                        document.body.style.overflow = 'auto'
+                        renderAllData()
+                      }
+                    },
+                    true,
+                  )
+                  domElements.modalConfirmContainer.addEventListener('click', (event) => {
+                    if (event.target.id === 'modal-cancel') {
+                      domElements.modalOverlay.remove()
+                      renderAllData()
+                    }
+                  })
+                }
               })
             })
           }
@@ -47,41 +106,60 @@ export function dargAndDrop () {
 
       if (typeCard === 'progress') {
         const cardsArray = boardsArray[activeBoardIndex].progressTasks
-        cardsArray.forEach((ite) => {
-          if (String(ite.id) === String(idNumber)) {
-            panel.forEach((i) => {
-              i.addEventListener('dragover', (e) => e.preventDefault())
-              i.addEventListener('dragenter', function (e) {
+        cardsArray.forEach((item) => {
+          if (String(item.id) === String(idNumber)) {
+            panel.forEach((value) => {
+              value.addEventListener('dragover', (e) => e.preventDefault())
+              value.addEventListener('dragenter', function (e) {
                 e.preventDefault()
               })
-              i.addEventListener('drop', function (e) {
+              value.addEventListener('drop', function (e) {
                 e.preventDefault()
-                const panelType = i.id.split('-')[2]
+                const panelType = value.id.split('-')[2]
                 if (panelType === 'todo') {
-                  cardsArray.forEach((items, index) => {
-                    if (String(items.id) === String(idNumber)) {
-                      items.type = 'todo'
-                      boardsArray[activeBoardIndex].todoTasks.push(items)
+                  cardsArray.forEach((item, index) => {
+                    if (String(item.id) === String(idNumber)) {
+                      item.completedTime = ''
+                      item.type = 'todo'
+                      boardsArray[activeBoardIndex].todoTasks.push(item)
                       cardsArray.splice(index, 1)
                       setData(boardsArray)
                       this.append(draggedItem)
-                      //   renderPanel(domElements, 'progress')
-                      //   renderPanel(domElements, 'todo')
                       renderAllData()
                     }
                   })
                 }
 
                 if (panelType === 'done') {
-                  cardsArray.forEach((items, index) => {
-                    if (String(items.id) === String(idNumber)) {
-                      items.type = 'done'
-                      boardsArray[activeBoardIndex].doneTasks.push(items)
-                      cardsArray.splice(index, 1)
-                      setData(boardsArray)
-                      this.append(draggedItem)
-                      // renderPanel(domElements, 'progress')
-                      // renderPanel(domElements, 'done')
+                  initConfirmModalWindow('Move task to completed?')
+                  const domElements = getDomElements()
+                  window.addEventListener(
+                    'keydown',
+                    (event) => {
+                      if (event.code === 'Escape') {
+                        domElements.modalOverlay.remove()
+                        document.body.style.overflow = 'auto'
+                        renderAllData()
+                      }
+                    },
+                    true,
+                  )
+                  domElements.modalConfirmContainer.addEventListener('click', (event) => {
+                    if (event.target.id === 'modal-cancel') {
+                      domElements.modalOverlay.remove()
+                      renderAllData()
+                    }
+                    if (event.target.id === 'modal-confirm') {
+                      cardsArray.forEach((items, index) => {
+                        if (String(items.id) === String(idNumber)) {
+                          items.type = 'done'
+                          boardsArray[activeBoardIndex].doneTasks.push(items)
+                          cardsArray.splice(index, 1)
+                          setData(boardsArray)
+                          domElements.modalOverlay.remove()
+                          this.append(draggedItem)
+                        }
+                      })
                       renderAllData()
                     }
                   })
@@ -100,7 +178,6 @@ export function dargAndDrop () {
       setTimeout(() => {
         item.style.display = 'flex'
         draggedItem = null
-        // renderAllData()
       }, 0)
     })
   })
