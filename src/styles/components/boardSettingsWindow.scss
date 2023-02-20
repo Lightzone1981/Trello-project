@@ -181,15 +181,7 @@
       .board-settings__buttons-container {
         display: flex;
         gap: 1rem;
-        padding: 1rem 0;
-
-        #board-settings-save-button {
-          margin-left: 1rem;
-        }
-
-        #board-settings-cancel-button {
-          margin-right: 1rem;
-        }
+        padding: 1rem;
       }
     }
   }

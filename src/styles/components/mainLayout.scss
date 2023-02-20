@@ -20,14 +20,22 @@
     align-items: center;
     padding-bottom: 0.5rem;
     @media (max-height: 420px) {
-        display: none;
+      display: none;
     }
     &__logo {
       width: 8rem;
+      cursor: pointer;
+      transition: 0.3s;
+
       @media (max-width: 768px) {
         display: none;
       }
     }
+    &__logo:hover {
+      filter: brightness(0.7);
+      transform: scale(1.1);
+    }
+
     .clock__info {
       text-align: center;
       width: 7rem;

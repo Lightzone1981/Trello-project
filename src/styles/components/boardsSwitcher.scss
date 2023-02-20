@@ -1,9 +1,20 @@
 .boards-switcher-wrapper {
+  position: relative;
+  
   @media (max-width: 768px) {
     width: 100%;
   }
   @media (max-height: 420px) {
     display: none;
+  }
+
+  .boards-switcher-title{
+    position: absolute;
+    top:0.6rem;
+    left:3rem;
+    font-size: 1.2rem;
+    width: 12rem;
+    color: #fff;
   }
 
   .boards-switcher {
@@ -83,6 +94,7 @@
 
       &:hover {
         opacity: 1;
+        scale: 1.1;
       }
     }
   }

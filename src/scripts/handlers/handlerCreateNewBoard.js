@@ -7,6 +7,7 @@ import { renderAllData } from '../renderers/renderAllData.js'
 
 export const handlerCreateNewBoard = () => {
   const boardsArray = getData()
+
   const newBoard = createNewBoard()
   boardsArray.push(newBoard)
   setData(boardsArray)
@@ -14,6 +15,5 @@ export const handlerCreateNewBoard = () => {
 
   renderBoardsSwitcher()
   renderAllData()
-
-  handlerChangeBoardSettings()
+  handlerChangeBoardSettings('new')
 }

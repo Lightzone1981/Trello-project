@@ -5,9 +5,18 @@ import { getData, setData } from '../utils/dataUtils.js'
 import { renderAllData } from '../renderers/renderAllData.js'
 import { renderBoardsSwitcher } from '../renderers/renderBoardSwitcher.js'
 
-export const handlerChangeBoardSettings = () => {
+export const handlerChangeBoardSettings = (flag) => {
   createBoardSettingsWindow()
   const domElements = getDomElements()
+
+  const boardsArray = getData()
+
+  const activeBoardIndex = getActiveBoardIndex()
+  const activeBoard = boardsArray[activeBoardIndex]
+
+  if (flag === 'new') {
+    domElements.boardSettingsCancelButton.style.display = 'none'
+  }
 
   window.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
@@ -15,11 +24,6 @@ export const handlerChangeBoardSettings = () => {
       document.body.style.overflow = 'auto'
     }
   }, true)
-
-  const boardsArray = getData()
-
-  const activeBoardIndex = getActiveBoardIndex()
-  const activeBoard = boardsArray[activeBoardIndex]
 
   // вешаем слушателя на окно редактирования пользователей
   domElements.boardSettingsWrapper.addEventListener('click', (event) => {

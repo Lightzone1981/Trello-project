@@ -10,11 +10,17 @@ export function createMainHeader () {
 
   const boardSwitcherWrapper = document.createElement('div')
   boardSwitcherWrapper.className = 'boards-switcher-wrapper'
-  boardSwitcherWrapper.append(createBoardsSwitcher())
+
+  const boardSwitcherTitle = document.createElement('p')
+  boardSwitcherTitle.className = 'boards-switcher-title'
+  boardSwitcherTitle.innerText = 'let\'s start working!'
+
+  boardSwitcherWrapper.append(createBoardsSwitcher(), boardSwitcherTitle)
 
   header.append(boardSwitcherWrapper)
   const logoImg = document.createElement('img')
   logoImg.className = 'main-header__logo'
+  logoImg.id = 'main-header-logo'
   logoImg.src = logoUrl
   logoImg.alt = 'Trollo-lo Logo'
 

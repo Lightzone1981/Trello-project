@@ -13,6 +13,7 @@ import { handlerSwitchPanelRight } from './handlers/handlerSwitchPanelRight.js'
 import { handlerSwitchPanelLeft } from './handlers/handlerSwitchPanelLeft.js'
 import { getDomElements } from './utils/getDomElements.js'
 import { handlerWindowResize } from './handlers/handlerWindowResize.js'
+import { handlerShowSplashScreen } from './handlers/handlerShowSplashScreen.js'
 
 // инициализация слушателей событий
 export const initAllListeners = () => {
@@ -91,7 +92,7 @@ export const initAllListeners = () => {
     }
   })
 
-  // вешаем слушателей на main header приложения
+  // вешаем слушателей на переключатели доски
   domElements.boardSwitcherWrapper.addEventListener('click', (event) => {
     // события нажатия кнопки Add new board
     if (event.target.id === 'boards-switcher-button-add') {
@@ -102,6 +103,11 @@ export const initAllListeners = () => {
       const boardId = event.target.id.split('-').at(-1)
       handlerSwitchBoard(boardId)
     }
+  })
+
+  // вешаем слушателей на нажатие логотипа
+  domElements.boardHeaderLogo.addEventListener('click', (event) => {
+    handlerShowSplashScreen()
   })
 
   // событие изменения размеров окна (управляет отображением меню на экране)

@@ -6,11 +6,15 @@ export const getDomElements = () => {
     boardsContainer: document.querySelector('#boards-container'),
 
     boardHeader: document.querySelector('.board__header'),
+    boardHeaderLogo: document.querySelector('#main-header-logo'),
+
     boardTitle: document.querySelector('.board__header-title'),
     usersBarWrapper: document.querySelector('#users-bar-wrapper'),
     usersBar: document.querySelector('#users-bar'),
 
     boardSwitcherWrapper: document.querySelector('.boards-switcher-wrapper'),
+    boardSwitcherTitle: document.querySelector('.boards-switcher-title'),
+
     boardSwitcher: document.querySelector('.boards-switcher'),
     boardContainer: document.querySelector('.board__panels-container'),
 
@@ -35,6 +39,7 @@ export const getDomElements = () => {
 
     boardSettingsWrapper: document.querySelector('.board-settings-wrapper'),
     boardSettingsTitle: document.querySelector('.board-settings__title'),
+    boardSettingsCancelButton: document.querySelector('#board-settings-cancel-button'),
 
     modalContainer: document.querySelector('.modal-edit__container'),
 
@@ -52,7 +57,7 @@ export const getDomElements = () => {
     doneArrowTop: document.querySelector('#arrow-top-done'),
 
     switchPanelLeft: document.querySelector('#switch-panel-left'),
-    switchPanelRight: document.querySelector('#switch-panel-right')
-
+    switchPanelRight: document.querySelector('#switch-panel-right'),
+    splash: document.querySelector('.splash')
   }
 }

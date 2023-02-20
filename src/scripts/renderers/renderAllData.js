@@ -8,6 +8,7 @@ import { getData } from '../utils/dataUtils.js'
 import { clear } from '../utils/clearComponent.js'
 import { renderClock } from './renderClock.js'
 import { dargAndDrop } from '../utils/dargAndDrop.js'
+import { createSplashScreen } from '../components/splashScreen.js'
 
 export const renderAllData = () => {
   const boardsArray = getData()
@@ -18,6 +19,10 @@ export const renderAllData = () => {
     renderBoard()
     renderBoardHeader()
     const domElements = getDomElements()
+    domElements.boardHeaderLogo.style.opacity = '1'
+    domElements.clockInfo.style.opacity = '1'
+    domElements.boardSwitcherTitle.style.display = 'none'
+    // domElements.boardSwitcherTitle.style.zIndex = '1'
 
     if (window.innerWidth < 768) {
       domElements.progressPanel.setAttribute('disable', '')
@@ -36,7 +41,14 @@ export const renderAllData = () => {
   } else {
     const domElements = getDomElements()
     clear(domElements.boardsContainer)
-    document.body.style.background = '#000'
+    domElements.boardHeaderLogo.style.opacity = '0'
+    domElements.clockInfo.style.opacity = '0'
+    domElements.boardSwitcherTitle.style.display = 'block'
+    // domElements.boardSwitcherTitle.style.zIndex = '-50'
+    document.body.style.background =
+      'url(\'https://cashtech.com.au/wp-content/uploads/2017/05/Untitled-19.jpg\') center/cover no-repeat'
+
+    domElements.boardsContainer.append(createSplashScreen())
   }
   dargAndDrop()
 }
