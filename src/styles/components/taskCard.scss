@@ -28,6 +28,8 @@
     width: 80%;
     margin-right: auto;
     padding: 1rem 0.5rem 1rem 1rem;
+    cursor: grab;
+
 
     .task-card__title {
       font-size: 0.9rem;
@@ -49,11 +51,6 @@
       }
     }
     .task-card__footer {
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: space-between;
-      // gap: 0.5rem;
-
       .task-card__user-container {
         display: flex;
         gap: 0.5rem;

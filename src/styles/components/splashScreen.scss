@@ -34,11 +34,11 @@
 			position: absolute;
             content: '';
 			top: 50%;
-			left: 15px;
-			width: 35px;
-			height: 20px;
-			background-color: #fff;
-			border-radius: 2px;
+			left: 1rem;
+            z-index: 150;
+			width: 2.5rem;
+			height: 1.8rem;
+			border-radius: 3px;
 			
 			animation-name: card;
 			animation-iteration-count: infinite;
@@ -103,11 +103,11 @@
         .bug {
             position: absolute;
             content: '';
-            top: 0.6rem;
-            left: 3.05rem;
+            top: 1rem;
+            left: 2.5rem;
             z-index: 5;
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 2.5rem;
+            height: 3rem;
             transition: 2s;
 
             animation-name: bug;
@@ -127,13 +127,13 @@
 
 @keyframes bug {
     0% {
-        top: 0.6rem;
+        top: 1rem;
     }
 	50% {
-        top: 0.4rem;
+        top: 0.6rem;
 	}
     100% {
-        top: 0.6rem;
+        top: 1rem;
 	}
 }
 
@@ -226,31 +226,24 @@
         background: url('../assets/images/llo-blue.svg') center/contain no-repeat;
 
 	}
-  
-
 }
 
 @keyframes lo {
-   
-   
     55% {
 		transform: scale(1);
 		left: 0;
         opacity: 1;
         background: url('../assets/images/lo.svg') center/contain no-repeat;
-
 	}
 
     65% {
 		transform: scale(0.7) rotate(-15deg);
         opacity: 0.5;
         background: url('../assets/images/lo-blue.svg') center/contain no-repeat;
-
 	}
 	70% {
 		transform: scale(0.7) rotate(-15deg);
         opacity: 0.5;
-
 	}
 	
 	73% {
@@ -258,9 +251,7 @@
 		left: 0.5rem;
         opacity: 1;
         background: url('../assets/images/lo-blue.svg') center/contain no-repeat;
-
 	}
-
 }
 
 @keyframes card {
@@ -268,30 +259,27 @@
 		transform: scale(3.5) rotate(340deg);
 		top: -5rem;
 		left: -8rem;
-		z-index: 0;
-        opacity: 0.3;
-        background-color: #fff;
+		z-index: 1000;
+        background: url('../assets/images/card-todo.svg') center/contain no-repeat;
 
 	}
 	40% {
 		transform: scale(1.5) rotate(180deg);
 		top: -1rem;
         left: 9rem;
-        background-color: rgb(44, 137, 208);
+        background: url('../assets/images/card-progress.svg') center/contain no-repeat;
+
 	}
 	70% {
 		top: 2rem;
         left: 16rem;
-        opacity: 1;
 		transform: scale(2);
-        background-color: rgb(72, 74, 76);
-        
+        background: url('../assets/images/card-done.svg') center/contain no-repeat;
 	}
 	100% {
 		top: -5rem;
         left:45rem;
-        background-color: #fff;
-        opacity: 0;
-
+        background: url('../assets/images/card-todo.svg') center/contain no-repeat;
+		z-index: 1000;
 	}
 }

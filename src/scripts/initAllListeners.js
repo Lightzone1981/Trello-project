@@ -14,14 +14,27 @@ import { handlerSwitchPanelLeft } from './handlers/handlerSwitchPanelLeft.js'
 import { getDomElements } from './utils/getDomElements.js'
 import { handlerWindowResize } from './handlers/handlerWindowResize.js'
 import { handlerShowSplashScreen } from './handlers/handlerShowSplashScreen.js'
+import { handlerDragAndDrop } from './handlers/handlerDragAndDrop.js'
 
 // инициализация слушателей событий
 export const initAllListeners = () => {
   const domElements = getDomElements()
 
+  domElements.boardsContainer.addEventListener('dragstart', (event) => {
+    // событие захвата карточки для перетаскивания
+    if (event.target.id.indexOf('task-card') !== -1) {
+      event.dataTransfer.effectAllowed = 'move'
+
+      const cardId = event.target.id.split('-').at(-1)
+      const cardNode = document.querySelector(`#task-card-${cardId}`)
+      const cardType = [...cardNode.classList][1].split('-').at(-1)
+
+      handlerDragAndDrop(cardNode, cardId, cardType)
+    }
+  })
+
   // вешаем слушателей на основной контейнер доски
   domElements.boardsContainer.addEventListener('click', (event) => {
-    // событие нажатия кнопки "New Card"
     if (event.target.id === 'add-new-card-button') {
       handlerCreateNewCard(event.target.id, domElements)
     }

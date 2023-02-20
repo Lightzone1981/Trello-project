@@ -28,7 +28,7 @@ export function handlerMoveCardForward (cardId, cardType) {
 
           return
         } else {
-          initConfirmModalWindow('You can\'t add more than 6 tasks to progress panel! Please, complete current tasks', 'alert')
+          initConfirmModalWindow('You can\'t add more than 6 tasks to progress panel! Please, complete progress tasks', 'alert')
           const domElements = getDomElements()
 
           window.addEventListener('keydown', (event) => {
