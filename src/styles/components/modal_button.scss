@@ -1,0 +1,13 @@
+.modal-button {
+    flex-grow: 1;
+    background-color: $color1-opacity;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    &:hover {
+      background-color: $color1;
+    }
+  }

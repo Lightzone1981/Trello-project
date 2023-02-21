@@ -1,4 +1,6 @@
 import { createButton } from './button.js'
+import { getActiveBoardColor } from '../utils/getActiveBoardColor.js'
+import { createArrowTop } from './arrowTop.js'
 
 // верстка панели для карточек
 export function createPanel (type) {
@@ -23,13 +25,26 @@ export function createPanel (type) {
   const panelContainer = document.createElement('div')
   panelContainer.className = 'panel__container'
   panelContainer.id = `panel-container-${type}`
+  panelContainer.append(createArrowTop(type))
   panel.append(panelContainer)
 
   switch (type) {
-    case 'todo': createButton('panel-todo-button', 'panel__button', 'New card', 'button')
+    case 'todo': {
+      const addCardButton = createButton('add-new-card-button', 'panel__button', 'Add new card', 'button', 'Create new task', 'fill')
+      panel.append(addCardButton)
       break
-    case 'done': createButton('panel-done-button', 'panel__button', 'Delete All', 'button')
+    }
+    case 'done': {
+      const deleteCardButton = createButton('delete-all-button', 'panel__button', 'Delete All', 'button', 'Delete all completed cards', 'fill')
+      panel.append(deleteCardButton)
+      panelContainer.style.backgroundColor = getActiveBoardColor('transparent')
+      panelContainer.onmouseover = function () {
+        panelContainer.style.backgroundColor = getActiveBoardColor('normal')
+      }
+      panelContainer.onmouseout = function () {
+        panelContainer.style.backgroundColor = getActiveBoardColor('transparent')
+      }
+    }
   }
-
   return panel
 }

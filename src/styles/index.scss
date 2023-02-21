@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import "./config/reset";
 @import "./config/normalize";
 @import "./config/base.scss";
+@import "./variables/colors.scss";
+@import "./components/mainLayout.scss";
+@import "./components/board.scss";
+@import "./components/usersBar.scss";
+@import "./components/panel.scss";
+@import "./components/arrowTop.scss";
+@import "./components/taskCard.scss";
+@import "./components/modal_button.scss";
+@import "./components/usersModalWindow.scss";
+@import "./components/boardSettingsWindow.scss";
+@import "./components/confirmModalWindow.scss";
+@import "./components/editCardModalWindow.scss";
+@import "./components/boardsSwitcher.scss";
+@import "./components/splashScreen.scss";
+

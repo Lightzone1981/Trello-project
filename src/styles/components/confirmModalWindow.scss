@@ -1,0 +1,42 @@
+.modal-overlay,
+.edit-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+
+  .modal-confirm__container {
+    width: 20rem;
+    margin: 3rem auto;
+    padding: 1rem;
+    border-radius: 5px;
+    padding-bottom: 1rem;
+    border: 1px solid $color1;
+    display: flex;
+    flex-direction: column;
+
+    .modal-confirm__header {
+      padding: 2rem;
+      text-align: center;
+      font-size: 1.2rem;
+      color: white;
+    }
+    .modal-confirm__buttons-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+  }
+}

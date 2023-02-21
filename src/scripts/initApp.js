@@ -1,12 +1,11 @@
 import { createMainLayout } from './components/mainLayout.js'
-import { getDomElements } from './modules/getDomElements.js'
-import { renderAllData } from './modules/renderAllData.js'
-import { initAllListeners } from './modules/initAllListeners.js'
-
+import { renderAllData } from './renderers/renderAllData.js'
+import { initAllListeners } from './initAllListeners.js'
+import { initSoundsElements } from './utils/sounds.js'
 // инициализация приложения
 export function initApp (root) {
+  initSoundsElements()
   createMainLayout(root)
-  const elem = getDomElements()
-  renderAllData(elem)
-  initAllListeners(elem)
+  renderAllData()
+  initAllListeners()
 }

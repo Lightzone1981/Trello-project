@@ -1,18 +1,17 @@
-import { createHeader } from '../components/mainHeader.js'
-import { createBoard } from '../components/board.js'
+import { createMainHeader } from '../components/mainHeader.js'
 
 // верстка основного шаблона приложения
 export function createMainLayout (root) {
   const wrapper = document.createElement('div')
   wrapper.className = 'main-wrapper'
 
-  const mainHeader = createHeader()
+  const mainHeader = createMainHeader()
   wrapper.append(mainHeader)
 
   const mainBoardsContainer = document.createElement('main')
   mainBoardsContainer.className = 'boards-container container'
+  mainBoardsContainer.id = 'boards-container'
 
-  mainBoardsContainer.append(createBoard())
   wrapper.append(mainBoardsContainer)
 
   root.append(wrapper)

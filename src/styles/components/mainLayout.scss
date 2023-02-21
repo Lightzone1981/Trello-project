@@ -1,0 +1,52 @@
+.main-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  min-width: 700px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 1rem 0 1rem 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    @media (max-height: 420px) {
+      display: none;
+    }
+    &__logo {
+      width: 8rem;
+      cursor: pointer;
+      transition: 0.3s;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    &__logo:hover {
+      filter: brightness(0.7);
+      transform: scale(1.1);
+    }
+
+    .clock__info {
+      text-align: center;
+      width: 7rem;
+      padding: 0.5rem;
+      font-size: 1.2 rem;
+      border: 2px solid $color1;
+      border-radius: 1.5rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.2);
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

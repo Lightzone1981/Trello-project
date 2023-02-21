@@ -1,4 +1,5 @@
 import { createButton } from '../components/button.js'
+import { createUserBar } from '../components/usersBar.js'
 
 // верстка header доски
 export function createBoardHeader () {
@@ -8,13 +9,18 @@ export function createBoardHeader () {
   const boardHeaderTitle = document.createElement('h1')
   boardHeaderTitle.className = 'board__header-title'
 
-  // Здесь будут usersAvatars
-  // const boardHeaderAvatars = document.createElement('div')
-  // boardHeaderAvatarsDiv.className = ' board__users-Avatars'
+  const boardHeaderMenuContainer = document.createElement('div')
+  boardHeaderMenuContainer.classList = 'board__menu-container'
+  const usersBarWrapper = document.createElement('div')
+  usersBarWrapper.classList = 'users-bar-wrapper'
+  usersBarWrapper.append(createUserBar())
 
-  const boardMenuButton = createButton('#board-menu-button', 'board__menu-button', '', 'button')
-
-  boardHeader.append(boardHeaderTitle, boardMenuButton)
+  boardHeaderMenuContainer.append(
+    usersBarWrapper,
+    createButton('board-settings-button', 'board__settings-button', '', 'button', 'Board Settings'),
+    createButton('board-delete-button', 'board__delete-button', '', 'button', 'Delete Board')
+  )
+  boardHeader.append(boardHeaderTitle, boardHeaderMenuContainer)
 
   return boardHeader
 }
