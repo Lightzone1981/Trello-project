@@ -42,8 +42,9 @@ export const renderAllData = () => {
     domElements.boardHeaderLogo.style.opacity = '0'
     domElements.clockInfo.style.opacity = '0'
     domElements.boardSwitcherTitle.style.display = 'block'
+
     document.body.style.background =
-      'url(\'https://cashtech.com.au/wp-content/uploads/2017/05/Untitled-19.jpg\') center/cover no-repeat'
+    'url(\'./main-background.jpg\') center/cover no-repeat'
 
     domElements.boardsContainer.append(createSplashScreen())
     const bug = document.querySelector('#bug')

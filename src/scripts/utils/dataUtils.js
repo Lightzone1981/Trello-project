@@ -4,7 +4,7 @@ export function getData () {
   const boardsArray = [
     {
       id: 1,
-      title: 'Example',
+      title: 'Example project',
       background: 1,
       color: 1,
       status: 'active',
@@ -39,39 +39,6 @@ export function getData () {
           description: 'Протестировать приложение, найти баги, составить отчет',
           user: 7,
           creationTime: '18 Feb, 09:50',
-          takenTime: '',
-          completedTime: ''
-        },
-        {
-          type: 'todo',
-          id: 14,
-          panelIndex: 3,
-          title: '11111111',
-          description: 'Написать на js динамическую верстку, использовать методологию бэм',
-          user: 11,
-          creationTime: '18 Feb, 10:20',
-          takenTime: '',
-          completedTime: ''
-        },
-        {
-          type: 'todo',
-          id: 15,
-          panelIndex: 4,
-          title: '22222222',
-          description: 'Написать UI с помощью scss, использовать вложенность',
-          user: 10,
-          creationTime: '18 Feb, 10:50',
-          takenTime: '',
-          completedTime: ''
-        },
-        {
-          type: 'todo',
-          id: 16,
-          panelIndex: 5,
-          title: '3333333',
-          description: 'Протестировать приложение, найти баги, составить отчет',
-          user: 9,
-          creationTime: '18 Feb, 11:14',
           takenTime: '',
           completedTime: ''
         }
