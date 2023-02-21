@@ -5,7 +5,7 @@ export function getData () {
     {
       id: 1,
       title: 'Example project',
-      background: 1,
+      background: 5,
       color: 1,
       status: 'active',
       todoTasks: [
