@@ -7,6 +7,8 @@
 **<h1>Tro-llo-lo project</h1>**
 [Demo](https://lightzone1981.github.io/Trello-project/)
 
+![Splash screen](./docs/screen.jpg)
+
 **<h2>About the project:</h2>**
 This project is the implementation of a joint coursework on creating a clone of the popular Trello task manager. 
 The application was created in Javascript using a modular component approach. 
@@ -15,7 +17,10 @@ The BEM approach was used to write classes.
 Adaptive responsive design is implemented using media queries and flexbox technology. 
 The project was built using WebPack.
 
-![Screen preview](./docs/screen.jpg)
+![main screen](./docs/screen1.jpg)
+![settings screen](./docs/screen2.jpg)
+![users screen](./docs/screen3.jpg)
+![card edit screen](./docs/screen4.jpg)
 
 <h2>Stack:</h2>
 
