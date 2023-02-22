@@ -15,6 +15,8 @@ The BEM approach was used to write classes.
 Adaptive responsive design is implemented using media queries and flexbox technology. 
 The project was built using WebPack.
 
+![Screen preview](./screen.jpg)
+
 <h2>Stack:</h2>
 
 * [HTML-5](http://htmlbook.ru/samhtml5/sintaksis-html5)
