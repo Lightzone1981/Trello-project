@@ -1,5 +1,5 @@
 **<h1>Tro-llo-lo project</h1>**
-[Demo](https://lightzone1981.github.io/Tro-llo-lo/)
+[Demo](https://lightzone1981.github.io/Trello-project/)
 
 **<h2>About the project:</h2>**
 This project is the implementation of a joint coursework on creating a clone of the popular Trello task manager. 
