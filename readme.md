@@ -11,7 +11,7 @@ The project was built using WebPack.
 
 <h2>Stack:</h2>
 
-* [HTML 5](http://htmlbook.ru/samhtml5/sintaksis-html5)
+* [HTML-5](http://htmlbook.ru/samhtml5/sintaksis-html5)
 * [SCSS](https://sass-scss.ru/guide/)
 * [WebPack](https://webpack.js.org/)
 * [JavaScript](https://learn.javascript.ru/)
